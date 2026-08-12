@@ -8,3 +8,4 @@ novaspirit_templates, https://raw.githubusercontent.com/novaspirit/pi-hosted/mas
 mediadepot_templates, https://raw.githubusercontent.com/mediadepot/templates/master/portainer.json, https://github.com/mediadepot/templates/
 shmolf_templates, https://raw.githubusercontent.com/shmolf/portainer-templates/main/templates-2.0.json, https://github.com/shmolf/portainer-templates/
 portainer_templates, https://raw.githubusercontent.com/portainer/templates/v3/templates.json, https://github.com/portainer/templates/
+dockroute_templates, https://raw.githubusercontent.com/Dockroute/Dockroute/main/templates/portainer/dockroute.json, https://github.com/Dockroute/Dockroute/
