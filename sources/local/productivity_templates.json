@@ -312,6 +312,52 @@
       },
       "title": "Pumperly",
       "type": 3
+    },
+    {
+      "categories": [
+        "Business",
+        "Productivity",
+        "Self-hosted"
+      ],
+      "description": "Open-source equipment rental platform. Rent out cameras, tools, bikes, party gear or vehicles from a branded storefront with live availability, and manage products, reservations, pickups and returns, customers, PDF contracts and revenue statistics from one dashboard. The storefront is served at the root of the site, the dashboard under /dashboard, and the app installs its own database schema on first boot. Source: https://github.com/Synapsr/Louez",
+      "env": [
+        {
+          "default": "http://localhost:3000",
+          "label": "Public URL of your instance, sign-in is bound to it",
+          "name": "APP_URL"
+        },
+        {
+          "default": "3000",
+          "label": "Host port mapped to the app",
+          "name": "LOUEZ_PORT"
+        },
+        {
+          "default": "",
+          "label": "MySQL password for the louez user, set one before first boot",
+          "name": "DB_PASSWORD"
+        },
+        {
+          "default": "",
+          "label": "MySQL root password, set one before first boot",
+          "name": "DB_ROOT_PASSWORD"
+        },
+        {
+          "default": "",
+          "label": "Image store password, set one before first boot",
+          "name": "MINIO_PASSWORD"
+        }
+      ],
+      "logo": "https://raw.githubusercontent.com/Synapsr/Louez/main/apps/web/public/icons/icon-512.png",
+      "name": "louez",
+      "note": "Deploys the app, MySQL and a private MinIO bucket for product images. The first account you create becomes the store owner. Outgoing email is optional: without SMTP credentials you sign in with a password.",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "sources/stacks/louez.yml",
+        "url": "https://github.com/lissy93/portainer-templates"
+      },
+      "restart_policy": "unless-stopped",
+      "title": "Louez",
+      "type": 3
     }
   ],
   "version": "3"
