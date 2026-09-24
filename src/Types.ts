@@ -34,7 +34,14 @@ export interface Template {
   primary?: string; // set on listings: slug of the variant shown for this app, when it ships as several
 }
 
-export type TemplateCard = Pick<Template, 'title' | 'description' | 'logo' | 'categories' | 'primary'>;
+export type TemplateCard = Pick<Template, 'title' | 'description' | 'logo' | 'categories' | 'primary'> & { status?: string };
+
+// A known issue flagged in overrides.json, eg a template that's currently broken
+export interface TemplateStatus {
+  status: string;
+  note?: string;
+  updated?: string;
+}
 
 export interface Volume {
   container: string;

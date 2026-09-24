@@ -17,6 +17,9 @@ export const isHiddenVariant = (slug: string, primary?: string): boolean => !!pr
 export const listingTitle = (title: string, primary?: string): string =>
   primary === slugify(title) ? baseTitle(title) : title;
 
+// snarkdown, minus reading snake_case words as emphasis
+export const inlineMarkdown = (md: string): string => snarkdown(md.replace(/(?<=\w)_(?=\w)/g, '&#95;'));
+
 const markdownPattern = /\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|__[^_]+__|`[^`]+`|~~[^~]+~~/;
 
 // Parse markdown descriptions, dropping links to their label (cards are already links). Null if plaintext.

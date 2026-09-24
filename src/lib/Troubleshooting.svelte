@@ -1,14 +1,16 @@
 <script lang="ts">
   import { gitHubRepo } from '$src/constants';
+  import { formatDate, inlineMarkdown } from '$lib/format';
   import { envValue } from '$src/utils/template-to-docker-parser';
-  import type { Template, Service, DockerMeta, ProjectStats } from '$src/Types';
+  import type { Template, Service, DockerMeta, ProjectStats, TemplateStatus } from '$src/Types';
   import Collapsible from '$lib/Collapsible.svelte';
 
-  let { template, dockerMeta = null, project = null, services = [] }: {
+  let { template, dockerMeta = null, project = null, services = [], status = null }: {
     template: Template;
     dockerMeta?: DockerMeta | null;
     project?: ProjectStats | null;
     services?: Service[];
+    status?: TemplateStatus | null;
   } = $props();
 
   const repoLink = (repoUrl?: string | null): { slug: string; href: string } | null => {
@@ -85,6 +87,8 @@
   );
   const noVolumes = $derived(template.type === 1 && !!image && volumes.length === 0);
 
+  const reviewed = $derived(formatDate(status?.updated ?? ''));
+
   const rows = $derived([
     { label: 'Bug within the app', link: repoLink(project?.url), fallback: `Open an issue within ${appName || 'the app'}'s repo` },
     { label: 'Template not working', link: repoLink(template.maintainer), fallback: "Open an issue within the template's repo" },
@@ -94,6 +98,17 @@
 
 <Collapsible title="Troubleshooting">
   <div class="troubleshooting">
+      {#if status}
+        <div class="troubleshooting-item">
+          <h3>Known issue</h3>
+          <p>This template is currently marked as {status.status}, so it may not deploy or run as expected{reviewed ? ` (last reviewed ${reviewed})` : ''}.</p>
+          <ul>
+            {#if status.note}<li>{@html inlineMarkdown(status.note)}</li>{/if}
+            <li>Until it's fixed, one of the similar apps below may work as an alternative.</li>
+          </ul>
+        </div>
+      {/if}
+
       <div class="troubleshooting-item">
         <h3>Check the logs first</h3>
         <p>Nine times out of ten the logs tell you exactly what went wrong.</p>

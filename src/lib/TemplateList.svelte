@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { TemplateCard } from '$src/Types';
   import Logo from '$lib/Logo.svelte';
+  import Icon from '$lib/Icon.svelte';
   import { slugify, parseDescription, listingTitle } from '$lib/format';
 
   let { templates }: { templates: TemplateCard[] } = $props();
@@ -10,7 +11,14 @@
   {#each templates as template (template.title)}
     {@const descHtml = parseDescription(template.description)}
     <a class="template-card" href="/{slugify(template.title)}">
-      <h3>{listingTitle(template.title, template.primary)}</h3>
+      <h3>
+        {listingTitle(template.title, template.primary)}
+        {#if template.status}
+          <span class="status" role="img" aria-label="Currently {template.status}" title="Currently {template.status}">
+            <Icon name="warning" color="var(--red)" />
+          </span>
+        {/if}
+      </h3>
       <div class="template-summary">
         <div class="left">
           <Logo src={template.logo} name={listingTitle(template.title, template.primary)} />
@@ -51,6 +59,16 @@ section.templates {
     }
     p, h3 {
       margin: 0;
+    }
+    h3 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .status {
+      display: flex;
+      flex-shrink: 0;
     }
     .description {
       font-style: italic;

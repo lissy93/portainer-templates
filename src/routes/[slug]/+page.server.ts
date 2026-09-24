@@ -7,6 +7,7 @@ import { cachedSearchIndex } from '$lib/server/search-index';
 import { searchEntries } from '$lib/search';
 import { listingTitle, slugify } from '$lib/format';
 import { MODE_ORDER, groupKey, onePerApp, primarySlugs } from '$lib/server/variants';
+import { getStatuses, statusOf } from '$lib/server/overrides';
 import type { Template, Service, SimilarApp, DockerMeta, ProjectStats, SearchEntry, DeployMode } from '$src/Types';
 import type { PageServerLoad } from './$types';
 
@@ -111,12 +112,13 @@ const returnResults = async (allTemplates: Template[], templateSlug: string, fet
   }
 
   // Everything below is independent, so fetch it all at once
-  const [hubStats, hubMeta, project, ghcr, issuesUrl] = await Promise.all([
+  const [hubStats, hubMeta, project, ghcr, issuesUrl, statuses] = await Promise.all([
     getDockerHubStats(template.image, fetch),
     getDockerMeta(template.image, fetch, 30),
     getProjectStats(template, fetch),
     getGhcrStats(template.image, fetch),
     getIssuesUrl(template, fetch),
+    getStatuses(),
   ]);
   // GHCR images aren't on Docker Hub, so fall back to the registry manifest for their image card
   const dockerStats = hubStats ?? ghcr?.info ?? null;
@@ -135,6 +137,7 @@ const returnResults = async (allTemplates: Template[], templateSlug: string, fet
     services,
     stackfile,
     issuesUrl,
+    status: statusOf(statuses, template) ?? null,
     similar: findSimilar(allTemplates, template, await primariesLookup),
     modes: findModes(allTemplates, template),
   };

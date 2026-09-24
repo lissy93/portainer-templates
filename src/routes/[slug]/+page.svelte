@@ -11,6 +11,7 @@
   import DeployModes from '$lib/DeployModes.svelte';
   import MdContent from '$lib/MdContent.svelte';
   import Note from '$lib/Note.svelte';
+  import StatusBanner from '$lib/StatusBanner.svelte';
   import Logo from '$lib/Logo.svelte';
   import InstallSection from '$lib/configurator/InstallSection.svelte';
   import PortainerInstall from '$lib/PortainerInstall.svelte';
@@ -22,7 +23,7 @@
 
   import { baseUrl } from '$src/constants';
   import { baseTitle } from '$lib/format';
-  import type { Template, Service, DockerHubResponse, DockerMeta, ProjectStats as ProjectStatsType, SimilarApp, DeployMode } from '$src/Types';
+  import type { Template, Service, DockerHubResponse, DockerMeta, ProjectStats as ProjectStatsType, SimilarApp, DeployMode, TemplateStatus } from '$src/Types';
 
   const urlSlug = $derived(page.params.slug ?? '');
 
@@ -39,6 +40,7 @@
   const readme = $derived((page.data.readme ?? null) as string | null);
   const stackfile = $derived((page.data.stackfile ?? null) as string | null);
   const issuesUrl = $derived((page.data.issuesUrl ?? null) as string | null);
+  const status = $derived((page.data.status ?? null) as TemplateStatus | null);
 
   const makeMultiDoc = (svcs: Service[]) =>
     svcs
@@ -140,6 +142,10 @@
 />
 
 {#if template}
+  {#if status}
+    <StatusBanner {status} />
+  {/if}
+
   <section class="summary-section">
     <div class="summary-head">
       <h1>
@@ -222,7 +228,7 @@
     <ReverseProxy {template} {services} />
   </svelte:boundary>
   <svelte:boundary onerror={(e) => console.error('Troubleshooting section failed:', e)}>
-    <Troubleshooting {template} {dockerMeta} {project} {services} />
+    <Troubleshooting {template} {dockerMeta} {project} {services} {status} />
   </svelte:boundary>
   <svelte:boundary onerror={(e) => console.error('Portainer explainer section failed:', e)}>
     <PortainerExplainer {template} {dockerMeta} {project} {services} />
