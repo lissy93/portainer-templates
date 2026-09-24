@@ -2,34 +2,28 @@ import { error } from '@sveltejs/kit';
 import { loadTemplates, getServices, mergeEnv } from '$lib/server/templates';
 import { getDockerHubStats, getDockerMeta } from '$lib/server/dockerhub';
 import { getGhcrStats } from '$lib/server/ghcr';
-import { getProjectStats, getReadme, getReleases } from '$lib/server/github';
+import { getIssuesUrl, getProjectStats, getReadme, getReleases } from '$lib/server/github';
 import { cachedSearchIndex } from '$lib/server/search-index';
 import { searchEntries } from '$lib/search';
-import { slugify } from '$lib/format';
+import { listingTitle, slugify } from '$lib/format';
+import { MODE_ORDER, groupKey, onePerApp, primarySlugs } from '$lib/server/variants';
 import type { Template, Service, SimilarApp, DockerMeta, ProjectStats, SearchEntry, DeployMode } from '$src/Types';
 import type { PageServerLoad } from './$types';
 
 type Fetch = typeof globalThis.fetch;
-
-// Reading order for the deploy-mode switcher: container, stack, swarm, edge
-const MODE_ORDER = [1, 3, 2, 4];
 
 /* Based on the current page name, find the corresponding template */
 const findTemplate = (allTemplates: Template[], slug: string) => {
   return allTemplates.find((temp) => slugify(temp.title) === slug);
 };
 
-/* Same app minus its "(container)"/"(stack)"/etc suffix, so differently-worded variants still group */
-const baseKey = (title: string): string =>
-  title.replace(/\s*\((?:container|stack|swarm|compose|edge)\)\s*$/i, '').replace(/[^a-z0-9]/gi, '').toLowerCase();
-
 /* The deploy methods this app ships as (container/stack/swarm), for the mode switcher */
 const findModes = (allTemplates: Template[], current: Template): DeployMode[] => {
-  const key = baseKey(current.title);
+  const key = groupKey(current.title);
   const currentSlug = slugify(current.title);
   const seen = new Set<number>();
   return allTemplates
-    .filter((t) => baseKey(t.title) === key)
+    .filter((t) => groupKey(t.title) === key)
     .map((t) => ({ type: t.type, slug: slugify(t.title) }))
     .filter((m) => m.slug && !seen.has(m.type) && seen.add(m.type))
     .sort((a, b) => MODE_ORDER.indexOf(a.type) - MODE_ORDER.indexOf(b.type))
@@ -49,11 +43,10 @@ const toSearchEntry = (t: Template): SearchEntry => ({
 });
 
 /* Entries to search when a slug 404s: the prebuilt index for stats if it's ready, else the plain list */
-const fallbackEntries = (allTemplates: Template[]): SearchEntry[] => {
-  const index = cachedSearchIndex();
-  if (index) return index.entries;
+const fallbackEntries = (allTemplates: Template[], primaries: Map<string, string>): SearchEntry[] => {
   const seen = new Set<string>();
-  return allTemplates.map(toSearchEntry).filter((e) => e.slug && !seen.has(e.slug) && seen.add(e.slug));
+  const entries = cachedSearchIndex()?.entries ?? allTemplates.map(toSearchEntry).filter((e) => e.slug && !seen.has(e.slug) && seen.add(e.slug));
+  return onePerApp(entries, primaries, (e) => e.slug);
 };
 
 /* Match docker tags to github releases, so each version can show its release notes */
@@ -69,17 +62,18 @@ const withReleaseNotes = async (meta: DockerMeta | null, project: ProjectStats |
   return { ...meta, versions };
 };
 
-/* Other apps sharing a category, A-Z. Pure local data, so it's free and always there. */
-const findSimilar = (allTemplates: Template[], current: Template, limit = 12): SimilarApp[] => {
+/* Other apps sharing a category, A-Z, one per app. Local data, so it's cheap and always there. */
+const findSimilar = (allTemplates: Template[], current: Template, primaries: Map<string, string>, limit = 12): SimilarApp[] => {
   const cats = new Set(current.categories ?? []);
   if (!cats.size) return [];
   const shared = (t: Template) => (t.categories ?? []).filter((c) => cats.has(c)).length;
-  return allTemplates
-    .filter((t) => t.title !== current.title && shared(t) > 0)
+  const key = groupKey(current.title);
+  return onePerApp(allTemplates, primaries, (t) => slugify(t.title))
+    .filter((t) => groupKey(t.title) !== key && shared(t) > 0)
     .sort((a, b) => shared(b) - shared(a) || a.title.localeCompare(b.title))
     .slice(0, limit)
     .map((t) => ({
-      title: t.title,
+      title: listingTitle(t.title, t.primary),
       slug: slugify(t.title),
       logo: t.logo,
       category: (t.categories ?? []).find((c) => cats.has(c)),
@@ -88,12 +82,15 @@ const findSimilar = (allTemplates: Template[], current: Template, limit = 12): S
 
 /* Format results for returning to component */
 const returnResults = async (allTemplates: Template[], templateSlug: string, fetch: Fetch) => {
+  // Started early, as it may fetch stackfiles on a cold start
+  const primariesLookup = primarySlugs(allTemplates);
+
   // Find template, based on slug
   let template = findTemplate(allTemplates, templateSlug);
   if (!template) {
     // No such page. If the slug reads like a search, 404 but carry the results it would've matched
     const query = templateSlug.replace(/[-_]+/g, ' ');
-    const matches = searchEntries(fallbackEntries(allTemplates), query, 24);
+    const matches = searchEntries(fallbackEntries(allTemplates, await primariesLookup), query, 24);
     throw error(404, matches.length ? { message: `No template named "${templateSlug}"`, query, matches } : `No template named "${templateSlug}"`);
   }
 
@@ -114,11 +111,12 @@ const returnResults = async (allTemplates: Template[], templateSlug: string, fet
   }
 
   // Everything below is independent, so fetch it all at once
-  const [hubStats, hubMeta, project, ghcr] = await Promise.all([
+  const [hubStats, hubMeta, project, ghcr, issuesUrl] = await Promise.all([
     getDockerHubStats(template.image, fetch),
     getDockerMeta(template.image, fetch, 30),
     getProjectStats(template, fetch),
     getGhcrStats(template.image, fetch),
+    getIssuesUrl(template, fetch),
   ]);
   // GHCR images aren't on Docker Hub, so fall back to the registry manifest for their image card
   const dockerStats = hubStats ?? ghcr?.info ?? null;
@@ -136,7 +134,8 @@ const returnResults = async (allTemplates: Template[], templateSlug: string, fet
     readme,
     services,
     stackfile,
-    similar: findSimilar(allTemplates, template),
+    issuesUrl,
+    similar: findSimilar(allTemplates, template, await primariesLookup),
     modes: findModes(allTemplates, template),
   };
 };

@@ -8,25 +8,23 @@ let { searchTerm, selectedCategories, clearSearch, numResults, totalResults }: {
 } = $props();
 </script>
 
-<div class="search-summary">
-  {#if searchTerm}
-    <p>
-      Showing {numResults} of {totalResults}
-      results, matching "<i>{searchTerm}</i>"
-      {selectedCategories.length  ? `in categories: ${selectedCategories.join(', ')}` : ''}
-    </p>
-  {:else if selectedCategories.length}
-    <p>
-      Showing {numResults} of {totalResults}
-      results, matching categories: {selectedCategories.join(', ')}
-    </p>
-  {:else}
-    <p>Click an app to view info, stats and usage docs</p>
-  {/if}
-  {#if searchTerm || selectedCategories.length}
+{#if searchTerm || selectedCategories.length}
+  <div class="search-summary">
+    {#if searchTerm}
+      <p>
+        Showing {numResults} of {totalResults}
+        results, matching "<i>{searchTerm}</i>"
+        {selectedCategories.length  ? `in categories: ${selectedCategories.join(', ')}` : ''}
+      </p>
+    {:else}
+      <p>
+        Showing {numResults} of {totalResults}
+        results, matching categories: {selectedCategories.join(', ')}
+      </p>
+    {/if}
     <button onclick={clearSearch}>⨯ Clear Filters</button>
-  {/if}
-</div>
+  </div>
+{/if}
 
 <style lang="scss">
 .search-summary {

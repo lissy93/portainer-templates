@@ -3,7 +3,7 @@ import { error } from '@sveltejs/kit';
 import { get } from 'svelte/store';
 import { templates } from '$src/store';
 import { templatesUrl } from '$src/constants';
-import type { DependsOn, Environment, Service, Template, Volume } from '$src/Types';
+import type { Build, DependsOn, Environment, Service, Template, Volume } from '$src/Types';
 
 type Fetch = typeof globalThis.fetch;
 
@@ -60,7 +60,7 @@ type ComposeServiceRaw = {
   entrypoint?: string;
   command?: string;
   ports?: string[];
-  build?: string;
+  build?: Build;
   interactive?: boolean;
   volumes?: unknown[];
   restart?: Service['restart_policy'];

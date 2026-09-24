@@ -114,7 +114,7 @@
     background: var(--card);
     padding: 1rem;
     border-radius: 6px;
-    margin: 1rem auto;
+    margin: 1rem auto 4rem auto;
     max-width: 1000px;
     h2 {
       margin: 0 0 0.5rem;

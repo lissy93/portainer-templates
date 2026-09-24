@@ -1,13 +1,14 @@
 import { env } from '$env/dynamic/private';
 import { cached } from './cache';
 import { fetchJson, fetchText } from './http';
+import { baseTitle } from '$lib/format';
 import type { ProjectStats, Template } from '$src/Types';
 
 const DAY = 86_400_000;
 
 // Grab owner/repo from a github link. repo is greedy over word/dot/dash chars, so it
 // naturally stops at the next slash, bracket or space (handles trailing slashes too).
-const GITHUB_LINK = /\bgithub\.com\/([\w.-]+)\/([\w.-]+)/i;
+const GITHUB_LINK = /\bgithub\.com\/([\w.-]+)\/([\w.-]+)/gi;
 // A project's Pages site (owner.github.io/repo) maps straight back to its repo.
 const PAGES_LINK = /\b([\w-]+)\.github\.io\/([\w.-]+)/i;
 const NOT_A_PROJECT = new Set(['sponsors', 'orgs', 'apps', 'topics', 'about', 'features', 'marketplace']);
@@ -29,14 +30,14 @@ function toRepo(owner: string, repo: string): string | null {
 // Aggregators (linuxserver on lscr.io etc) yield no candidate, so they never match.
 export function candidateRepos({ description, note, image }: Pick<Template, 'description' | 'note' | 'image'>): string[] {
   const text = `${description ?? ''} ${note ?? ''}`;
-  const gh = text.match(GITHUB_LINK);
+  const gh = [...text.matchAll(GITHUB_LINK)].map((m) => toRepo(m[1], m[2]));
   const pages = text.match(PAGES_LINK);
   const img = (image ?? '').split('@')[0].split(':')[0].split('/');
   const ghcr = img.length === 3 && img[0] === 'ghcr.io' ? img.slice(1) : null;
   const hub = img.length === 2 && !img[0].includes('.') ? img : null;
 
   const ordered = [
-    gh && toRepo(gh[1], gh[2]),          // explicit github link, the most deliberate signal
+    ...gh,                               // explicit github links, the most deliberate signal
     ghcr && toRepo(ghcr[0], ghcr[1]),    // a GHCR image lives in the repo's own namespace
     pages && toRepo(pages[1], pages[2]), // the project's Pages site maps back to its repo
     hub && toRepo(hub[0], hub[1]),       // docker hub owner often mirrors the repo
@@ -104,6 +105,29 @@ export function getProjectStats(
     }
     return null;
   });
+}
+
+// Where a template was sourced from: its listing's maintainer, else wherever its stackfile lives
+const SOURCE_REPO = /^https:\/\/github\.com\/([\w.-]+)\/([\w.-]+?)(?:\.git)?\/?$/i;
+
+/* New issue link on the repo this template came from, null if unknown or it doesn't take issues */
+export async function getIssuesUrl(
+  template: Pick<Template, 'title' | 'maintainer' | 'repository'>,
+  fetch: typeof globalThis.fetch,
+): Promise<string | null> {
+  const match = [template.maintainer, template.repository?.url].map((url) => url?.trim().match(SOURCE_REPO)).find(Boolean);
+  if (!match) return null;
+  const repo = `${match[1]}/${match[2]}`;
+  // '' (not null) for disabled trackers, so the cache keeps that for the day
+  const issues = await cached(`gh:issues:${repo.toLowerCase()}`, DAY, async () => {
+    const data = await fetchJson<{ html_url: string; has_issues: boolean; archived: boolean }>(
+      `https://api.github.com/repos/${repo}`,
+      { headers: ghHeaders('application/vnd.github+json'), fetch },
+    );
+    if (!data) return null;
+    return data.has_issues && !data.archived ? `${data.html_url}/issues/new` : '';
+  });
+  return issues ? `${issues}?title=${encodeURIComponent(`${baseTitle(template.title)} - Deployment is broken`)}` : null;
 }
 
 export interface GhReleaseNotes {

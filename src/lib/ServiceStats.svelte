@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { TemplateOrService, Volume, Environment } from '$src/Types';
+  import type { TemplateOrService, Volume, Environment, Build } from '$src/Types';
 
   let { template }: { template: TemplateOrService } = $props();
 
@@ -10,6 +10,9 @@
   const envText = (e: Environment) =>
     `${e.name}=${e.value ?? e.default ?? e.select?.find((o) => o.default)?.value ?? "''"}`;
   const one = (value?: string | null): string[] => (value ? [value] : []);
+  // long form build is an object, so show its context and dockerfile
+  const buildText = (b?: Build) =>
+    typeof b === 'object' && b ? [b.context || '.', b.dockerfile && `(${b.dockerfile})`].filter(Boolean).join(' ') : b;
 
   const rows: Row[] = $derived(
     [
@@ -25,7 +28,7 @@
       { label: 'Env vars', values: (template.env ?? []).map(envText) },
       { label: 'Labels', values: (template.labels ?? []).map((l) => `${l.name}=${l.value}`) },
       { label: 'Restart', values: one(template.restart_policy) },
-      { label: 'Build', values: one(template.build) },
+      { label: 'Build', values: one(buildText(template.build)) },
       { label: 'Source', values: one(template.repository ? 'Repo' : null), href: template.repository?.url },
     ].filter((r) => r.values.length),
   );

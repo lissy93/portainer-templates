@@ -78,7 +78,7 @@
 </svelte:head>
 
 <!-- Main title, and CTA buttons -->
-<Hero />
+<Hero total={data.total} />
 
 <!-- Search bar, and Templates sub-title -->
 <ListFilter

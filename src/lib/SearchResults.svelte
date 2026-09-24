@@ -1,7 +1,7 @@
 <script lang="ts">
   import Logo from '$lib/Logo.svelte';
   import Icon from '$lib/Icon.svelte';
-  import { formatBigNumber, formatBytes, timeAgo } from '$lib/format';
+  import { formatBigNumber, formatBytes, listingTitle, timeAgo } from '$lib/format';
   import { lastUpdated } from '$lib/search';
   import type { SearchEntry } from '$src/Types';
 
@@ -28,7 +28,7 @@
       <a class="row" href="/{entry.slug}">
         <Logo src={entry.logo} name={entry.title} />
         <div class="info">
-          <h2>{entry.title}</h2>
+          <h2>{listingTitle(entry.title, entry.primary)}</h2>
           <p class="description">{plain}</p>
           {#if entry.architectures?.length}
             <p class="archs" title="Supported architectures">

@@ -19,7 +19,10 @@
 </script>
 
 <div class="title-row">
-  <h2>Template List</h2>
+  <div class="heading">
+    <h2>Template List</h2>
+    <p>Click an app to view info, stats and usage docs</p>
+  </div>
   <div class="filters">
     <button onclick={toggleCategories}>
       {isCategoriesVisible ? '▲' : '▼'} Categories
@@ -51,6 +54,11 @@
   h2 {
     font-size: 2rem;
     margin: 0;
+  }
+  .heading p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.75;
   }
   .filters {
     input {

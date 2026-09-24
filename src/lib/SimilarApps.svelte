@@ -54,7 +54,10 @@
   }
   .title {
     font-weight: 500;
-    word-break: break-word;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .cat {
     font-size: 0.8rem;

@@ -31,6 +31,7 @@ export interface Template {
     stackfile: string;
     url: string;
   };
+  primary?: string; // set on listings: slug of the variant shown for this app, when it ships as several
 }
 
 export interface Volume {
@@ -63,6 +64,9 @@ export interface Label {
 // compose short form (list of names) or long form (map with conditions)
 export type DependsOn = string[] | Record<string, { condition: string }>;
 
+// compose short form (context path) or long form (context, dockerfile, etc)
+export type Build = string | { context?: string; dockerfile?: string };
+
 export interface Service {
   name: string;
   image?: string;
@@ -71,7 +75,7 @@ export interface Service {
   volumes?: Volume[];
   command?: string;
   ports?: string[];
-  build?: string;
+  build?: Build;
   interactive?: boolean;
   env?: Environment[];
   user?: string;
@@ -134,7 +138,7 @@ export interface DockerComposeService {
   restart?: string;
   command?: string;
   entrypoint?: string;
-  build?: string | { context: string; dockerfile?: string };
+  build?: Build;
   networks?: string[];
   network_mode?: string;
   deploy?: {
@@ -253,6 +257,7 @@ export interface SearchEntry {
   ghStars?: number;
   language?: string;
   ghUpdated?: string;
+  primary?: string; // slug of the variant shown for this app, when it ships as several
 }
 
 export interface SearchIndex {

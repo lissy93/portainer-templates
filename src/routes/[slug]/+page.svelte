@@ -18,8 +18,10 @@
   import Troubleshooting from '$lib/Troubleshooting.svelte';
   import PortainerExplainer from '$lib/PortainerExplainer.svelte';
   import Meta from '$lib/Meta.svelte';
+  import Button from '$lib/Button.svelte';
 
   import { baseUrl } from '$src/constants';
+  import { baseTitle } from '$lib/format';
   import type { Template, Service, DockerHubResponse, DockerMeta, ProjectStats as ProjectStatsType, SimilarApp, DeployMode } from '$src/Types';
 
   const urlSlug = $derived(page.params.slug ?? '');
@@ -31,8 +33,12 @@
   const services = $derived((page.data.services ?? []) as Service[]);
   const similar = $derived((page.data.similar ?? []) as SimilarApp[]);
   const modes = $derived((page.data.modes ?? []) as DeployMode[]);
+  // split "Airsonic (container)" so the variant can sit quieter than the name
+  const titleName = $derived(baseTitle(template?.title ?? ''));
+  const titleVariant = $derived((template?.title ?? '').slice(titleName.length).trim());
   const readme = $derived((page.data.readme ?? null) as string | null);
   const stackfile = $derived((page.data.stackfile ?? null) as string | null);
+  const issuesUrl = $derived((page.data.issuesUrl ?? null) as string | null);
 
   const makeMultiDoc = (svcs: Service[]) =>
     svcs
@@ -138,7 +144,7 @@
     <div class="summary-head">
       <h1>
         <Logo src={template.logo} name={template.title} />
-        {template.title}
+        <span>{titleName}{#if titleVariant}{' '}<span class="variant">{titleVariant}</span>{/if}</span>
       </h1>
       <DeployModes {modes} />
     </div>
@@ -165,10 +171,15 @@
       </div>
       <ServiceStats template={template} />
     </div>
-    {#if maintainerHref || sourceHref}
-      <p class="attribution">
-        {#if maintainerHref}Template by <a href={maintainerHref} target="_blank" rel="noreferrer">{maintainerName}</a>{/if}{#if maintainerHref && sourceHref} · {/if}{#if sourceHref}<a href={sourceHref} target="_blank" rel="noreferrer">Source</a>{/if}
-      </p>
+    {#if maintainerHref || sourceHref || issuesUrl}
+      <div class="summary-foot">
+        <p class="attribution">
+          {#if maintainerHref}Template by <a href={maintainerHref} target="_blank" rel="noreferrer">{maintainerName}</a>{/if}{#if maintainerHref && sourceHref} · {/if}{#if sourceHref}<a href={sourceHref} target="_blank" rel="noreferrer">Source</a>{/if}
+        </p>
+        {#if issuesUrl}
+          <Button to={issuesUrl} target="_blank" icon="bug" size="small" title="Report a problem with this template to its maintainers">Report issue</Button>
+        {/if}
+      </div>
     {/if}
   </section>
 
@@ -246,6 +257,12 @@
       display: flex;
       align-items: center;
       gap: 1rem;
+      .variant {
+        font-size: 0.45em;
+        font-weight: 400;
+        opacity: 0.6;
+        white-space: nowrap;
+      }
     }
     .tags {
       display: flex;
@@ -311,14 +328,33 @@
     }
   }
 
+  .summary-foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    margin-top: 1rem;
+    > :global(a) {
+      background: var(--card-2);
+      margin-left: auto;
+      :global(svg) {
+        width: 13px;
+        height: 13px;
+      }
+    }
+  }
+
   .attribution {
-    margin: 1rem 0 0;
+    margin: 0;
     font-size: 0.85rem;
     opacity: 0.6;
     a {
       color: inherit;
       text-decoration: underline;
       &:hover { color: var(--accent); }
+      &:not(:last-child) { margin-right: 0.25rem; }
+      &:last-child { margin-left: 0.25rem; }
     }
   }
 

@@ -5,7 +5,7 @@
   import Meta from '$lib/Meta.svelte';
   import NoResults from '$lib/NoResults.svelte';
   import SearchResults from '$lib/SearchResults.svelte';
-  import { timeAgo } from '$lib/format';
+  import { isHiddenVariant, timeAgo } from '$lib/format';
   import { buildDoc, lastUpdated, rankDoc, tokenize } from '$lib/search';
   import { baseUrl } from '$src/constants';
   import type { SearchEntry } from '$src/Types';
@@ -69,6 +69,8 @@
       .map((d) => ({ ...d, rank: tokens.length ? rankDoc(d, tokens) : 0 }))
       .filter(({ entry, rank }) => {
         if (tokens.length && !rank) return false;
+        // one result per app, unless filtering by type where each variant stands alone
+        if (!kind && isHiddenVariant(entry.slug, entry.primary)) return false;
         if (category && !(entry.categories ?? []).some((c) => c.toLowerCase() === category)) return false;
         if (platform && entry.platform !== platform) return false;
         if (kind && (kind === 'container') !== (entry.type === 1)) return false;

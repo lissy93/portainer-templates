@@ -3,6 +3,17 @@ import snarkdown from 'snarkdown';
 export const slugify = (title: string): string =>
   title.toLowerCase().replace(/[^a-zA-Z ]/g, '').replaceAll(' ', '-');
 
+// "Airsonic (container)" -> "Airsonic"
+export const baseTitle = (title: string): string =>
+  title.replace(/\s*\((?:container|stack|swarm|compose|edge)\)\s*$/i, '');
+
+// A variant that another entry stands in for in listings (eg the stack, when the container's shown)
+export const isHiddenVariant = (slug: string, primary?: string): boolean => !!primary && primary !== slug;
+
+// Title for listings, dropping the variant suffix on the entry that stands in for them all
+export const listingTitle = (title: string, primary?: string): string =>
+  primary === slugify(title) ? baseTitle(title) : title;
+
 const markdownPattern = /\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|__[^_]+__|`[^`]+`|~~[^~]+~~/;
 
 // Parse markdown descriptions, dropping links to their label (cards are already links). Null if plaintext.
