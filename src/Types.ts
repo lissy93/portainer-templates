@@ -172,11 +172,13 @@ export interface ChangeItem {
   name: string;
   slug: string | null; // set when the template still resolves to a page on our site
   fields?: string[]; // which template fields changed (updated items only)
+  from?: string; // the title it used to go by (renamed items only)
 }
 
 export interface ChangelogChanges {
   added: ChangeItem[];
   updated: ChangeItem[];
+  renamed: ChangeItem[];
   removed: ChangeItem[];
 }
 
@@ -186,7 +188,7 @@ export interface ChangelogEntry {
   isRelease: boolean; // minor/major versions get their full release notes shown
   title: string | null;
   notes: string | null;
-  changes: ChangelogChanges | null; // per-tag added/updated/removed from the auto-changelog
+  changes: ChangelogChanges | null; // per-tag added/updated/renamed/removed from the auto-changelog
 }
 
 export interface DockerVersion {

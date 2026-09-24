@@ -28,6 +28,7 @@
       ? ([
           { key: 'added', label: 'Added', icon: 'added', items: entry.changes.added },
           { key: 'updated', label: 'Updated', icon: 'updated', items: entry.changes.updated },
+          { key: 'renamed', label: 'Renamed', icon: 'renamed', items: entry.changes.renamed },
           { key: 'removed', label: 'Removed', icon: 'removed', items: entry.changes.removed },
         ] as const).filter((group) => group.items.length)
       : []
@@ -70,6 +71,7 @@
                 {:else}
                   <span class="name">{item.name}</span>
                 {/if}
+                {#if item.from}<span class="chip">was {item.from}</span>{/if}
                 {#if item.fields?.length}
                   <span class="fields">
                     {#each item.fields as field (field)}<span class="chip">{field}</span>{/each}
@@ -192,6 +194,7 @@
   .group {
     &[data-kind='added'] { --kind: var(--green); }
     &[data-kind='updated'] { --kind: var(--blue); }
+    &[data-kind='renamed'] { --kind: var(--yellow); }
     &[data-kind='removed'] { --kind: var(--red); }
     h4 {
       display: flex;

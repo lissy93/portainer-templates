@@ -48,6 +48,7 @@
     'help',
     'added',
     'removed',
+    'renamed',
   ] as const;
 
   interface Icon {
@@ -191,6 +192,11 @@
       box: 640,
       name: 'removed',
       svg: '<path d="M96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320z"/>',
+    },
+    {
+      box: 640,
+      name: 'renamed',
+      svg: '<path d="M96 320C96 302.3 110.3 288 128 288L400 288L400 176L592 320L400 464L400 352L128 352C110.3 352 96 337.7 96 320z"/>',
     },
   ];
   const displayIcon = $derived(icons.find((e) => e.name === name));

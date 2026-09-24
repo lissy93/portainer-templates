@@ -11,7 +11,7 @@ const changelogUrl = `https://raw.githubusercontent.com/${repo}/refs/heads/main/
 interface GhTag { name: string; commit: { sha: string }; }
 interface GhRelease { tag_name: string; name: string | null; body: string | null; published_at: string; }
 interface GhCommit { commit: { committer: { date: string } }; }
-interface RawChange { version: string; added: string[]; removed: string[]; updated: { title: string; fields: string[] }[]; }
+interface RawChange { version: string; added: string[]; removed: string[]; renamed?: { from: string; to: string }[]; updated: { title: string; fields: string[] }[]; }
 
 // patch number of 0 means it's a minor or major release, so we show its notes
 const isMinorOrMajor = (version: string) => Number(version.replace(/^v/, '').split('.')[2]) === 0;
@@ -24,9 +24,10 @@ const toChanges = (raw: RawChange | undefined, linkFor: (title: string) => strin
   const changes = {
     added: raw.added.map((n) => item(n, true)),
     updated: raw.updated.map((u) => item(u.title, true, u.fields)),
+    renamed: (raw.renamed ?? []).map((r) => ({ ...item(r.to, true), from: r.from })),
     removed: raw.removed.map((n) => item(n, false)),
   };
-  return changes.added.length || changes.updated.length || changes.removed.length ? changes : null;
+  return Object.values(changes).some((group) => group.length) ? changes : null;
 };
 
 export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
