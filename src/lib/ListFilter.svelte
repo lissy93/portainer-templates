@@ -82,6 +82,12 @@
         white-space: nowrap;
       }
     }
+    @media (max-width: 600px) {
+      display: flex;
+      align-items: flex-start;
+      width: 100%;
+      .search { flex: 1; min-width: 0; }
+    }
   }
   button {
     color: var(--foreground);

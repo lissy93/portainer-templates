@@ -516,6 +516,8 @@
       }
     }
     @media (max-width: 600px) {
+      .row.ports, .row.volumes { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto auto; }
+      .row.labels, .row.devices { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto; }
       .row.env {
         grid-template-columns: 1fr auto;
         .key, > input[aria-label='Variable name'] {

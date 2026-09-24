@@ -26,7 +26,7 @@
 <style lang="scss">
 section.templates {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
   gap: 1rem;
   margin: 1rem auto;
   padding: 0 1rem;
@@ -39,7 +39,6 @@ section.templates {
     flex-direction: column;
     gap: 1rem;
     transition:all 0.3s ease-in-out;
-    max-width: 28rem;
     text-decoration: none;
     color: var(--foreground);
     &:hover {

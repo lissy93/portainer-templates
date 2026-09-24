@@ -252,7 +252,8 @@
       gap: 0.75rem 1rem;
     }
     h1 {
-      font-size: 4rem;
+      font-size: clamp(2rem, 10vw, 4rem);
+      overflow-wrap: anywhere;
       margin: 0;
       display: flex;
       align-items: center;
@@ -266,6 +267,7 @@
     }
     .tags {
       display: flex;
+      flex-wrap: wrap;
       margin: 0;
       gap: 0.5rem;
       a {
@@ -299,9 +301,16 @@
     > :global(.stats) {
       min-width: 15rem;
       max-width: 18rem;
+      @media (max-width: 600px) {
+        flex-basis: 100%;
+        min-width: 0;
+        max-width: none;
+      }
     }
     .left {
-      flex: 1;
+      flex: 1 1 16rem;
+      min-width: 0;
+      overflow-wrap: break-word;
       display: flex;
       flex-direction: column;
       gap: 1rem;

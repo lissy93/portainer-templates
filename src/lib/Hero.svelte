@@ -31,12 +31,12 @@
 
 <style lang="scss">
   .hero {
-    padding: 2rem;
+    padding: 2rem 0;
     text-align: center;
   }
 
   h1 {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 15vw, 4rem);
     margin: 0 auto;
     background: var(--gradient);
     -webkit-background-clip: text;

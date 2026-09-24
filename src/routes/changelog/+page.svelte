@@ -65,11 +65,4 @@
       background: var(--card);
     }
   }
-  @media (max-width: 600px) {
-    // break out of main's 2rem padding so content nearly fills the screen
-    .changelog {
-      margin: -2rem -2rem 0 -2rem;
-      padding: 0 1rem;
-    }
-  }
 </style>

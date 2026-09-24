@@ -75,6 +75,9 @@
   main {
     padding: 2rem;
     flex: 1;
+    @media (max-width: 600px) {
+      padding: 1rem;
+    }
   }
 
 </style>

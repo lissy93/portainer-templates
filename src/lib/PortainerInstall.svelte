@@ -122,6 +122,7 @@
       border-radius: 6px;
       &.template-url {
         white-space: normal;
+        overflow-wrap: anywhere;
       }
     }
     button {

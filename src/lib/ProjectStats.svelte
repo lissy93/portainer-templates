@@ -66,6 +66,9 @@
       gap: 0.5rem;
       :global(svg) { opacity: 0.7; }
     }
-    a { color: var(--accent); }
+    a {
+      color: var(--accent);
+      min-width: 0;
+    }
   }
 </style>
