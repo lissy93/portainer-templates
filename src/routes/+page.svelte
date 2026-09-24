@@ -9,22 +9,25 @@
   import NoResults from '$lib/NoResults.svelte';
   import Footer from '$lib/Footer.svelte';
   import Meta from '$lib/Meta.svelte';
-  import type { Template } from '$src/Types';
+  import type { TemplateCard } from '$src/Types';
   import type { PageData } from './$types';
   import { baseUrl } from '$src/constants';
+  import { roundedCount } from '$lib/format';
 
   let { data }: { data: PageData } = $props();
 
-  const description = 'A community-driven library of 400+ 1-click self-hosted apps and stacks, for easy use with Portainer or Docker-Compose';
+  const count = $derived(roundedCount(data.templates.length));
+  const title = $derived(`Portainer Templates | ${count} One-Click Self-Hosted Docker Apps`);
+  const description = $derived(`A community-driven library of ${count} 1-click self-hosted apps and stacks, for easy use with Portainer or Docker-Compose`);
 
   // Structured data identifying the site (escape < for safe inlining)
-  const jsonLd = JSON.stringify({
+  const jsonLd = $derived(JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Portainer Templates',
     url: baseUrl,
     description,
-  }).replace(/</g, '\\u003c');
+  }).replace(/</g, '\\u003c'));
 
   const preSelectedCategories = page.url.searchParams.get('categories');
 
@@ -34,7 +37,7 @@
 
   let showCategories = $state(!!preSelectedCategories);
 
-  const filteredTemplates = $derived(data.templates.filter((template: Template) => {
+  const filteredTemplates = $derived(data.templates.filter((template: TemplateCard) => {
     const compareStr = (str1: string, str2: string) =>
       (str1 || '').toLowerCase().includes(str2.toLowerCase());
 
@@ -71,7 +74,7 @@
 
 </script>
 
-<Meta title="Portainer Templates" {description} />
+<Meta {title} {description} />
 
 <svelte:head>
   {@html '<script type="application/ld+json">' + jsonLd + '</scr' + 'ipt>'}

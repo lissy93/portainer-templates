@@ -1,7 +1,7 @@
 {
   "name": "Portainer Templates",
   "short_name": "Portainer Templates",
-  "description": "A community-driven library of 400+ 1-click self-hosted apps and stacks, for easy use with Portainer or Docker-Compose",
+  "description": "A community-driven library of 700+ 1-click self-hosted apps and stacks, for easy use with Portainer or Docker-Compose",
   "start_url": "/",
   "icons": [
     {

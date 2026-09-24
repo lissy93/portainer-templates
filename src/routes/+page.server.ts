@@ -4,10 +4,10 @@ import { templates } from '$src/store';
 import { templatesUrl } from '$src/constants';
 import { onePerApp, primarySlugs } from '$lib/server/variants';
 import { slugify } from '$lib/format';
-import type { Template } from '$src/Types';
+import type { Template, TemplateCard } from '$src/Types';
 import type { PageServerLoad } from './$types';
 
-const makeCategories = (allTemplates: Template[]): Record<string, number> => {
+const makeCategories = (allTemplates: TemplateCard[]): Record<string, number> => {
   // Get categories from templates
   const categories = allTemplates.reduce((acc: Record<string, number>, { categories: templateCategories }) => {
     (templateCategories || []).forEach((category) => {
@@ -28,7 +28,8 @@ const makeCategories = (allTemplates: Template[]): Record<string, number> => {
 
 /* One card per app, so container/stack variants don't list twice */
 const makeListing = async (allTemplates: Template[]) => {
-  const listed = onePerApp(allTemplates, await primarySlugs(allTemplates), (t) => slugify(t.title));
+  const cards: TemplateCard[] = allTemplates.map(({ title, description, logo, categories }) => ({ title, description, logo, categories }));
+  const listed = onePerApp(cards, await primarySlugs(allTemplates), (t) => slugify(t.title));
   return { templates: listed, categories: makeCategories(listed), total: allTemplates.length };
 };
 

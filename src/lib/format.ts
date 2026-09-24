@@ -7,6 +7,9 @@ export const slugify = (title: string): string =>
 export const baseTitle = (title: string): string =>
   title.replace(/\s*\((?:container|stack|swarm|compose|edge)\)\s*$/i, '');
 
+// 732 -> "700+"
+export const roundedCount = (n: number): string => (n < 100 ? `${n}` : `${Math.floor(n / 100) * 100}+`);
+
 // A variant that another entry stands in for in listings (eg the stack, when the container's shown)
 export const isHiddenVariant = (slug: string, primary?: string): boolean => !!primary && primary !== slug;
 

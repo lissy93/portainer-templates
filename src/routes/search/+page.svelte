@@ -5,7 +5,7 @@
   import Meta from '$lib/Meta.svelte';
   import NoResults from '$lib/NoResults.svelte';
   import SearchResults from '$lib/SearchResults.svelte';
-  import { isHiddenVariant, timeAgo } from '$lib/format';
+  import { isHiddenVariant, roundedCount, timeAgo } from '$lib/format';
   import { buildDoc, lastUpdated, rankDoc, tokenize } from '$lib/search';
   import { baseUrl } from '$src/constants';
   import type { SearchEntry } from '$src/Types';
@@ -16,15 +16,16 @@
   const PER_PAGE = 25;
   const DAY = 86_400_000;
 
-  const description = 'Advanced search across 600+ self-hosted apps and stacks. Sort by Docker Hub downloads, stars or image size, and filter by category, platform, architecture and more.';
+  const count = $derived(roundedCount(data.entries.length));
+  const description = $derived(`Advanced search across ${count} self-hosted apps and stacks. Sort by Docker Hub downloads, stars or image size, and filter by category, platform, architecture and more.`);
 
-  const jsonLd = JSON.stringify({
+  const jsonLd = $derived(JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'App Search - Portainer Templates',
     url: `${baseUrl}/search`,
     description,
-  }).replace(/</g, '\\u003c');
+  }).replace(/</g, '\\u003c'));
 
   type SortId = 'match' | 'pulls' | 'dockerStars' | 'ghStars' | 'updated' | 'newest' | 'size' | 'title';
   const sorts: Record<SortId, { label: string; value: (e: SearchEntry) => number | string | undefined; dir: 1 | -1 }> = {
@@ -149,7 +150,7 @@
 
 <section class="search-page">
   <h1>App Search</h1>
-  <p class="intro">Advanced search: find Portainer templates for over 500 self-hosted Docker apps</p>
+  <p class="intro">Advanced search: find Portainer templates for {count} self-hosted Docker apps</p>
 
   <form class="controls" onsubmit={(e) => e.preventDefault()}>
     <div class="primary">

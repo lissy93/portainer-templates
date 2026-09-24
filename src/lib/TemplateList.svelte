@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { Template } from '$src/Types';
+  import type { TemplateCard } from '$src/Types';
   import Logo from '$lib/Logo.svelte';
   import { slugify, parseDescription, listingTitle } from '$lib/format';
 
-  let { templates }: { templates: Template[] } = $props();
+  let { templates }: { templates: TemplateCard[] } = $props();
 </script>
 
 <section class="templates">

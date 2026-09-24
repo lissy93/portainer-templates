@@ -34,6 +34,8 @@ export interface Template {
   primary?: string; // set on listings: slug of the variant shown for this app, when it ships as several
 }
 
+export type TemplateCard = Pick<Template, 'title' | 'description' | 'logo' | 'categories' | 'primary'>;
+
 export interface Volume {
   container: string;
   bind?: string;
