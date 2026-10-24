@@ -15,3 +15,4 @@ replayhaven, https://raw.githubusercontent.com/SauerExe/ReplayHaven/main/portain
 ai-marketplace-monitor, https://raw.githubusercontent.com/BoPeng/ai-marketplace-monitor/main/deploy/portainer/templates.json, https://github.com/BoPeng/ai-marketplace-monitor/, app
 libredb_studio, https://raw.githubusercontent.com/libredb/libredb-studio/main/portainer-template.json, https://github.com/libredb/libredb-studio/, app
 seawise_client, https://raw.githubusercontent.com/seawise-io/seawise-client/main/portainer-template.json, https://github.com/seawise-io/seawise-client/, app
+opentodo, https://raw.githubusercontent.com/pixari/opentodo/main/deploy/portainer/portainer-template.json, https://github.com/pixari/opentodo/, app
