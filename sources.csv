@@ -17,3 +17,4 @@ libredb_studio, https://raw.githubusercontent.com/libredb/libredb-studio/main/po
 seawise_client, https://raw.githubusercontent.com/seawise-io/seawise-client/main/portainer-template.json, https://github.com/seawise-io/seawise-client/, app
 opentodo, https://raw.githubusercontent.com/pixari/opentodo/main/deploy/portainer/portainer-template.json, https://github.com/pixari/opentodo/, app
 armanckeser_selfhost_apps, https://armanckeser.github.io/selfhost-apps/portainer/templates.json, https://github.com/armanckeser/selfhost-apps/, collection
+yuvomi, https://raw.githubusercontent.com/ulsklyc/yuvomi/main/deploy/portainer/portainer-template.json, https://github.com/ulsklyc/yuvomi/, app
