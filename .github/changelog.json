@@ -1,6 +1,18 @@
 {
   "entries": [
     {
+      "version": "v1.3.22",
+      "previous": "v1.3.21",
+      "date": "2026-10-25",
+      "templateCount": 862,
+      "added": [
+        "Yuvomi"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.3.21",
       "previous": "v1.3.20",
       "date": "2026-10-25",
