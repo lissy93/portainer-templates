@@ -16,3 +16,4 @@ ai-marketplace-monitor, https://raw.githubusercontent.com/BoPeng/ai-marketplace-
 libredb_studio, https://raw.githubusercontent.com/libredb/libredb-studio/main/portainer-template.json, https://github.com/libredb/libredb-studio/, app
 seawise_client, https://raw.githubusercontent.com/seawise-io/seawise-client/main/portainer-template.json, https://github.com/seawise-io/seawise-client/, app
 opentodo, https://raw.githubusercontent.com/pixari/opentodo/main/deploy/portainer/portainer-template.json, https://github.com/pixari/opentodo/, app
+armanckeser_selfhost_apps, https://armanckeser.github.io/selfhost-apps/portainer/templates.json, https://github.com/armanckeser/selfhost-apps/, collection
