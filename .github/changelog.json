@@ -1,6 +1,25 @@
 {
   "entries": [
     {
+      "version": "v1.3.21",
+      "previous": "v1.3.20",
+      "date": "2026-10-25",
+      "templateCount": 861,
+      "added": [
+        "Jellymeme",
+        "Kumbara",
+        "OpenList",
+        "Stars Organizer",
+        "USCIS Tracker",
+        "Wishlist",
+        "flatnotes",
+        "tududi"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.3.20",
       "previous": "v1.3.19",
       "date": "2026-10-24",
