@@ -33780,7 +33780,46 @@
       "id": 854
     },
     {
-      "id": 855,
+      "type": 3,
+      "title": "Yuvomi",
+      "description": "Self-hosted family planner: tasks, shared calendar with CalDAV/CardDAV, shopping, meals, budget, notes, contacts and health in one installable PWA on a single SQLite database. Source: https://github.com/ulsklyc/yuvomi",
+      "categories": [
+        "Productivity"
+      ],
+      "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/ulsklyc/yuvomi/main/public/icons/icon-512.png",
+      "repository": {
+        "url": "https://github.com/ulsklyc/yuvomi",
+        "stackfile": "docs/docker-compose.portainer.yml"
+      },
+      "env": [
+        {
+          "name": "SESSION_SECRET",
+          "label": "Session secret (required)",
+          "description": "At least 32 random characters. Generate one with: openssl rand -hex 32. Changing it later signs everyone out once."
+        },
+        {
+          "name": "DB_ENCRYPTION_KEY",
+          "label": "Database encryption key (required)",
+          "description": "At least 32 random characters. Generate one with: openssl rand -hex 32. Keep a copy: the database and its backups only open with exactly this key."
+        },
+        {
+          "name": "OIKOS_HTTP_PORT",
+          "label": "Host port for the web UI",
+          "default": "3000"
+        },
+        {
+          "name": "BASE_URL",
+          "label": "Base URL (recommended)",
+          "description": "The address your household uses, e.g. https://yuvomi.example.com. Without it, password reset mails are never sent."
+        }
+      ],
+      "note": "Set the <b>session secret</b> and the <b>database encryption key</b> before you deploy, and keep a copy of the key. Then open port 3000 (or the one you chose) and create your admin account. Behind an HTTPS reverse proxy, also set SESSION_SECURE=true. All other settings are listed in <a href=\"https://github.com/ulsklyc/yuvomi/blob/main/.env.example\" target=\"_blank\">.env.example</a>.",
+      "maintainer": "https://github.com/ulsklyc/yuvomi/",
+      "id": 855
+    },
+    {
+      "id": 856,
       "type": 1,
       "title": "Zen",
       "name": "Zen",
@@ -33826,7 +33865,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 856,
+      "id": 857,
       "type": 3,
       "title": "Zipline",
       "name": "zipline",
@@ -33899,10 +33938,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 857
+      "id": 858
     },
     {
-      "id": 858,
+      "id": 859,
       "type": 1,
       "title": "Znc",
       "name": "Znc",
@@ -33947,7 +33986,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 859,
+      "id": 860,
       "type": 1,
       "title": "Zotero",
       "name": "Zotero",
@@ -34019,7 +34058,7 @@
       },
       "title": "ZTNet",
       "type": 3,
-      "id": 860
+      "id": 861
     },
     {
       "categories": [
@@ -34056,7 +34095,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 861
+      "id": 862
     }
   ]
 }
