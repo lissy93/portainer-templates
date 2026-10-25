@@ -18,3 +18,4 @@ seawise_client, https://raw.githubusercontent.com/seawise-io/seawise-client/main
 opentodo, https://raw.githubusercontent.com/pixari/opentodo/main/deploy/portainer/portainer-template.json, https://github.com/pixari/opentodo/, app
 armanckeser_selfhost_apps, https://armanckeser.github.io/selfhost-apps/portainer/templates.json, https://github.com/armanckeser/selfhost-apps/, collection
 yuvomi, https://raw.githubusercontent.com/ulsklyc/yuvomi/main/deploy/portainer/portainer-template.json, https://github.com/ulsklyc/yuvomi/, app
+maintenant, https://raw.githubusercontent.com/kOlapsis/maintenant/main/deploy/portainer/template.json, https://github.com/kOlapsis/maintenant/, app
