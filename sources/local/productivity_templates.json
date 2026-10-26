@@ -384,6 +384,24 @@
           "container": "/app/uploads"
         }
       ]
+    },
+    {
+      "categories": [
+        "Productivity",
+        "Documents"
+      ],
+      "description": "Collaborative LaTeX editor you host yourself, an alternative to Overleaf. Real-time editing, a git repository per project, and a sandboxed TeX Live compiler. Source: https://github.com/trahloff/Aldine",
+      "logo": "https://raw.githubusercontent.com/trahloff/Aldine/main/brand/icon.svg",
+      "name": "aldine",
+      "note": "Open <code>http://&lt;your-host&gt;:8080</code>. The stack has two containers: the app, and a compiler that runs TeX Live on an internal network with no internet access, all Linux capabilities dropped and bounded memory and processes. The compiler image is about 2.4 GB to download, so the first deploy takes a while. There is no login by default, so anyone who can reach the port can open every project; to require accounts, edit the stack and add <code>AUTH_ENABLED: \"1\"</code> under the app service's <code>environment</code>. Docs: <a href=\"https://github.com/trahloff/Aldine/blob/main/deploy/README.md\" target=\"_blank\">deploy/README.md</a>",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "docker-compose.yml",
+        "url": "https://github.com/trahloff/Aldine"
+      },
+      "restart_policy": "unless-stopped",
+      "title": "Aldine",
+      "type": 3
     }
   ],
   "version": "3"
