@@ -1,6 +1,42 @@
 {
   "entries": [
     {
+      "version": "v1.3.23",
+      "previous": "v1.3.22",
+      "date": "2026-10-27",
+      "templateCount": 866,
+      "added": [
+        "Casdoor",
+        "Password Pusher",
+        "Ryot",
+        "SparkyFitness"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": [
+        {
+          "title": "Kumbara",
+          "fields": [
+            "env"
+          ]
+        },
+        {
+          "title": "LibreDB Studio",
+          "fields": [
+            "description"
+          ]
+        },
+        {
+          "title": "OpenTodo",
+          "fields": [
+            "description",
+            "image",
+            "logo"
+          ]
+        }
+      ]
+    },
+    {
       "version": "v1.3.22",
       "previous": "v1.3.21",
       "date": "2026-10-25",
