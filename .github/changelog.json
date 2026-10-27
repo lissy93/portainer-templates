@@ -1,6 +1,21 @@
 {
   "entries": [
     {
+      "version": "v1.3.24",
+      "previous": "v1.3.23",
+      "date": "2026-10-27",
+      "templateCount": 870,
+      "added": [
+        "Aldine",
+        "Mermaid Live Editor",
+        "Spliit",
+        "marimo"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.3.23",
       "previous": "v1.3.22",
       "date": "2026-10-27",
