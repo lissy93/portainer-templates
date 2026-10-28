@@ -1,6 +1,25 @@
 {
   "entries": [
     {
+      "version": "v1.3.25",
+      "previous": "v1.3.24",
+      "date": "2026-10-28",
+      "templateCount": 871,
+      "added": [
+        "Mathesar"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": [
+        {
+          "title": "Stars Organizer",
+          "fields": [
+            "env"
+          ]
+        }
+      ]
+    },
+    {
       "version": "v1.3.24",
       "previous": "v1.3.23",
       "date": "2026-10-27",
