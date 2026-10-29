@@ -1,6 +1,20 @@
 {
   "entries": [
     {
+      "version": "v1.3.26",
+      "previous": "v1.3.25",
+      "date": "2026-10-29",
+      "templateCount": 874,
+      "added": [
+        "AnythingLLM",
+        "Kaneo",
+        "PicoShare"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.3.25",
       "previous": "v1.3.24",
       "date": "2026-10-28",
