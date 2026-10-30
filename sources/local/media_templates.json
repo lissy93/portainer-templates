@@ -291,7 +291,7 @@
         }
       ],
       "image": "ghcr.io/windoze95/cantinarr:latest",
-      "logo": "https://raw.githubusercontent.com/windoze95/cantinarr/main/app/web/icons/Icon-512.png",
+      "logo": "https://cantinarr.com/static/symbol-transparent-v1.png",
       "name": "cantinarr",
       "note": "Web UI and API on port 8585. Radarr, Sonarr, Chaptarr, download clients, Tautulli, and Plex are all optional and are added from the admin UI after first run. Documentation: https://github.com/windoze95/cantinarr",
       "platform": "linux",
