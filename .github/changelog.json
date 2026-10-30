@@ -1,6 +1,29 @@
 {
   "entries": [
     {
+      "version": "v1.3.28",
+      "previous": "v1.3.27",
+      "date": "2026-10-30",
+      "templateCount": 875,
+      "added": [],
+      "removed": [],
+      "renamed": [],
+      "updated": [
+        {
+          "title": "Cantinarr",
+          "fields": [
+            "logo"
+          ]
+        },
+        {
+          "title": "Lazylibrarian",
+          "fields": [
+            "description"
+          ]
+        }
+      ]
+    },
+    {
       "version": "v1.3.27",
       "previous": "v1.3.26",
       "date": "2026-10-30",
