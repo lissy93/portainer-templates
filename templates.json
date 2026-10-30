@@ -3121,7 +3121,7 @@
         }
       ],
       "image": "ghcr.io/windoze95/cantinarr:latest",
-      "logo": "https://raw.githubusercontent.com/windoze95/cantinarr/main/app/web/icons/Icon-512.png",
+      "logo": "https://cantinarr.com/static/symbol-transparent-v1.png",
       "name": "cantinarr",
       "note": "Web UI and API on port 8585. Radarr, Sonarr, Chaptarr, download clients, Tautulli, and Plex are all optional and are added from the admin UI after first run. Documentation: https://github.com/windoze95/cantinarr",
       "platform": "linux",
@@ -14646,7 +14646,7 @@
       "title": "Lazylibrarian",
       "name": "Lazylibrarian",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a>, based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Ensure to create the following volume directories on the host file system, or modify the paths in the volume mapping section under the advanced options below, as needed.</p><p>mkdir -p /srv/lsio/lazylibrarian/config<br>mkdir -p /srv/lsio/lazylibrarian/downloads<br>mkdir -p /srv/lsio/lazylibrarian/books</p>",
-      "description": "[Lazylibrarian](https://lazylibrarian.gitlab.io/) is a program to follow authors and grab metadata for all your digital reading needs. It uses a combination of Goodreads Librarything and optionally GoogleBooks as sources for author info and book info. This container is based on the DobyTang fork.",
+      "description": "[Lazylibrarian](https://lazylibrarian.gitlab.io/) is a program to follow authors and grab metadata for all your digital reading needs. It uses a combination of HardCover, OpenLibrary, Librarything, GoodReads, and optionally GoogleBooks as sources for author info and book info.",
       "categories": [
         "Books"
       ],
