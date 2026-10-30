@@ -1,6 +1,18 @@
 {
   "entries": [
     {
+      "version": "v1.3.27",
+      "previous": "v1.3.26",
+      "date": "2026-10-30",
+      "templateCount": 875,
+      "added": [
+        "Maintainerr"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.3.26",
       "previous": "v1.3.25",
       "date": "2026-10-29",
