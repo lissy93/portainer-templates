@@ -1,6 +1,16 @@
 {
   "entries": [
     {
+      "version": "v1.4.0",
+      "previous": "v1.3.28",
+      "date": "2026-11-01",
+      "templateCount": 875,
+      "added": [],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.3.28",
       "previous": "v1.3.27",
       "date": "2026-10-30",
