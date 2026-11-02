@@ -1,6 +1,23 @@
 {
   "entries": [
     {
+      "version": "v1.4.2",
+      "previous": "v1.4.1",
+      "date": "2026-11-02",
+      "templateCount": 877,
+      "added": [],
+      "removed": [],
+      "renamed": [],
+      "updated": [
+        {
+          "title": "OpenTodo",
+          "fields": [
+            "maintainer"
+          ]
+        }
+      ]
+    },
+    {
       "version": "v1.4.1",
       "previous": "v1.4.0",
       "date": "2026-11-02",
