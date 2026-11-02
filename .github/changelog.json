@@ -1,6 +1,19 @@
 {
   "entries": [
     {
+      "version": "v1.4.1",
+      "previous": "v1.4.0",
+      "date": "2026-11-02",
+      "templateCount": 877,
+      "added": [
+        "Flagsmith",
+        "Livebook"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.4.0",
       "previous": "v1.3.28",
       "date": "2026-11-01",
