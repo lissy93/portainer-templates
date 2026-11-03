@@ -1,6 +1,18 @@
 {
   "entries": [
     {
+      "version": "v1.4.3",
+      "previous": "v1.4.2",
+      "date": "2026-11-03",
+      "templateCount": 878,
+      "added": [
+        "Hister"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.4.2",
       "previous": "v1.4.1",
       "date": "2026-11-02",
