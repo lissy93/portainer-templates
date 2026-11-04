@@ -1,6 +1,19 @@
 {
   "entries": [
     {
+      "version": "v1.4.5",
+      "previous": "v1.4.4",
+      "date": "2026-11-04",
+      "templateCount": 880,
+      "added": [
+        "AsoBeast",
+        "Yamtrack"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.4.4",
       "previous": "v1.4.3",
       "date": "2026-11-04",
