@@ -1,6 +1,23 @@
 {
   "entries": [
     {
+      "version": "v1.4.6",
+      "previous": "v1.4.5",
+      "date": "2026-11-05",
+      "templateCount": 880,
+      "added": [],
+      "removed": [],
+      "renamed": [],
+      "updated": [
+        {
+          "title": "Craft-apps",
+          "fields": [
+            "description"
+          ]
+        }
+      ]
+    },
+    {
       "version": "v1.4.5",
       "previous": "v1.4.4",
       "date": "2026-11-04",
