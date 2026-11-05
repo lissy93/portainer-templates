@@ -1,0 +1,72 @@
+# Frameleaf - self-hosted photo and video library (beta, a fork of Immich)
+# https://github.com/Frameleaf/frameleaf-app
+#
+# Based on the release docker-compose.yml (frameleaf-v1.2.3), made self-contained
+# for Portainer: no env_file, settings come from the template's env vars.
+# Left out: the optional LAN discovery service (needs host networking) and the
+# optional 2443 HTTPS listener for Frameleaf Cloud direct connections.
+# After deploying, open port 2283 and create the admin account in the browser.
+
+services:
+  frameleaf-server:
+    image: ghcr.io/frameleaf/frameleaf-server:${FRAMELEAF_VERSION:-latest}
+    restart: unless-stopped
+    ports:
+      - "${FRAMELEAF_HOST_PORT:-2283}:2283"
+    environment:
+      TZ: ${TZ:-Etc/UTC}
+      DB_HOSTNAME: database
+      DB_USERNAME: postgres
+      DB_PASSWORD: ${DB_PASSWORD:?Set a database password (letters and digits only)}
+      DB_DATABASE_NAME: frameleaf
+    volumes:
+      # A volume name, or an absolute host path for your photo library
+      - ${UPLOAD_LOCATION:-frameleaf-library}:/data
+      # The Studio render worker's enrolment, shared read-only with machine learning
+      - frameleaf-studio-worker:/run/frameleaf/studio-worker
+    depends_on:
+      database:
+        condition: service_healthy
+    # Encrypted Locked files are decrypted into /dev/shm for thumbnails, video and ML
+    shm_size: 2gb
+    stop_grace_period: 10s
+    healthcheck:
+      disable: false
+
+  frameleaf-machine-learning:
+    image: ghcr.io/frameleaf/frameleaf-machine-learning:${FRAMELEAF_VERSION:-latest}
+    restart: unless-stopped
+    networks:
+      default:
+        # The server's default machine learning URL is http://immich-machine-learning:3003
+        aliases: [immich-machine-learning]
+    volumes:
+      - frameleaf-model-cache:/cache
+      - frameleaf-studio-worker:/run/frameleaf/studio-worker:ro
+    healthcheck:
+      disable: false
+
+  database:
+    image: ghcr.io/frameleaf/frameleaf-postgres:19beta4-pgvector0.8.7@sha256:7b155ed85302ab66c1022309f1f70f0b79f98f70bd52af8d7d3611a0cbf08cf0
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Set a database password (letters and digits only)}
+      POSTGRES_USER: postgres
+      POSTGRES_DB: frameleaf
+      POSTGRES_INITDB_ARGS: "--data-checksums"
+    volumes:
+      # PostgreSQL 18+ layout: mount /var/lib/postgresql, not /var/lib/postgresql/data.
+      # Keep the database on local disk, never on a network share.
+      - frameleaf-postgres:/var/lib/postgresql
+    shm_size: 128mb
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready --host=127.0.0.1 --dbname=\"$${POSTGRES_DB}\" --username=\"$${POSTGRES_USER}\" && /usr/local/bin/healthcheck.sh"]
+      interval: 30s
+      start_period: 5m
+      start_interval: 5s
+
+volumes:
+  frameleaf-library:
+  frameleaf-model-cache:
+  frameleaf-studio-worker:
+  frameleaf-postgres:

@@ -1,0 +1,54 @@
+{
+  "version": "3",
+  "templates": [
+    {
+      "categories": [
+        "Photos",
+        "Video",
+        "Backup"
+      ],
+      "description": "A self-hosted photo and video library with native apps, private face and smart search, photo and video editing, and optional cloud backup. In beta, and a fork of Immich. Source: https://github.com/Frameleaf/frameleaf-app",
+      "env": [
+        {
+          "description": "Letters and digits only. Generate one with: openssl rand -hex 32. Keep it the same when you redeploy, or Frameleaf can't reach its database.",
+          "label": "Database password (required)",
+          "name": "DB_PASSWORD"
+        },
+        {
+          "default": "frameleaf-library",
+          "description": "Where your photos and videos are stored. Leave it as a Docker volume name, or set an absolute host path such as /srv/photos. Changing it later does not move existing files.",
+          "label": "Library location",
+          "name": "UPLOAD_LOCATION"
+        },
+        {
+          "default": "Etc/UTC",
+          "description": "A TZ database name, e.g. Europe/London.",
+          "label": "Timezone",
+          "name": "TZ"
+        },
+        {
+          "default": "2283",
+          "label": "Host port for the web UI",
+          "name": "FRAMELEAF_HOST_PORT"
+        },
+        {
+          "default": "latest",
+          "description": "latest follows stable releases. To pin one, use an exact release tag such as frameleaf-v1.2.3 (there is no plain 1.2.3 tag).",
+          "label": "Frameleaf version (image tag)",
+          "name": "FRAMELEAF_VERSION"
+        }
+      ],
+      "logo": "https://raw.githubusercontent.com/Frameleaf/frameleaf-app/main/design/frameleaf/brand-kit/frameleaf-app-icon.svg",
+      "name": "frameleaf",
+      "note": "Frameleaf is in <b>beta</b>. Set a <b>database password</b> before you deploy, using letters and digits only (<code>openssl rand -hex 32</code> makes a good one); the stack won't start without it. Then open <code>http://&lt;your-host&gt;:2283</code> and create the admin account in the browser. There are no default credentials, and the first person to finish setup becomes the admin, so do it straight away. The first start can take a few minutes while the database initialises. Photos and videos are stored in the <b>Library location</b> (a Docker volume unless you set a host path); the database, ML model cache and Studio worker use their own volumes. Keep the database on local disk, not a network share. Needs 6 GB RAM and 2 CPU cores. Docs: <a href=\"https://frameleaf.app/docs/start/install/\" target=\"_blank\">frameleaf.app/docs</a>",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "sources/stacks/frameleaf.yml",
+        "url": "https://github.com/lissy93/portainer-templates"
+      },
+      "restart_policy": "unless-stopped",
+      "title": "Frameleaf",
+      "type": 3
+    }
+  ]
+}
