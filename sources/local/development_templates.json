@@ -118,11 +118,12 @@
         "Automation",
         "Tools"
       ],
-      "description": "A powerful, self-contained DAG-based job scheduler with a web UI, YAML definitions, and no dependencies. Source: https://github.com/dagu-org/dagu",
+      "description": "A powerful, self-contained DAG-based job scheduler with a web UI, YAML definitions, and no dependencies. Source: https://github.com/dagucloud/dagu",
       "env": [],
-      "image": "ghcr.io/dagu-org/dagu:latest",
+      "image": "ghcr.io/dagucloud/dagu:latest",
       "logo": "https://avatars.githubusercontent.com/u/131097250",
       "name": "dagu",
+      "note": "Open port 8080 and create the first admin account. See https://docs.dagu.sh",
       "platform": "linux",
       "ports": [
         "8080:8080/tcp"
