@@ -1,6 +1,27 @@
 {
   "entries": [
     {
+      "version": "v1.4.7",
+      "previous": "v1.4.6",
+      "date": "2026-11-05",
+      "templateCount": 881,
+      "added": [
+        "Tolgee"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": [
+        {
+          "title": "Dagu",
+          "fields": [
+            "description",
+            "image",
+            "note"
+          ]
+        }
+      ]
+    },
+    {
       "version": "v1.4.6",
       "previous": "v1.4.5",
       "date": "2026-11-05",
