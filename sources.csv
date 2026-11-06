@@ -19,3 +19,4 @@ opentodo, https://raw.githubusercontent.com/OpenTodoApp/OpenTodo/main/deploy/por
 armanckeser_selfhost_apps, https://armanckeser.github.io/selfhost-apps/portainer/templates.json, https://github.com/armanckeser/selfhost-apps/, collection
 yuvomi, https://raw.githubusercontent.com/ulsklyc/yuvomi/main/deploy/portainer/portainer-template.json, https://github.com/ulsklyc/yuvomi/, app
 asobeast, https://raw.githubusercontent.com/AsoBeast/asobeast/main/portainer-template.json, https://github.com/AsoBeast/asobeast/, app
+manawg, https://raw.githubusercontent.com/Abuarchiv/manawg/main/portainer-template.json, https://github.com/Abuarchiv/manawg/, app
