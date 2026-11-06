@@ -1,6 +1,26 @@
 {
   "entries": [
     {
+      "version": "v1.4.9",
+      "previous": "v1.4.8",
+      "date": "2026-11-06",
+      "templateCount": 882,
+      "added": [
+        "Ferret"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": [
+        {
+          "title": "AsoBeast",
+          "fields": [
+            "env",
+            "note"
+          ]
+        }
+      ]
+    },
+    {
       "version": "v1.4.8",
       "previous": "v1.4.7",
       "date": "2026-11-06",
