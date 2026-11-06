@@ -34501,13 +34501,13 @@
       "env": [
         {
           "name": "SESSION_SECRET",
-          "label": "Session secret (required)",
-          "description": "At least 32 random characters. Generate one with: openssl rand -hex 32. Changing it later signs everyone out once."
+          "label": "Session secret (optional)",
+          "description": "On a new installation, leave this empty and Yuvomi generates one on its first start, kept in .secrets/ next to the database. To set your own: at least 32 random characters, e.g. openssl rand -hex 32. Changing it later signs everyone out once."
         },
         {
           "name": "DB_ENCRYPTION_KEY",
-          "label": "Database encryption key (required)",
-          "description": "At least 32 random characters. Generate one with: openssl rand -hex 32. Keep a copy: the database and its backups only open with exactly this key."
+          "label": "Database encryption key (optional)",
+          "description": "On a new installation, leave this empty and Yuvomi generates one on its first start, kept in .secrets/ next to the database; Settings > Household > Backup and restore shows it, and a backup only opens with it. An installation whose database is already encrypted keeps needing the key it was encrypted with: emptying this field there does not generate a new one, the start is refused. To set your own: at least 32 random characters, e.g. openssl rand -hex 32. Keep a copy either way."
         },
         {
           "name": "OIKOS_HTTP_PORT",
@@ -34520,7 +34520,7 @@
           "description": "The address your household uses, e.g. https://yuvomi.example.com. Without it, password reset mails are never sent."
         }
       ],
-      "note": "Set the <b>session secret</b> and the <b>database encryption key</b> before you deploy, and keep a copy of the key. Then open port 3000 (or the one you chose) and create your admin account. Behind an HTTPS reverse proxy, also set SESSION_SECURE=true. All other settings are listed in <a href=\"https://github.com/ulsklyc/yuvomi/blob/main/.env.example\" target=\"_blank\">.env.example</a>.",
+      "note": "On a new installation you can deploy this as it is: Yuvomi generates the <b>session secret</b> and the <b>database encryption key</b> on its first start. Keep a copy of the key - Settings &gt; Household &gt; Backup and restore shows it, and a backup only opens with it. Then open port 3000 (or the one you chose) and create your admin account. Behind an HTTPS reverse proxy, also set SESSION_SECURE=true. All other settings are listed in <a href=\"https://github.com/ulsklyc/yuvomi/blob/main/.env.example\" target=\"_blank\">.env.example</a>.",
       "maintainer": "https://github.com/ulsklyc/yuvomi/",
       "id": 874
     },
