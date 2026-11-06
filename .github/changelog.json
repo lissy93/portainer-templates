@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "version": "v1.4.8",
+      "previous": "v1.4.7",
+      "date": "2026-11-06",
+      "templateCount": 881,
+      "added": [],
+      "removed": [],
+      "renamed": [],
+      "updated": [
+        {
+          "title": "Yuvomi",
+          "fields": [
+            "env",
+            "note"
+          ]
+        }
+      ]
+    },
+    {
       "version": "v1.4.7",
       "previous": "v1.4.6",
       "date": "2026-11-05",
