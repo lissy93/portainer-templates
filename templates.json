@@ -16864,7 +16864,7 @@
         {
           "name": "JWT_SECRET",
           "label": "Signing secret (32 or more characters)",
-          "description": "The Auth and Storage API keys are signed with it when the stack starts. Changing it later signs everyone out."
+          "description": "The Auth and Storage API keys are signed with it when the stack starts. Changing it later signs everyone out and breaks calendar feed and unsubscribe links, unless you set MEMBER_SESSION_SECRET yourself."
         },
         {
           "name": "SMTP_HOST",
@@ -28761,7 +28761,7 @@
         {
           "name": "TAG",
           "label": "Version",
-          "default": "1.3.2"
+          "default": "1.3.3"
         },
         {
           "name": "PORT",
