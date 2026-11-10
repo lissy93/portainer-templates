@@ -1,6 +1,29 @@
 {
   "entries": [
     {
+      "version": "v1.4.11",
+      "previous": "v1.4.10",
+      "date": "2026-11-10",
+      "templateCount": 885,
+      "added": [],
+      "removed": [],
+      "renamed": [],
+      "updated": [
+        {
+          "title": "ManaWG",
+          "fields": [
+            "env"
+          ]
+        },
+        {
+          "title": "Stars Organizer",
+          "fields": [
+            "env"
+          ]
+        }
+      ]
+    },
+    {
       "version": "v1.4.10",
       "previous": "v1.4.9",
       "date": "2026-11-07",
