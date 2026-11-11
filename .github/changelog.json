@@ -1,6 +1,23 @@
 {
   "entries": [
     {
+      "version": "v1.4.12",
+      "previous": "v1.4.11",
+      "date": "2026-11-11",
+      "templateCount": 885,
+      "added": [],
+      "removed": [],
+      "renamed": [],
+      "updated": [
+        {
+          "title": "Stars Organizer",
+          "fields": [
+            "env"
+          ]
+        }
+      ]
+    },
+    {
       "version": "v1.4.11",
       "previous": "v1.4.10",
       "date": "2026-11-10",
