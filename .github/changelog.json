@@ -1,6 +1,18 @@
 {
   "entries": [
     {
+      "version": "v1.4.15",
+      "previous": "v1.4.14",
+      "date": "2026-11-12",
+      "templateCount": 886,
+      "added": [
+        "Excaliself"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.4.14",
       "previous": "v1.4.13",
       "date": "2026-11-12",
