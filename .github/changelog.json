@@ -1,6 +1,18 @@
 {
   "entries": [
     {
+      "version": "v1.4.14",
+      "previous": "v1.4.13",
+      "date": "2026-11-12",
+      "templateCount": 885,
+      "added": [
+        "Contrack"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.4.13",
       "previous": "v1.4.12",
       "date": "2026-11-12",

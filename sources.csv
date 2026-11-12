@@ -22,3 +22,5 @@ asobeast, https://raw.githubusercontent.com/AsoBeast/asobeast/main/portainer-tem
 manawg, https://raw.githubusercontent.com/Abuarchiv/manawg/main/portainer-template.json, https://github.com/Abuarchiv/manawg/, app
 ferret, https://raw.githubusercontent.com/ferret-project/ferret/main/contrib/portainer/template.json, https://github.com/ferret-project/ferret/, app
 excaliself, https://raw.githubusercontent.com/maciekzygmunt/excaliself/main/portainer-template.json, https://github.com/maciekzygmunt/excaliself/, app
+contrack, https://raw.githubusercontent.com/arvarik/contrack/main/portainer-template.json, https://github.com/arvarik/contrack/, app
+
