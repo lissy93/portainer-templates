@@ -363,6 +363,14 @@ python3 lib/validate_sources.py https://raw.githubusercontent.com/you/my-app/mai
 
 Fix every error, and the warnings too. The same check runs automatically on your PR.
 
+Got Docker? Then you can go a step further and start it the way Portainer would, with the form left at its defaults. It waits for your app to come up and answer, and shows you its logs if it doesn't. A local file works here too:
+
+```bash
+python3 lib/test_template.py https://raw.githubusercontent.com/you/my-app/main/portainer-template.json
+```
+
+That one runs on your PR as well, as the 🧪 Test template check.
+
 **2. For stacks, check the compose file on its own.** Set any required variables, then run:
 
 ```bash
