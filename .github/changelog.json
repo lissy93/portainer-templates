@@ -1,6 +1,18 @@
 {
   "entries": [
     {
+      "version": "v1.4.16",
+      "previous": "v1.4.15",
+      "date": "2026-11-12",
+      "templateCount": 887,
+      "added": [
+        "Life Console"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.4.15",
       "previous": "v1.4.14",
       "date": "2026-11-12",
