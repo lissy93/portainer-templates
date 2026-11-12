@@ -1,6 +1,26 @@
 {
   "entries": [
     {
+      "version": "v1.4.13",
+      "previous": "v1.4.12",
+      "date": "2026-11-12",
+      "templateCount": 884,
+      "added": [],
+      "removed": [
+        "NodeBB"
+      ],
+      "renamed": [],
+      "updated": [
+        {
+          "title": "tududi",
+          "fields": [
+            "env",
+            "note"
+          ]
+        }
+      ]
+    },
+    {
       "version": "v1.4.12",
       "previous": "v1.4.11",
       "date": "2026-11-11",
