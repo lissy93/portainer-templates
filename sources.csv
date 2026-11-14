@@ -24,4 +24,5 @@ ferret, https://raw.githubusercontent.com/ferret-project/ferret/main/contrib/por
 excaliself, https://raw.githubusercontent.com/maciekzygmunt/excaliself/main/portainer-template.json, https://github.com/maciekzygmunt/excaliself/, app
 contrack, https://raw.githubusercontent.com/arvarik/contrack/main/portainer-template.json, https://github.com/arvarik/contrack/, app
 life_console, https://raw.githubusercontent.com/TJ-coding/life-console/main/packaging/portainer/portainer-template.json, https://github.com/TJ-coding/life-console/, app
+pingkit_agent, https://raw.githubusercontent.com/pingkit/agent/main/portainer-template.json, https://github.com/pingkit/agent/, app
 
