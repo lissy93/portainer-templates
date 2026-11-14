@@ -1,6 +1,19 @@
 {
   "entries": [
     {
+      "version": "v1.4.17",
+      "previous": "v1.4.16",
+      "date": "2026-11-14",
+      "templateCount": 889,
+      "added": [
+        "Paperless-AI",
+        "PsiTransfer"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.4.16",
       "previous": "v1.4.15",
       "date": "2026-11-12",
