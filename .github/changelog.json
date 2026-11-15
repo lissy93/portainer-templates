@@ -1,6 +1,25 @@
 {
   "entries": [
     {
+      "version": "v1.4.18",
+      "previous": "v1.4.17",
+      "date": "2026-11-15",
+      "templateCount": 890,
+      "added": [
+        "jotty·page"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": [
+        {
+          "title": "Stars Organizer",
+          "fields": [
+            "env"
+          ]
+        }
+      ]
+    },
+    {
       "version": "v1.4.17",
       "previous": "v1.4.16",
       "date": "2026-11-14",
