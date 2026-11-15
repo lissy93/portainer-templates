@@ -346,7 +346,7 @@ A template runs with whatever access it asks for, on somebody else's server. Ask
 - Only use `privileged`, host networking, devices or extra capabilities when there's no other way, and explain why in the note.
 - Portainer admins can block bind mounts, privileged mode and devices for regular users, so a template that needs them may only deploy for admins. Say so in the note.
 - If the first person to open your setup page becomes the admin, say so in the note, so people finish setup before anyone else can reach it.
-
+<!--
 ## Testing it
 
 A template can pass every check and still not run, so test it three ways.
@@ -440,6 +440,8 @@ Go through this before you submit.
 - [ ] There are no secrets or default passwords in the template or compose file.
 - [ ] Docker socket access, privileged mode, host networking and devices are only there if the app can't work without them, and the note explains why.
 
+-->
+
 ## Submitting it
 
 1. Commit `portainer-template.json` to your repo's default branch.
@@ -452,6 +454,7 @@ Go through this before you submit.
    The name has to be unique, start with a lowercase letter or number, and only use lowercase letters, numbers, `_` and `-`.
 3. If your app already has a copy in one of the files in [`sources/local/`](../sources/local), remove that entry in the same PR, along with any entry for it in [`overrides.json`](../overrides.json). Otherwise the old copy keeps winning and your updates never show up.
 4. Open a PR here.
+5. You must fill in the [PR Template](https://github.com/lissy93/portainer-templates/blob/main/.github/PULL_REQUEST_TEMPLATE.md) in full.
 
 Once it's merged, you can edit the template in your own repo whenever you like, and changes show up here within a day. Keep the URL pointing at a branch rather than a tag or a commit.
 
