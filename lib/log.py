@@ -34,7 +34,10 @@ class Formatter(logging.Formatter):
     if record.exc_info:
       msg = f'{msg}\n{self.formatException(record.exc_info)}'
     if self.github and level in GH_PREFIX:
-      return f'{GH_PREFIX[level]}{msg}'
+      # extra={'annotate': {'file': ..., 'line': ...}} pins it to a line of the PR
+      where = ','.join(f'{key}={value}' for key, value in getattr(record, 'annotate', {}).items())
+      prefix = f'{GH_PREFIX[level][:-2]} {where}::' if where else GH_PREFIX[level]
+      return f'{prefix}{msg}'
     tag = f'[{level}]'
     if self.color and level in LEVEL_COLORS:
       tag = f'{_rgb(LEVEL_COLORS[level])}{tag}{RESET}'

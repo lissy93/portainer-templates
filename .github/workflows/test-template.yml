@@ -1,6 +1,6 @@
-# Starts templates the way Portainer would, then checks they come up and answer.
+# Deploys templates as Portainer would, checks they answer and survive a restart
 # Tests what a PR adds, whatever you name on demand, and every app source weekly
-name: 🧪 Test template
+name: 🧪 Smoke test Template
 
 on:
   pull_request:
@@ -38,15 +38,16 @@ concurrency:
 
 jobs:
   test:
-    name: 🧪 Test template
+    name: Test template
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    # Each app is started twice, and the weekly run covers every app source
+    timeout-minutes: 120
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-          # A PR checks out as a merge commit, and its first parent is the base it merged onto
+          # A PR checks out as a merge commit, whose first parent is the base branch
           fetch-depth: 2
 
       - name: Set up Python
