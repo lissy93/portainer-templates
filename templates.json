@@ -5417,53 +5417,46 @@
       "id": 147
     },
     {
-      "id": 148,
-      "type": 1,
-      "title": "Davos",
-      "name": "Davos",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a>, based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Ensure to create the following volume directories on the host file system, or modify the paths in the volume mapping section under the advanced options below, as needed.</p><p>mkdir -p /srv/lsio/davos/config<br>mkdir -p /srv/lsio/davos/download</p>",
-      "description": "[Davos](https://github.com/linuxserver/davos) is an FTP automation tool that periodically scans given host locations for new files. It can be configured for various purposes, including listening for specific files to appear in the host location, ready for it to download and then move, if required. It also supports completion notifications as well as downstream API calls, to further the workflow.",
       "categories": [
-        "FTP"
+        "FTP",
+        "Tools"
       ],
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/davos/master/docs/list.PNG",
-      "image": "linuxserver/davos:latest",
+      "description": "davos is an FTP automation tool that periodically scans given host locations for new files. It can be configured for various purposes, including listening for specific files to appear in the host location, ready for it to download and then move, if required. It also supports completion notifications as well as downstream API calls, to further the workflow.",
       "env": [
         {
-          "name": "PUID",
+          "default": "1000",
           "label": "PUID",
-          "default": "1000",
-          "description": "Run 'id [USER]' for the owner of the host volume directories to get the UID to use here."
+          "name": "PUID"
         },
         {
-          "name": "PGID",
+          "default": "100",
           "label": "PGID",
-          "default": "1000",
-          "description": "Run 'id [USER]' for the owner of the host volume directories to get the GID to use here."
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Etc/UTC",
-          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+          "name": "PGID"
         }
       ],
+      "image": "linuxserver/davos:latest",
+      "logo": "https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/davos.png",
+      "name": "davos",
+      "note": "Configuration <ul><li><b>/config</b> - AppData Location</li><li><b>/downloads</b> - File Download Location</li></ul>",
+      "platform": "linux",
       "ports": [
-        "8080:8080/tcp"
+        "8080/tcp"
       ],
+      "restart_policy": "unless-stopped",
+      "title": "Davos",
+      "type": 1,
       "volumes": [
         {
           "container": "/config",
-          "bind": "/srv/lsio/davos/config"
+          "bind": "/portainer/Files/AppData/Config/Davos"
         },
         {
-          "container": "/download",
-          "bind": "/srv/lsio/davos/download"
+          "container": "/downloads",
+          "bind": "/portainer/Downloads"
         }
       ],
-      "restart_policy": "unless-stopped",
-      "maintainer": "https://github.com/technorabilia/portainer-templates/"
+      "maintainer": "https://github.com/xneo1/portainer_templates/",
+      "id": 148
     },
     {
       "categories": [
@@ -14009,6 +14002,12 @@
           "description": "Specify the port you bind to the outside for Kasm Workspaces."
         },
         {
+          "name": "KASM_SETUP",
+          "label": "KASM_SETUP",
+          "default": "false",
+          "description": "Set to `true` to enable the Kasm setup page, *first-run setup is always enabled*."
+        },
+        {
           "name": "DOCKER_HUB_USERNAME",
           "label": "DOCKER_HUB_USERNAME",
           "default": "USER",
@@ -14028,7 +14027,7 @@
         }
       ],
       "ports": [
-        "3000:3000/tcp",
+        "127.0.0.1:3000:3000/tcp",
         "443:443/tcp"
       ],
       "volumes": [
