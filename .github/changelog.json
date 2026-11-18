@@ -1,6 +1,18 @@
 {
   "entries": [
     {
+      "version": "v1.4.21",
+      "previous": "v1.4.20",
+      "date": "2026-11-18",
+      "templateCount": 892,
+      "added": [
+        "ChartDB"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.4.20",
       "previous": "v1.4.19",
       "date": "2026-11-17",
