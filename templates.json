@@ -3454,6 +3454,43 @@
       "id": 91
     },
     {
+      "id": 92,
+      "type": 1,
+      "title": "ChartDB",
+      "name": "chartdb",
+      "description": "Database diagram editor that draws your real schema from one query's output, for PostgreSQL, MySQL, MariaDB, SQL Server, SQLite, Oracle, ClickHouse and more, then lets you edit it and export it as SQL, even for a different database. Source: https://github.com/chartdb/chartdb",
+      "categories": [
+        "Database",
+        "Development",
+        "Tools"
+      ],
+      "platform": "linux",
+      "logo": "https://avatars.githubusercontent.com/u/177466511?s=256",
+      "image": "ghcr.io/chartdb/chartdb:latest",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        "8087:80/tcp"
+      ],
+      "env": [
+        {
+          "name": "DISABLE_ANALYTICS",
+          "label": "Analytics off",
+          "description": "Keeps ChartDB's Fathom analytics script out of the page, so leave it as it is.",
+          "default": "true",
+          "preset": true
+        },
+        {
+          "name": "HIDE_CHARTDB_CLOUD",
+          "label": "Hide the star-us popup",
+          "description": "Stops the editor asking you to star the project on GitHub.",
+          "default": "true",
+          "preset": true
+        }
+      ],
+      "note": "Open <code>http://&lt;your-host&gt;:8087</code>, pick your database, run the query it gives you against it, and paste the result back in to get the diagram (a SQL or DBML schema dump works too). There's no login and nothing to back up on the server, since diagrams are saved in your browser's own storage, so another browser or a cleared cache starts empty. Backup --&gt; Export Diagram keeps a copy, and Restore Diagram brings it back. Actions --&gt; Export SQL works offline, but its AI tab needs an OpenAI key, which ChartDB hands to every visitor, so it's left off here. The page loads its font from Google Fonts and a GitHub star button from ghbtns.com. Docs: <a href=\"https://docs.chartdb.io\" target=\"_blank\">docs.chartdb.io</a>",
+      "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
+    },
+    {
       "type": 3,
       "title": "Chatwoot",
       "name": "chatwoot",
@@ -3515,7 +3552,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 92
+      "id": 93
     },
     {
       "categories": [
@@ -3532,7 +3569,7 @@
       "title": "CheckCle",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 93
+      "id": 94
     },
     {
       "categories": [
@@ -3549,7 +3586,7 @@
       "title": "Checkmate",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 94
+      "id": 95
     },
     {
       "categories": [
@@ -3615,7 +3652,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 95
+      "id": 96
     },
     {
       "categories": [
@@ -3632,7 +3669,7 @@
       "title": "Chibisafe",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 96
+      "id": 97
     },
     {
       "categories": [
@@ -3649,7 +3686,7 @@
       "title": "Chiefonboarding",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 97
+      "id": 98
     },
     {
       "categories": [
@@ -3673,7 +3710,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 98
+      "id": 99
     },
     {
       "type": 3,
@@ -3689,10 +3726,10 @@
         "stackfile": "chromadb/compose.yaml"
       },
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 99
+      "id": 100
     },
     {
-      "id": 100,
+      "id": 101,
       "type": 1,
       "title": "Chrome",
       "name": "Chrome",
@@ -3744,7 +3781,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 101,
+      "id": 102,
       "type": 1,
       "title": "Chromium",
       "name": "Chromium",
@@ -3826,7 +3863,7 @@
       "type": 1,
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/cturra/docker-ntp\" target=\"_blank\">https://github.com/cturra/docker-ntp</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/cturra/docker-ntp/blob/main/README.md\" target=\"_blank\">https://github.com/cturra/docker-ntp/blob/main/README.md</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 102
+      "id": 103
     },
     {
       "categories": [
@@ -3864,7 +3901,7 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://docs.clamav.net/\" target=\"_blank\">https://docs.clamav.net/</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/mkodockx/docker-clamav\" target=\"_blank\">https://hub.docker.com/r/mkodockx/docker-clamav</a><br><br><h3><b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/tools/install_clamav.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install: </b>wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/tools/install_clamav.sh | bash</h3><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 103
+      "id": 104
     },
     {
       "type": 3,
@@ -3888,7 +3925,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 104
+      "id": 105
     },
     {
       "type": 1,
@@ -3951,7 +3988,7 @@
         }
       ],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 105
+      "id": 106
     },
     {
       "categories": [
@@ -3975,7 +4012,7 @@
           "container": "/opt/cloudbeaver/workspace"
         }
       ],
-      "id": 106
+      "id": 107
     },
     {
       "categories": [
@@ -4009,7 +4046,7 @@
       "type": 1,
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.cloudflare.com/en-gb/learning/dns/glossary/dynamic-dns/\" target=\"_blank\">https://www.cloudflare.com/en-gb/learning/dns/glossary/dynamic-dns/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/favonia/cloudflare-ddns/\" target=\"_blank\">https://github.com/favonia/cloudflare-ddns/</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 107
+      "id": 108
     },
     {
       "categories": [
@@ -4048,10 +4085,10 @@
           "container": "/config"
         }
       ],
-      "id": 108
+      "id": 109
     },
     {
-      "id": 109,
+      "id": 110,
       "type": 1,
       "title": "Cloudreve",
       "name": "cloudreve",
@@ -4093,7 +4130,7 @@
       ],
       "restart_policy": "unless-stopped",
       "maintainer": "https://github.com/shmolf/portainer-templates/",
-      "id": 110
+      "id": 111
     },
     {
       "type": 1,
@@ -4116,7 +4153,7 @@
       ],
       "command": "start --insecure",
       "maintainer": "https://github.com/mikestraney/portainer-templates/",
-      "id": 111
+      "id": 112
     },
     {
       "type": 3,
@@ -4131,10 +4168,10 @@
       "categories": [
         "edge"
       ],
-      "id": 112
+      "id": 113
     },
     {
-      "id": 113,
+      "id": 114,
       "type": 2,
       "title": "CockroachDB (swarm)",
       "description": "CockroachDB cluster",
@@ -4151,7 +4188,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 114,
+      "id": 115,
       "type": 1,
       "title": "Code-server (container)",
       "name": "Code-server",
@@ -4258,7 +4295,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 115
+      "id": 116
     },
     {
       "type": 1,
@@ -4339,7 +4376,7 @@
       ],
       "restart_policy": "unless-stopped",
       "maintainer": "https://github.com/shmolf/portainer-templates/",
-      "id": 116
+      "id": 117
     },
     {
       "categories": [
@@ -4356,7 +4393,7 @@
       "title": "Codex",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 117
+      "id": 118
     },
     {
       "categories": [
@@ -4392,7 +4429,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 118
+      "id": 119
     },
     {
       "type": 3,
@@ -4453,10 +4490,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 119
+      "id": 120
     },
     {
-      "id": 120,
+      "id": 121,
       "type": 1,
       "title": "CommaFeed",
       "name": "commafeed",
@@ -4488,7 +4525,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 121,
+      "id": 122,
       "type": 1,
       "title": "CommandBox",
       "description": "ColdFusion (CFML) CLI",
@@ -4512,7 +4549,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 122,
+      "id": 123,
       "type": 1,
       "title": "ContentBox",
       "description": "Open-source modular CMS",
@@ -4613,10 +4650,10 @@
       ],
       "note": "Open <code>http://&lt;your-host&gt;:3210</code> right after deploying: <b>the first visitor to open port <code>3210</code> creates the admin account</b>, so complete setup before exposing the port publicly.<br><br>All persistent data (SQLite database, uploads, snapshots, and generated <code>secret.key</code>) is stored in <code>/app/data</code>, and local search models are bundled in the image. AI keys, OpenID Connect, outgoing mail, and connectors can be configured in <code>Settings</code> inside the app. Behind an HTTPS reverse proxy, set <code>PUBLIC_URL</code> and <code>TRUST_PROXY_HOPS=1</code>. See the <a href=\"https://github.com/arvarik/contrack/blob/main/docs/self-hosting.md\" target=\"_blank\">self-hosting docs</a>.",
       "maintainer": "https://github.com/arvarik/contrack/",
-      "id": 123
+      "id": 124
     },
     {
-      "id": 124,
+      "id": 125,
       "type": 1,
       "title": "ConvertX",
       "name": "convertx",
@@ -4705,10 +4742,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 125
+      "id": 126
     },
     {
-      "id": 126,
+      "id": 127,
       "type": 1,
       "title": "Cops",
       "name": "Cops",
@@ -4758,7 +4795,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 127,
+      "id": 128,
       "type": 3,
       "title": "copyparty",
       "name": "copyparty",
@@ -4832,10 +4869,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 128
+      "id": 129
     },
     {
-      "id": 129,
+      "id": 130,
       "type": 1,
       "title": "Craft-apps",
       "name": "Craft-apps",
@@ -4883,7 +4920,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 130,
+      "id": 131,
       "type": 1,
       "title": "CrateDB",
       "description": "An open-source distributed SQL database",
@@ -4919,7 +4956,7 @@
       },
       "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/cronicle.png",
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 131
+      "id": 132
     },
     {
       "categories": [
@@ -4936,7 +4973,7 @@
       "title": "Crowdsec WEB UI",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 132
+      "id": 133
     },
     {
       "categories": [
@@ -4956,7 +4993,7 @@
       "title": "Cryptofolio",
       "type": 1,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 133
+      "id": 134
     },
     {
       "categories": [
@@ -4986,10 +5023,10 @@
       },
       "title": "CryptPad",
       "type": 3,
-      "id": 134
+      "id": 135
     },
     {
-      "id": 135,
+      "id": 136,
       "type": 1,
       "title": "Cura",
       "name": "Cura",
@@ -5035,7 +5072,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 136,
+      "id": 137,
       "type": 1,
       "title": "CyberChef",
       "name": "cyberchef",
@@ -5090,7 +5127,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 137
+      "id": 138
     },
     {
       "categories": [
@@ -5115,10 +5152,10 @@
           "container": "/var/lib/dagu"
         }
       ],
-      "id": 138
+      "id": 139
     },
     {
-      "id": 139,
+      "id": 140,
       "type": 1,
       "title": "Darktable",
       "name": "Darktable",
@@ -5178,7 +5215,7 @@
       "title": "Dashdot",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 140
+      "id": 141
     },
     {
       "categories": [
@@ -5203,7 +5240,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 141
+      "id": 142
     },
     {
       "categories": [
@@ -5240,7 +5277,7 @@
           "container": "/app/user-data"
         }
       ],
-      "id": 142
+      "id": 143
     },
     {
       "categories": [
@@ -5274,7 +5311,7 @@
       "title": "Dashy (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 143
+      "id": 144
     },
     {
       "categories": [
@@ -5299,10 +5336,10 @@
       },
       "title": "Databag",
       "type": 3,
-      "id": 144
+      "id": 145
     },
     {
-      "id": 145,
+      "id": 146,
       "type": 1,
       "title": "Datadog agent (container)",
       "description": "Collect events and metrics",
@@ -5338,7 +5375,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 146,
+      "id": 147,
       "title": "Datadog agent (swarm)",
       "type": 2,
       "categories": [
@@ -5414,7 +5451,7 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/docs/davinci.md\" target=\"_blank\">https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/docs/davinci.md</a><br><b>Official Docker Documentation: </b><a href=\"https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/docs/davinci.md\" target=\"_blank\">https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/docs/davinci.md</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 147
+      "id": 148
     },
     {
       "categories": [
@@ -5456,7 +5493,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 148
+      "id": 149
     },
     {
       "categories": [
@@ -5473,10 +5510,10 @@
       "title": "Dawarich",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 149
+      "id": 150
     },
     {
-      "id": 150,
+      "id": 151,
       "type": 3,
       "title": "DbGate",
       "name": "dbgate",
@@ -5509,7 +5546,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 151,
+      "id": 152,
       "type": 1,
       "title": "Ddclient",
       "name": "Ddclient",
@@ -5581,10 +5618,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 152
+      "id": 153
     },
     {
-      "id": 153,
+      "id": 154,
       "type": 1,
       "title": "Deluge",
       "name": "Deluge",
@@ -5698,7 +5735,7 @@
         }
       ],
       "maintainer": "https://github.com/SelfhostedPro/selfhosted_templates/",
-      "id": 154
+      "id": 155
     },
     {
       "type": 3,
@@ -5746,10 +5783,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 155
+      "id": 156
     },
     {
-      "id": 156,
+      "id": 157,
       "type": 1,
       "title": "Digikam",
       "name": "Digikam",
@@ -5832,10 +5869,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 157
+      "id": 158
     },
     {
-      "id": 158,
+      "id": 159,
       "type": 1,
       "title": "Diskover (container)",
       "name": "Diskover",
@@ -5911,7 +5948,7 @@
       "title": "Diskover (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 159
+      "id": 160
     },
     {
       "categories": [
@@ -5928,7 +5965,7 @@
       "title": "Docker Compose maker",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 160
+      "id": 161
     },
     {
       "categories": [
@@ -5945,7 +5982,7 @@
       "title": "Docker Container Stats",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 161
+      "id": 162
     },
     {
       "type": 3,
@@ -6005,7 +6042,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 162
+      "id": 163
     },
     {
       "categories": [
@@ -6022,7 +6059,7 @@
       "title": "Dockge",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 163
+      "id": 164
     },
     {
       "categories": [
@@ -6119,7 +6156,7 @@
           "readonly": true
         }
       ],
-      "id": 164
+      "id": 165
     },
     {
       "categories": [
@@ -6149,7 +6186,7 @@
       },
       "title": "Docmost",
       "type": 3,
-      "id": 165
+      "id": 166
     },
     {
       "type": 3,
@@ -6223,7 +6260,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 166
+      "id": 167
     },
     {
       "categories": [
@@ -6240,7 +6277,7 @@
       "title": "Documize",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 167
+      "id": 168
     },
     {
       "categories": [
@@ -6271,7 +6308,7 @@
           "container": "/data"
         }
       ],
-      "id": 168
+      "id": 169
     },
     {
       "type": 3,
@@ -6331,10 +6368,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 169
+      "id": 170
     },
     {
-      "id": 170,
+      "id": 171,
       "type": 1,
       "title": "Dogwalk",
       "name": "Dogwalk",
@@ -6394,10 +6431,10 @@
       "title": "Dokemon",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 171
+      "id": 172
     },
     {
-      "id": 172,
+      "id": 173,
       "type": 1,
       "title": "Dokku (container)",
       "description": "Dokku setup as a container",
@@ -6437,7 +6474,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 173,
+      "id": 174,
       "type": 3,
       "title": "Dokku (stack)",
       "description": "Dokku setup as a compose file",
@@ -6495,7 +6532,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 174,
+      "id": 175,
       "type": 1,
       "title": "Dokuwiki",
       "name": "Dokuwiki",
@@ -6541,7 +6578,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 175,
+      "id": 176,
       "type": 3,
       "title": "Dolibarr",
       "name": "dolibarr",
@@ -6589,7 +6626,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 176,
+      "id": 177,
       "type": 1,
       "title": "Dolphin",
       "name": "Dolphin",
@@ -6671,10 +6708,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 177
+      "id": 178
     },
     {
-      "id": 178,
+      "id": 179,
       "type": 1,
       "title": "Donetick",
       "name": "donetick",
@@ -6717,7 +6754,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 179,
+      "id": 180,
       "type": 1,
       "title": "Doplarr_rs",
       "name": "Doplarr_rs",
@@ -6762,7 +6799,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 180,
+      "id": 181,
       "type": 1,
       "title": "Dosbox-staging",
       "name": "Dosbox-staging",
@@ -6808,7 +6845,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 181,
+      "id": 182,
       "type": 1,
       "title": "Doublecommander",
       "name": "Doublecommander",
@@ -6880,7 +6917,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 182
+      "id": 183
     },
     {
       "categories": [
@@ -6898,7 +6935,7 @@
       "title": "Dradis",
       "type": 1,
       "maintainer": "https://github.com/SelfhostedPro/selfhosted_templates/",
-      "id": 183
+      "id": 184
     },
     {
       "categories": [
@@ -6916,10 +6953,10 @@
       "title": "Draw.io",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 184
+      "id": 185
     },
     {
-      "id": 185,
+      "id": 186,
       "type": 1,
       "title": "drawDB",
       "name": "drawdb",
@@ -7038,10 +7075,10 @@
         }
       ],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 186
+      "id": 187
     },
     {
-      "id": 187,
+      "id": 188,
       "type": 1,
       "title": "Drupal",
       "description": "Open-source content management framework",
@@ -7062,7 +7099,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 188,
+      "id": 189,
       "type": 1,
       "title": "Duckdns",
       "name": "Duckdns",
@@ -7137,7 +7174,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 189,
+      "id": 190,
       "type": 1,
       "title": "Duckstation",
       "name": "Duckstation",
@@ -7243,10 +7280,10 @@
         }
       ],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 190
+      "id": 191
     },
     {
-      "id": 191,
+      "id": 192,
       "type": 1,
       "title": "Duplicati",
       "name": "Duplicati",
@@ -7317,7 +7354,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 192,
+      "id": 193,
       "type": 3,
       "title": "Easy!Appointments",
       "name": "easy-appointments",
@@ -7386,10 +7423,10 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://mosquitto.org/\" target=\"_blank\">https://mosquitto.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://mosquitto.org/\" target=\"_blank\">https://mosquitto.org/</a><br><br><h3><b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/tools/install_mosquitto.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install: </b>wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/tools/install_mosquitto.sh | bash</h3><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 193
+      "id": 194
     },
     {
-      "id": 194,
+      "id": 195,
       "type": 1,
       "title": "Eden",
       "name": "Eden",
@@ -7468,10 +7505,10 @@
           "container": "/usr/share/elasticsearch/data"
         }
       ],
-      "id": 195
+      "id": 196
     },
     {
-      "id": 196,
+      "id": 197,
       "type": 1,
       "title": "Emby",
       "name": "Emby",
@@ -7553,10 +7590,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 197
+      "id": 198
     },
     {
-      "id": 198,
+      "id": 199,
       "type": 3,
       "title": "EMQX Open Source MQTT Broker",
       "description": "Open-source MQTT broker for IoT, IIoT, and connected vehicles - Single Broker deployment",
@@ -7582,7 +7619,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 199,
+      "id": 200,
       "type": 3,
       "title": "EspoCRM",
       "name": "espocrm",
@@ -7625,7 +7662,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 200,
+      "id": 201,
       "type": 3,
       "title": "Etherpad",
       "name": "etherpad",
@@ -7710,7 +7747,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 201
+      "id": 202
     },
     {
       "categories": [
@@ -7728,7 +7765,7 @@
       "title": "Excalidraw",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 202
+      "id": 203
     },
     {
       "type": 3,
@@ -7770,10 +7807,10 @@
       ],
       "note": "Set the <b>database password</b> (<code>openssl rand -hex 24</code>), the <b>auth secret</b> (<code>openssl rand -base64 32</code>) and the <b>address</b> you will open the app at, e.g. <code>http://&lt;your-host&gt;:3000</code>, before you deploy. The stack won't start without them. Then open that address: the first visitor creates the admin account, so do this right away. Drawings are stored in the <code>pgdata</code> volume. For a public server, put a reverse proxy with HTTPS in front. Docs: <a href=\"https://excaliself.com/docs/docker-compose/\" target=\"_blank\">excaliself.com/docs</a>",
       "maintainer": "https://github.com/maciekzygmunt/excaliself/",
-      "id": 203
+      "id": 204
     },
     {
-      "id": 204,
+      "id": 205,
       "type": 3,
       "title": "ezBookkeeping",
       "name": "ezbookkeeping",
@@ -7840,10 +7877,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 205
+      "id": 206
     },
     {
-      "id": 206,
+      "id": 207,
       "type": 1,
       "title": "Fail2ban",
       "name": "Fail2ban",
@@ -7968,7 +8005,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 207,
+      "id": 208,
       "type": 1,
       "title": "Faster-whisper",
       "name": "Faster-whisper",
@@ -8042,7 +8079,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 208,
+      "id": 209,
       "type": 3,
       "title": "FDO",
       "description": "FDO",
@@ -8079,7 +8116,7 @@
       "title": "Feedcord",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 209
+      "id": 210
     },
     {
       "categories": [
@@ -8113,7 +8150,7 @@
       "title": "Fenrus",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 210
+      "id": 211
     },
     {
       "categories": [
@@ -8130,10 +8167,10 @@
       "title": "Ferdi Server",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 211
+      "id": 212
     },
     {
-      "id": 212,
+      "id": 213,
       "type": 1,
       "title": "Ferdium (container)",
       "name": "Ferdium",
@@ -8194,10 +8231,10 @@
       "title": "Ferdium (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 213
+      "id": 214
     },
     {
-      "id": 214,
+      "id": 215,
       "type": 1,
       "title": "Ferret",
       "name": "ferret",
@@ -8243,10 +8280,10 @@
       "title": "Fetchcord",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 215
+      "id": 216
     },
     {
-      "id": 216,
+      "id": 217,
       "type": 1,
       "title": "Ffmpeg",
       "name": "Ffmpeg",
@@ -8291,7 +8328,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 217,
+      "id": 218,
       "type": 1,
       "title": "File browser (container)",
       "description": "A web file manager",
@@ -8343,7 +8380,7 @@
       ],
       "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/file-browser.png",
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 218
+      "id": 219
     },
     {
       "categories": [
@@ -8377,7 +8414,7 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 219
+      "id": 220
     },
     {
       "categories": [
@@ -8423,7 +8460,7 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 220
+      "id": 221
     },
     {
       "categories": [
@@ -8440,7 +8477,7 @@
       "title": "Filegator",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 221
+      "id": 222
     },
     {
       "categories": [
@@ -8457,7 +8494,7 @@
       "title": "Filepizza",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 222
+      "id": 223
     },
     {
       "type": 3,
@@ -8476,7 +8513,7 @@
         "stackfile": "stacks/filerun/docker-compose.yml"
       },
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 223
+      "id": 224
     },
     {
       "categories": [
@@ -8493,10 +8530,10 @@
       "title": "Filestash",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 224
+      "id": 225
     },
     {
-      "id": 225,
+      "id": 226,
       "type": 1,
       "title": "Filezilla",
       "name": "Filezilla",
@@ -8542,7 +8579,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 226,
+      "id": 227,
       "type": 3,
       "title": "Firefly III",
       "name": "firefly-iii",
@@ -8594,7 +8631,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 227,
+      "id": 228,
       "type": 1,
       "title": "Firefox (container)",
       "name": "Firefox",
@@ -8660,7 +8697,7 @@
       "title": "Firefox (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 228
+      "id": 229
     },
     {
       "categories": [
@@ -8677,7 +8714,7 @@
       "title": "Fireshare",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 229
+      "id": 230
     },
     {
       "type": 3,
@@ -8738,10 +8775,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 230
+      "id": 231
     },
     {
-      "id": 231,
+      "id": 232,
       "type": 3,
       "title": "Flagsmith",
       "name": "flagsmith",
@@ -8828,7 +8865,7 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/pawelmalak/flame\" target=\"_blank\">https://github.com/pawelmalak/flame</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/pawelmalak/flame#with-docker-recommended\" target=\"_blank\">https://github.com/pawelmalak/flame#with-docker-recommended</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 232
+      "id": 233
     },
     {
       "categories": [
@@ -8853,7 +8890,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 233
+      "id": 234
     },
     {
       "categories": [
@@ -8895,10 +8932,10 @@
       "type": 1,
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Docker Documentation: </b><a href=\"https://github.com/FlareSolverr/FlareSolverr#installation\" target=\"_blank\">https://github.com/FlareSolverr/FlareSolverr#installation</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 234
+      "id": 235
     },
     {
-      "id": 235,
+      "id": 236,
       "type": 3,
       "title": "flatnotes",
       "name": "flatnotes",
@@ -8940,7 +8977,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 236,
+      "id": 237,
       "type": 1,
       "title": "Flexget",
       "name": "Flexget",
@@ -9013,7 +9050,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 237,
+      "id": 238,
       "type": 1,
       "title": "Floating License Server",
       "description": "License Server for Softing edgeConnector products",
@@ -9049,7 +9086,7 @@
       "title": "Flood",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 238
+      "id": 239
     },
     {
       "type": 3,
@@ -9092,7 +9129,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 239
+      "id": 240
     },
     {
       "categories": [
@@ -9110,7 +9147,7 @@
       "title": "Flowiseai",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 240
+      "id": 241
     },
     {
       "categories": [
@@ -9145,10 +9182,10 @@
           "container": "/root/Downloads"
         }
       ],
-      "id": 241
+      "id": 242
     },
     {
-      "id": 242,
+      "id": 243,
       "type": 1,
       "title": "Flycast",
       "name": "Flycast",
@@ -9194,7 +9231,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 243,
+      "id": 244,
       "type": 1,
       "title": "Foldingathome",
       "name": "Foldingathome",
@@ -9291,7 +9328,7 @@
           "container": "/data"
         }
       ],
-      "id": 244
+      "id": 245
     },
     {
       "type": 3,
@@ -9316,7 +9353,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 245
+      "id": 246
     },
     {
       "type": 3,
@@ -9361,7 +9398,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 246
+      "id": 247
     },
     {
       "categories": [
@@ -9409,7 +9446,7 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://foundryvtt.com/\" target=\"_blank\">https://foundryvtt.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/felddy/foundryvtt\" target=\"_blank\">https://hub.docker.com/r/felddy/foundryvtt</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 247
+      "id": 248
     },
     {
       "categories": [
@@ -9431,10 +9468,10 @@
       "title": "Freeboard",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 248
+      "id": 249
     },
     {
-      "id": 249,
+      "id": 250,
       "type": 1,
       "title": "Freecad",
       "name": "Freecad",
@@ -9494,10 +9531,10 @@
       "title": "Freescout",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 250
+      "id": 251
     },
     {
-      "id": 251,
+      "id": 252,
       "type": 1,
       "title": "Freshrss",
       "name": "Freshrss",
@@ -9557,7 +9594,7 @@
       "title": "Frigate NVR",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 252
+      "id": 253
     },
     {
       "categories": [
@@ -9575,7 +9612,7 @@
       "title": "Funkwhale",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 253
+      "id": 254
     },
     {
       "categories": [
@@ -9591,10 +9628,10 @@
       "title": "Fusion",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 254
+      "id": 255
     },
     {
-      "id": 255,
+      "id": 256,
       "type": 1,
       "title": "Fuuz Device Gateway",
       "description": "A secure gateway that connects on-premise devices, PLCs, and data sources to the Fuuz Cloud for seamless, real-time integration.",
@@ -9687,7 +9724,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 256,
+      "id": 257,
       "type": 2,
       "title": "Fuuz In-House Trial",
       "description": "Deploy the Fuuz AI-driven Industrial Intelligence Platform. Unify manufacturing operations across MES, WMS, CMMS, and Quality with built-in DataOps integration, rapid application development, and an event-native architecture \u2014 or build your own custom manufacturing applications.",
@@ -9952,7 +9989,7 @@
         }
       ],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 257
+      "id": 258
     },
     {
       "type": 3,
@@ -9979,7 +10016,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 258
+      "id": 259
     },
     {
       "categories": [
@@ -9997,7 +10034,7 @@
       "title": "Gathio",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 259
+      "id": 260
     },
     {
       "categories": [
@@ -10022,7 +10059,7 @@
           "container": "/config"
         }
       ],
-      "id": 260
+      "id": 261
     },
     {
       "categories": [
@@ -10065,10 +10102,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 261
+      "id": 262
     },
     {
-      "id": 262,
+      "id": 263,
       "type": 1,
       "title": "Ghost (container)",
       "description": "Free and open-source blogging platform",
@@ -10104,7 +10141,7 @@
       "title": "Ghost (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 263
+      "id": 264
     },
     {
       "categories": [
@@ -10125,10 +10162,10 @@
       "title": "Ghostfolio",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 264
+      "id": 265
     },
     {
-      "id": 265,
+      "id": 266,
       "type": 1,
       "title": "Gimp",
       "name": "Gimp",
@@ -10218,7 +10255,7 @@
         }
       ],
       "maintainer": "https://github.com/Qballjos/portainer_templates/",
-      "id": 266
+      "id": 267
     },
     {
       "type": 3,
@@ -10274,10 +10311,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 267
+      "id": 268
     },
     {
-      "id": 268,
+      "id": 269,
       "type": 1,
       "title": "Github-desktop",
       "name": "Github-desktop",
@@ -10323,7 +10360,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 269,
+      "id": 270,
       "type": 1,
       "title": "GitLab CE",
       "description": "Open-source end-to-end software development platform",
@@ -10381,10 +10418,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 270
+      "id": 271
     },
     {
-      "id": 271,
+      "id": 272,
       "type": 1,
       "title": "Gitqlient",
       "name": "Gitqlient",
@@ -10452,7 +10489,7 @@
           "container": "/app/config"
         }
       ],
-      "id": 272
+      "id": 273
     },
     {
       "categories": [
@@ -10469,7 +10506,7 @@
       "title": "Glances",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 273
+      "id": 274
     },
     {
       "type": 3,
@@ -10499,7 +10536,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 274
+      "id": 275
     },
     {
       "categories": [
@@ -10518,7 +10555,7 @@
       "type": 1,
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://hub.docker.com/r/serjs/go-socks5-proxy\" target=\"_blank\">https://hub.docker.com/r/serjs/go-socks5-proxy</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/serjs/go-socks5-proxy\" target=\"_blank\">https://hub.docker.com/r/serjs/go-socks5-proxy</a><br><br><br><b>Youtube Video: </b><a href=https://www.youtube.com/watch?v=IWj1-j2QWvo target=\"_blank\">Novaspirit Tech - Route Docker Traffic Through VPN Container</a><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 275
+      "id": 276
     },
     {
       "categories": [
@@ -10534,7 +10571,7 @@
       "title": "GoCostWeb",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 276
+      "id": 277
     },
     {
       "categories": [
@@ -10551,7 +10588,7 @@
       "title": "Gokapi",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 277
+      "id": 278
     },
     {
       "categories": [
@@ -10570,7 +10607,7 @@
       "restart_policy": "unless-stopped",
       "title": "Gotenberg",
       "type": 1,
-      "id": 278
+      "id": 279
     },
     {
       "categories": [
@@ -10613,7 +10650,7 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 279
+      "id": 280
     },
     {
       "categories": [
@@ -10659,7 +10696,7 @@
           "container": "/gotosocial/storage"
         }
       ],
-      "id": 280
+      "id": 281
     },
     {
       "categories": [
@@ -10678,10 +10715,10 @@
       "title": "Grafana",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 281
+      "id": 282
     },
     {
-      "id": 282,
+      "id": 283,
       "type": 3,
       "title": "Grafana Dashboard",
       "description": "Multi-platform open-source interactive visualization web application",
@@ -10739,10 +10776,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 283
+      "id": 284
     },
     {
-      "id": 284,
+      "id": 285,
       "type": 1,
       "title": "Grav",
       "name": "Grav",
@@ -10787,7 +10824,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 285,
+      "id": 286,
       "type": 3,
       "title": "Grist",
       "name": "grist",
@@ -10819,7 +10856,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 286,
+      "id": 287,
       "type": 1,
       "title": "Grocy (container)",
       "name": "Grocy",
@@ -10878,7 +10915,7 @@
       "title": "Grocy (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 287
+      "id": 288
     },
     {
       "categories": [
@@ -10903,10 +10940,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 288
+      "id": 289
     },
     {
-      "id": 289,
+      "id": 290,
       "type": 1,
       "title": "Gzdoom",
       "name": "Gzdoom",
@@ -10952,7 +10989,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 290,
+      "id": 291,
       "type": 1,
       "title": "Habridge",
       "name": "Habridge",
@@ -11004,7 +11041,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 291,
+      "id": 292,
       "type": 3,
       "title": "Halo",
       "name": "halo",
@@ -11042,7 +11079,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 292,
+      "id": 293,
       "type": 1,
       "title": "Handbrake",
       "name": "Handbrake",
@@ -11101,7 +11138,7 @@
       "title": "Hasty-Paste",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 293
+      "id": 294
     },
     {
       "type": 3,
@@ -11123,7 +11160,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 294
+      "id": 295
     },
     {
       "categories": [
@@ -11140,7 +11177,7 @@
       "title": "Hauk",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 295
+      "id": 296
     },
     {
       "categories": [
@@ -11184,10 +11221,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 296
+      "id": 297
     },
     {
-      "id": 297,
+      "id": 298,
       "type": 1,
       "title": "Healthchecks",
       "name": "Healthchecks",
@@ -11347,7 +11384,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 298,
+      "id": 299,
       "type": 1,
       "title": "Hedgedoc",
       "name": "Hedgedoc",
@@ -11458,7 +11495,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 299,
+      "id": 300,
       "type": 1,
       "title": "Heimdall",
       "name": "Heimdall",
@@ -11510,7 +11547,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 300,
+      "id": 301,
       "type": 1,
       "title": "Helium",
       "name": "Helium",
@@ -11594,10 +11631,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 301
+      "id": 302
     },
     {
-      "id": 302,
+      "id": 303,
       "type": 1,
       "title": "Hishtory-server",
       "name": "Hishtory-server",
@@ -11654,7 +11691,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 303,
+      "id": 304,
       "type": 3,
       "title": "Hister",
       "name": "hister",
@@ -11726,7 +11763,7 @@
           "bind": "/var/lib/hivekeep"
         }
       ],
-      "id": 304
+      "id": 305
     },
     {
       "categories": [
@@ -11743,7 +11780,7 @@
       "title": "Hoarder",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 305
+      "id": 306
     },
     {
       "categories": [
@@ -11790,7 +11827,7 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 306
+      "id": 307
     },
     {
       "categories": [
@@ -11807,7 +11844,7 @@
       "title": "Homarr (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 307
+      "id": 308
     },
     {
       "categories": [
@@ -11850,10 +11887,10 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 308
+      "id": 309
     },
     {
-      "id": 309,
+      "id": 310,
       "type": 1,
       "title": "Homeassistant",
       "name": "Homeassistant",
@@ -11926,7 +11963,7 @@
           "container": "/data"
         }
       ],
-      "id": 310
+      "id": 311
     },
     {
       "categories": [
@@ -11977,7 +12014,7 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 311
+      "id": 312
     },
     {
       "categories": [
@@ -11994,7 +12031,7 @@
       "title": "Homebridge (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 312
+      "id": 313
     },
     {
       "categories": [
@@ -12045,7 +12082,7 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 313
+      "id": 314
     },
     {
       "categories": [
@@ -12062,7 +12099,7 @@
       "title": "Homechart",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 314
+      "id": 315
     },
     {
       "type": 3,
@@ -12101,7 +12138,7 @@
       ],
       "note": "Set the <b>admin password</b> before you deploy: this stack publishes the UI on your LAN, and until an admin exists whoever opens the page first would choose it. Homedex stores only its Argon2id hash on first start and ignores the field afterwards; a password shorter than 12 characters stops the container with an error in its log. Then open <code>http://&lt;host&gt;:7377</code>, sign in and add your first source: the stack's read-only Docker socket proxy is prefilled as <code>tcp://docker-socket-proxy:2375</code>. Homedex only reads; the proxy rejects every Docker API write. Docs: <a href=\"https://github.com/HarshShah0203/homedex#quickstart\" target=\"_blank\">github.com/HarshShah0203/homedex</a>",
       "maintainer": "https://github.com/HarshShah0203/homedex/",
-      "id": 315
+      "id": 316
     },
     {
       "categories": [
@@ -12142,7 +12179,7 @@
           "container": "/data"
         }
       ],
-      "id": 316
+      "id": 317
     },
     {
       "type": 1,
@@ -12209,7 +12246,7 @@
         }
       ],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 317
+      "id": 318
     },
     {
       "categories": [
@@ -12226,7 +12263,7 @@
       "title": "Homepage (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 318
+      "id": 319
     },
     {
       "categories": [
@@ -12256,10 +12293,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 319
+      "id": 320
     },
     {
-      "id": 320,
+      "id": 321,
       "type": 1,
       "title": "Htpcmanager",
       "name": "Htpcmanager",
@@ -12304,7 +12341,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 321,
+      "id": 322,
       "type": 1,
       "title": "Httpd",
       "description": "Open-source HTTP server",
@@ -12346,7 +12383,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 322
+      "id": 323
     },
     {
       "description": "NZBHydra is a meta search for NZB indexers and the \"spiritual successor\" to NZBmegasearcH. It provides easy access to a number of raw and newznab based indexers.",
@@ -12392,7 +12429,7 @@
         "Other",
         "Tools"
       ],
-      "id": 323
+      "id": 324
     },
     {
       "categories": [
@@ -12408,7 +12445,7 @@
       "title": "I hate money",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 324
+      "id": 325
     },
     {
       "categories": [
@@ -12426,7 +12463,7 @@
       "title": "Immich",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 325
+      "id": 326
     },
     {
       "type": 3,
@@ -12502,10 +12539,10 @@
         "url": "https://github.com/shmolf/portainer-templates"
       },
       "maintainer": "https://github.com/shmolf/portainer-templates/",
-      "id": 326
+      "id": 327
     },
     {
-      "id": 327,
+      "id": 328,
       "type": 3,
       "title": "Inductive Automation - Ignition Gateway",
       "description": "Ignition Gateway is the primary software service that drives everything in Ignition - Single Server Deployment",
@@ -12601,7 +12638,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 328
+      "id": 329
     },
     {
       "type": 3,
@@ -12839,7 +12876,7 @@
       },
       "restart_policy": "unless-stopped",
       "maintainer": "https://github.com/shmolf/portainer-templates/",
-      "id": 329
+      "id": 330
     },
     {
       "categories": [
@@ -12856,7 +12893,7 @@
       "title": "Influxdb",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 330
+      "id": 331
     },
     {
       "categories": [
@@ -12874,7 +12911,7 @@
       "title": "Influxdb & Telegraf",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 331
+      "id": 332
     },
     {
       "categories": [
@@ -12905,10 +12942,10 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 332
+      "id": 333
     },
     {
-      "id": 333,
+      "id": 334,
       "type": 3,
       "title": "InfluxDB for Edge",
       "description": "InfluxDB Time Series Data Platformm - Single Server deployment",
@@ -12943,7 +12980,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 334,
+      "id": 335,
       "type": 1,
       "title": "Inkscape",
       "name": "Inkscape",
@@ -12989,7 +13026,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 335,
+      "id": 336,
       "type": 1,
       "title": "Intellij-idea",
       "name": "Intellij-idea",
@@ -13049,7 +13086,7 @@
       "title": "Invidious",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 336
+      "id": 337
     },
     {
       "categories": [
@@ -13097,7 +13134,7 @@
       "title": "Invoice Ninja (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 337
+      "id": 338
     },
     {
       "categories": [
@@ -13146,7 +13183,7 @@
       "title": "Invoice Ninja (swarm)",
       "type": 2,
       "maintainer": "https://github.com/mikestraney/portainer-templates/",
-      "id": 338
+      "id": 339
     },
     {
       "categories": [
@@ -13183,7 +13220,7 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/buanet/ioBroker.docker\" target=\"_blank\">https://github.com/buanet/ioBroker.docker</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/buanet/ioBroker.docker\" target=\"_blank\">https://github.com/buanet/ioBroker.docker</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 339
+      "id": 340
     },
     {
       "categories": [
@@ -13199,10 +13236,10 @@
       "title": "iperf",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 340
+      "id": 341
     },
     {
-      "id": 341,
+      "id": 342,
       "type": 2,
       "title": "IronFunctions",
       "description": "Open-source serverless computing platform",
@@ -13238,7 +13275,7 @@
       ],
       "privileged": true,
       "maintainer": "https://github.com/mikestraney/portainer-templates/",
-      "id": 342
+      "id": 343
     },
     {
       "type": 1,
@@ -13266,7 +13303,7 @@
       ],
       "privileged": true,
       "maintainer": "https://github.com/mikestraney/portainer-templates/",
-      "id": 343
+      "id": 344
     },
     {
       "categories": [
@@ -13285,10 +13322,10 @@
       "restart_policy": "unless-stopped",
       "title": "IT-Tools",
       "type": 1,
-      "id": 344
+      "id": 345
     },
     {
-      "id": 345,
+      "id": 346,
       "type": 1,
       "title": "Jackett",
       "name": "Jackett",
@@ -13393,10 +13430,10 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://my.jdownloader.org/\" target=\"_blank\">https://my.jdownloader.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/jaymoulin/docker-jdownloader\" target=\"_blank\">https://github.com/jaymoulin/docker-jdownloader</a><br><br><br><b>Youtube Video: </b><a href=https://www.youtube.com/watch?v=30MYRgCObu8&list=PL846hFPMqg3jwkxcScD1xw2bKXrJVvarc&index=4 target=\"_blank\">Novaspirit Tech - Installing JDownloader and File Browser On The Pi Docker Server</a><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 346
+      "id": 347
     },
     {
-      "id": 347,
+      "id": 348,
       "type": 1,
       "title": "Jellyfin (container)",
       "name": "Jellyfin",
@@ -13481,7 +13518,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 348
+      "id": 349
     },
     {
       "categories": [
@@ -13519,10 +13556,10 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 349
+      "id": 350
     },
     {
-      "id": 350,
+      "id": 351,
       "type": 3,
       "title": "Jellymeme",
       "name": "jellymeme",
@@ -13572,7 +13609,7 @@
       "title": "Jellyseer",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 351
+      "id": 352
     },
     {
       "categories": [
@@ -13609,7 +13646,7 @@
         }
       ],
       "maintainer": "https://github.com/Qballjos/portainer_templates/",
-      "id": 352
+      "id": 353
     },
     {
       "type": 1,
@@ -13637,7 +13674,7 @@
         }
       ],
       "maintainer": "https://github.com/mikestraney/portainer-templates/",
-      "id": 353
+      "id": 354
     },
     {
       "type": 3,
@@ -13654,10 +13691,10 @@
       },
       "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/jenkins.png",
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 354
+      "id": 355
     },
     {
-      "id": 355,
+      "id": 356,
       "type": 1,
       "title": "Joomla",
       "description": "Another free and open-source CMS",
@@ -13688,7 +13725,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 356,
+      "id": 357,
       "type": 1,
       "title": "Joplin",
       "name": "Joplin",
@@ -13734,7 +13771,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 357,
+      "id": 358,
       "type": 1,
       "title": "jotty\u00b7page",
       "name": "jotty",
@@ -13774,10 +13811,10 @@
       "title": "Jump",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 358
+      "id": 359
     },
     {
-      "id": 359,
+      "id": 360,
       "type": 1,
       "title": "JupyterLab",
       "name": "jupyterlab",
@@ -13802,7 +13839,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 360,
+      "id": 361,
       "type": 1,
       "title": "Kali-linux",
       "name": "Kali-linux",
@@ -13849,7 +13886,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 361,
+      "id": 362,
       "type": 1,
       "title": "Kanboard",
       "name": "kanboard",
@@ -13877,7 +13914,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 362,
+      "id": 363,
       "type": 3,
       "title": "Kaneo",
       "name": "kaneo",
@@ -13933,7 +13970,7 @@
       "title": "Kapowarr",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 363
+      "id": 364
     },
     {
       "type": 3,
@@ -13977,10 +14014,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 364
+      "id": 365
     },
     {
-      "id": 365,
+      "id": 366,
       "type": 1,
       "title": "Kasm",
       "name": "Kasm",
@@ -14066,10 +14103,10 @@
       "title": "Kasm Workspaces",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 366
+      "id": 367
     },
     {
-      "id": 367,
+      "id": 368,
       "type": 1,
       "title": "Kavita",
       "name": "Kavita",
@@ -14118,7 +14155,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 368,
+      "id": 369,
       "type": 1,
       "title": "Kdenlive",
       "name": "Kdenlive",
@@ -14164,7 +14201,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 369,
+      "id": 370,
       "type": 1,
       "title": "Keepassxc",
       "name": "Keepassxc",
@@ -14210,7 +14247,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 370,
+      "id": 371,
       "type": 3,
       "title": "Kener",
       "name": "kener",
@@ -14261,7 +14298,7 @@
       "title": "Kestra",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 371
+      "id": 372
     },
     {
       "type": 3,
@@ -14295,10 +14332,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 372
+      "id": 373
     },
     {
-      "id": 373,
+      "id": 374,
       "type": 1,
       "title": "Kicad",
       "name": "Kicad",
@@ -14367,10 +14404,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 374
+      "id": 375
     },
     {
-      "id": 375,
+      "id": 376,
       "type": 1,
       "title": "Kimai",
       "name": "Kimai",
@@ -14441,7 +14478,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 376,
+      "id": 377,
       "type": 3,
       "title": "KitchenOwl",
       "name": "kitchenowl",
@@ -14487,7 +14524,7 @@
       "title": "Kiwix",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 377
+      "id": 378
     },
     {
       "type": 3,
@@ -14527,7 +14564,7 @@
         "stackfile": "stacks/klaxon/docker-compose.yml"
       },
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 378
+      "id": 379
     },
     {
       "categories": [
@@ -14555,7 +14592,7 @@
       "title": "Klipper[Testing], Mainsail, Moonraker",
       "type": 3,
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 379
+      "id": 380
     },
     {
       "categories": [
@@ -14592,7 +14629,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 380
+      "id": 381
     },
     {
       "categories": [
@@ -14625,10 +14662,10 @@
       "title": "Koillection",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 381
+      "id": 382
     },
     {
-      "id": 382,
+      "id": 383,
       "type": 1,
       "title": "Kometa",
       "name": "Kometa",
@@ -14735,7 +14772,7 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/gotson/komga\" target=\"_blank\">https://github.com/gotson/komga</a><br><b>Official Docker Documentation: </b><a href=\"https://komga.org/\" target=\"_blank\">https://komga.org/</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 383
+      "id": 384
     },
     {
       "type": 3,
@@ -14783,10 +14820,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 384
+      "id": 385
     },
     {
-      "id": 385,
+      "id": 386,
       "type": 1,
       "title": "Krita",
       "name": "Krita",
@@ -14832,7 +14869,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 386,
+      "id": 387,
       "type": 3,
       "title": "Kumbara",
       "name": "kumbara",
@@ -14868,7 +14905,7 @@
       "maintainer": "https://github.com/armanckeser/selfhost-apps/"
     },
     {
-      "id": 387,
+      "id": 388,
       "type": 3,
       "title": "Langflow",
       "name": "langflow",
@@ -14954,10 +14991,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 388
+      "id": 389
     },
     {
-      "id": 389,
+      "id": 390,
       "type": 1,
       "title": "Lazylibrarian",
       "name": "Lazylibrarian",
@@ -15029,10 +15066,10 @@
       "title": "Lazytainer",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 390
+      "id": 391
     },
     {
-      "id": 391,
+      "id": 392,
       "type": 1,
       "title": "Ldap-auth",
       "name": "Ldap-auth",
@@ -15111,7 +15148,7 @@
       "title": "Leantime",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 392
+      "id": 393
     },
     {
       "categories": [
@@ -15191,7 +15228,7 @@
         }
       ],
       "maintainer": "https://github.com/SelfhostedPro/selfhosted_templates/",
-      "id": 393
+      "id": 394
     },
     {
       "categories": [
@@ -15272,7 +15309,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 394
+      "id": 395
     },
     {
       "type": 3,
@@ -15304,7 +15341,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 395
+      "id": 396
     },
     {
       "type": 1,
@@ -15352,7 +15389,7 @@
       ],
       "note": "Open <code>http://&lt;your-host&gt;:3006</code>. On the first start the app creates the admin account <code>admin@libredb.org</code>, generates its password and its signing secret, and prints the password to the container log, so read the log before signing in. Both are kept in <code>/app/data</code> and reused on later starts, which is why setting <code>ADMIN_PASSWORD</code> on its own afterwards does not change the stored one: to replace it, set <code>ADMIN_PASSWORD</code> to the new value and <code>ADMIN_PASSWORD_RESET=true</code> together for one start, then remove the flag. Saved connections, query history and the app's SQLite file all live under <code>/app/data</code>, which the volume covers. The databases you connect to are not part of this template, which runs LibreDB Studio alone. MIT licensed, no paid tier. Docs: <a href=\"https://libredb.org\">libredb.org</a>",
       "maintainer": "https://github.com/libredb/libredb-studio/",
-      "id": 396
+      "id": 397
     },
     {
       "categories": [
@@ -15378,10 +15415,10 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://libreddit.silkky.cloud/\" target=\"_blank\">https://libreddit.silkky.cloud/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/spikecodes/libreddit#2-docker\" target=\"_blank\">https://github.com/spikecodes/libreddit#2-docker</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 397
+      "id": 398
     },
     {
-      "id": 398,
+      "id": 399,
       "type": 1,
       "title": "Libreoffice",
       "name": "Libreoffice",
@@ -15483,10 +15520,10 @@
       "categories": [
         "Music"
       ],
-      "id": 399
+      "id": 400
     },
     {
-      "id": 400,
+      "id": 401,
       "type": 1,
       "title": "Librespeed",
       "name": "Librespeed",
@@ -15585,7 +15622,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 401,
+      "id": 402,
       "type": 3,
       "title": "LibreTranslate",
       "name": "libretranslate",
@@ -15618,7 +15655,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 402,
+      "id": 403,
       "type": 1,
       "title": "Librewolf",
       "name": "Librewolf",
@@ -15670,7 +15707,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 403,
+      "id": 404,
       "type": 1,
       "title": "Lidarr",
       "name": "Lidarr",
@@ -15738,7 +15775,7 @@
       "title": "Lidify",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 404
+      "id": 405
     },
     {
       "categories": [
@@ -15755,7 +15792,7 @@
       "title": "Lidify-full",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 405
+      "id": 406
     },
     {
       "type": 3,
@@ -15792,10 +15829,10 @@
       ],
       "note": "Set a <b>database password</b> before you deploy (<code>openssl rand -hex 32</code> makes a good one); the stack won't start without it. Then open <code>http://&lt;your-host&gt;:&lt;Web UI port&gt;</code> (the port you chose above, 8080 by default) and create your account: it becomes the admin. Sign-ups start closed, so nobody else can create an account until you open them in <b>Settings \u2192 Sign-ups</b>. Update with Stacks \u2192 life-console \u2192 <i>Pull and redeploy</i>. Docs: <a href=\"https://life-console.dev/docs/self-hosting\" target=\"_blank\">life-console.dev/docs/self-hosting</a>",
       "maintainer": "https://github.com/TJ-coding/life-console/",
-      "id": 406
+      "id": 407
     },
     {
-      "id": 407,
+      "id": 408,
       "type": 1,
       "title": "Limnoria",
       "name": "Limnoria",
@@ -15840,7 +15877,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 408,
+      "id": 409,
       "type": 3,
       "title": "LinkAce",
       "name": "linkace",
@@ -15914,7 +15951,7 @@
           "container": "/etc/linkding/data"
         }
       ],
-      "id": 409
+      "id": 410
     },
     {
       "categories": [
@@ -15931,7 +15968,7 @@
       "title": "Linkstack",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 410
+      "id": 411
     },
     {
       "type": 3,
@@ -15966,7 +16003,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 411
+      "id": 412
     },
     {
       "categories": [
@@ -15995,7 +16032,7 @@
       },
       "title": "Listmonk",
       "type": 3,
-      "id": 412
+      "id": 413
     },
     {
       "type": 3,
@@ -16024,10 +16061,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 413
+      "id": 414
     },
     {
-      "id": 414,
+      "id": 415,
       "type": 3,
       "title": "Litmus Edge",
       "description": "Litmus Edge is an edge data platform that enables industrial AI at scale. It connects, processes, and analyzes real-time OT data at the edge to power smart manufacturing.",
@@ -16043,7 +16080,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 415,
+      "id": 416,
       "type": 3,
       "title": "Litmus Edge Digital Factory Demo",
       "description": "Demo System for Litmus Edge. Litmus Edge is an edge data platform that enables industrial AI at scale. It connects, processes, and analyzes real-time OT data at the edge to power smart manufacturing. Note: Requires 5GB Disk Space / 3GB RAM available on the Host for deployment to succeed.",
@@ -16076,10 +16113,10 @@
       "title": "Littlelink Server",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 416
+      "id": 417
     },
     {
-      "id": 417,
+      "id": 418,
       "type": 3,
       "title": "Livebook",
       "name": "livebook",
@@ -16140,7 +16177,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 418
+      "id": 419
     },
     {
       "type": 3,
@@ -16185,10 +16222,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 419
+      "id": 420
     },
     {
-      "id": 420,
+      "id": 421,
       "type": 3,
       "title": "LiveSwitch (stack)",
       "description": "A basic LiveSwitch compose with gateway, caching, database and media server",
@@ -16210,7 +16247,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 421,
+      "id": 422,
       "type": 2,
       "title": "LiveSwitch (swarm)",
       "description": "A basic LiveSwitch stack with gateway, caching, database and media server",
@@ -16273,10 +16310,10 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/nitnelave/lldap\" target=\"_blank\">https://github.com/nitnelave/lldap</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/nitnelave/lldap\" target=\"_blank\">https://github.com/nitnelave/lldap</a><br><br><h3><b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/tools/install_lldap.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install: </b>wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/tools/install_lldap.sh | bash</h3><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 422
+      "id": 423
     },
     {
-      "id": 423,
+      "id": 424,
       "type": 1,
       "title": "Lm-studio",
       "name": "Lm-studio",
@@ -16338,7 +16375,7 @@
       "title": "Loggifly",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 424
+      "id": 425
     },
     {
       "type": 3,
@@ -16368,7 +16405,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 425
+      "id": 426
     },
     {
       "type": 1,
@@ -16407,7 +16444,7 @@
       ],
       "labels": [],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 426
+      "id": 427
     },
     {
       "type": 1,
@@ -16457,10 +16494,10 @@
       ],
       "labels": [],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 427
+      "id": 428
     },
     {
-      "id": 428,
+      "id": 429,
       "type": 1,
       "title": "Lollypop",
       "name": "Lollypop",
@@ -16506,7 +16543,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 429,
+      "id": 430,
       "type": 1,
       "title": "Luanti",
       "name": "Luanti",
@@ -16557,7 +16594,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 430,
+      "id": 431,
       "type": 1,
       "title": "LubeLogger",
       "name": "lubelogger",
@@ -16607,10 +16644,10 @@
       "title": "Lunalytics",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 431
+      "id": 432
     },
     {
-      "id": 432,
+      "id": 433,
       "type": 1,
       "title": "Lychee",
       "name": "Lychee",
@@ -16779,10 +16816,10 @@
       "restart_policy": "unless-stopped",
       "title": "LynxPrompt",
       "type": 3,
-      "id": 433
+      "id": 434
     },
     {
-      "id": 434,
+      "id": 435,
       "type": 3,
       "title": "MaestroHub",
       "description": "Industrial data orchestrator with a Unified Namespace, drag-and-drop pipelines, and 40+ protocol connectors. Built-in MCP server brings AI agents into your operational data stack.",
@@ -16819,7 +16856,7 @@
         }
       ],
       "maintainer": "https://github.com/mikestraney/portainer-templates/",
-      "id": 435
+      "id": 436
     },
     {
       "categories": [
@@ -16836,7 +16873,7 @@
       "title": "Mailpile",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 436
+      "id": 437
     },
     {
       "type": 3,
@@ -16861,10 +16898,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 437
+      "id": 438
     },
     {
-      "id": 438,
+      "id": 439,
       "type": 1,
       "title": "Maintainerr",
       "name": "maintainerr",
@@ -16930,10 +16967,10 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/krateng/maloja\" target=\"_blank\">https://github.com/krateng/maloja</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/krateng/maloja/blob/master/README.md\" target=\"_blank\">https://github.com/krateng/maloja/blob/master/README.md</a><br><br><h3><b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/tools/install_maloja.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install: </b>wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/tools/install_maloja.sh | bash</h3><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 439
+      "id": 440
     },
     {
-      "id": 440,
+      "id": 441,
       "type": 1,
       "title": "Mame",
       "name": "Mame",
@@ -17080,10 +17117,10 @@
         }
       ],
       "maintainer": "https://github.com/Abuarchiv/manawg/",
-      "id": 441
+      "id": 442
     },
     {
-      "id": 442,
+      "id": 443,
       "type": 3,
       "title": "Manubes Edge Node",
       "description": "High-performance cloud platform for industrial production management. Manubes is a no-code solution that is used to structure, monitor and control production data, systems and processes in the cloud.",
@@ -17116,7 +17153,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 443,
+      "id": 444,
       "type": 1,
       "title": "Manyfold",
       "name": "Manyfold",
@@ -17183,7 +17220,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 444,
+      "id": 445,
       "type": 1,
       "title": "MariaDB (container)",
       "description": "Performance beyond MySQL",
@@ -17246,7 +17283,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 445
+      "id": 446
     },
     {
       "type": 3,
@@ -17273,7 +17310,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 446
+      "id": 447
     },
     {
       "type": 3,
@@ -17322,10 +17359,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 447
+      "id": 448
     },
     {
-      "id": 448,
+      "id": 449,
       "type": 3,
       "title": "marimo",
       "name": "marimo",
@@ -17375,7 +17412,7 @@
       "title": "Markopolis",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 449
+      "id": 450
     },
     {
       "categories": [
@@ -17391,10 +17428,10 @@
       "title": "Marreta",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 450
+      "id": 451
     },
     {
-      "id": 451,
+      "id": 452,
       "type": 1,
       "title": "Mastodon (container)",
       "name": "Mastodon",
@@ -17683,10 +17720,10 @@
       "title": "Mastodon (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 452
+      "id": 453
     },
     {
-      "id": 453,
+      "id": 454,
       "type": 3,
       "title": "Mathesar",
       "name": "mathesar",
@@ -17735,7 +17772,7 @@
       "title": "Matomo",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 454
+      "id": 455
     },
     {
       "type": 3,
@@ -17760,10 +17797,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 455
+      "id": 456
     },
     {
-      "id": 456,
+      "id": 457,
       "type": 1,
       "title": "Mautic (container)",
       "description": "Open-source marketing automation platform",
@@ -17808,7 +17845,7 @@
       "title": "Mautic (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 457
+      "id": 458
     },
     {
       "type": 3,
@@ -17825,7 +17862,7 @@
         "stackfile": "stacks/mayan/docker-compose.yml"
       },
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 458
+      "id": 459
     },
     {
       "categories": [
@@ -17861,7 +17898,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 459
+      "id": 460
     },
     {
       "categories": [
@@ -17944,7 +17981,7 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 460
+      "id": 461
     },
     {
       "categories": [
@@ -17961,10 +17998,10 @@
       "title": "Medama",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 461
+      "id": 462
     },
     {
-      "id": 462,
+      "id": 463,
       "type": 1,
       "title": "Mediaelch",
       "name": "Mediaelch",
@@ -18010,7 +18047,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 463,
+      "id": 464,
       "type": 1,
       "title": "Medusa (container)",
       "name": "Medusa",
@@ -18077,7 +18114,7 @@
       "title": "Medusa (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 464
+      "id": 465
     },
     {
       "categories": [
@@ -18094,10 +18131,10 @@
       "title": "Meilisearch",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 465
+      "id": 466
     },
     {
-      "id": 466,
+      "id": 467,
       "type": 1,
       "title": "Melonds",
       "name": "Melonds",
@@ -18157,10 +18194,10 @@
       },
       "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/memos.png",
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 467
+      "id": 468
     },
     {
-      "id": 468,
+      "id": 469,
       "type": 1,
       "title": "Mermaid Live Editor",
       "name": "mermaid-live-editor",
@@ -18194,7 +18231,7 @@
       "title": "Meshcentral",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 469
+      "id": 470
     },
     {
       "type": 3,
@@ -18218,7 +18255,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 470
+      "id": 471
     },
     {
       "categories": [
@@ -18255,10 +18292,10 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://hub.docker.com/r/alexta69/metube\" target=\"_blank\">https://hub.docker.com/r/alexta69/metube</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/alexta69/metube\" target=\"_blank\">https://github.com/alexta69/metube</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 471
+      "id": 472
     },
     {
-      "id": 472,
+      "id": 473,
       "type": 2,
       "title": "Microsoft OMS Agent",
       "description": "Microsoft Operations Management Suite Linux agent.",
@@ -18300,7 +18337,7 @@
       "title": "Midarr",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 473
+      "id": 474
     },
     {
       "categories": [
@@ -18334,7 +18371,7 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.minecraft.net/en-us\" target=\"_blank\">https://www.minecraft.net/en-us</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/itzg/docker-minecraft-server#using-docker-compose\" target=\"_blank\">https://github.com/itzg/docker-minecraft-server#using-docker-compose</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 474
+      "id": 475
     },
     {
       "type": 3,
@@ -18380,7 +18417,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 475
+      "id": 476
     },
     {
       "categories": [
@@ -18415,7 +18452,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 476
+      "id": 477
     },
     {
       "categories": [
@@ -18431,10 +18468,10 @@
       "title": "Miniflux",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 477
+      "id": 478
     },
     {
-      "id": 478,
+      "id": 479,
       "type": 1,
       "title": "Minio (container)",
       "description": "A distributed object storage server built for cloud applications and devops",
@@ -18495,10 +18532,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 479
+      "id": 480
     },
     {
-      "id": 480,
+      "id": 481,
       "type": 1,
       "title": "Minisatip",
       "name": "Minisatip",
@@ -18551,7 +18588,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 481,
+      "id": 482,
       "type": 1,
       "title": "Modmanager",
       "name": "Modmanager",
@@ -18596,7 +18633,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 482,
+      "id": 483,
       "type": 1,
       "title": "Modrinth",
       "name": "Modrinth",
@@ -18642,7 +18679,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 483,
+      "id": 484,
       "type": 1,
       "title": "Mongo",
       "description": "Open-source document-oriented database",
@@ -18677,7 +18714,7 @@
       },
       "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/mongodb.png",
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 484
+      "id": 485
     },
     {
       "categories": [
@@ -18694,7 +18731,7 @@
       "title": "Monica",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 485
+      "id": 486
     },
     {
       "categories": [
@@ -18711,7 +18748,7 @@
       "title": "Moodle",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 486
+      "id": 487
     },
     {
       "type": 1,
@@ -18783,10 +18820,10 @@
         }
       ],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 487
+      "id": 488
     },
     {
-      "id": 488,
+      "id": 489,
       "type": 1,
       "title": "Msedge",
       "name": "Msedge",
@@ -18838,7 +18875,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 489,
+      "id": 490,
       "type": 1,
       "title": "Mstream",
       "name": "Mstream",
@@ -18888,7 +18925,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 490,
+      "id": 491,
       "type": 1,
       "title": "Mullvad-browser",
       "name": "Mullvad-browser",
@@ -18992,7 +19029,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 491
+      "id": 492
     },
     {
       "categories": [
@@ -19039,7 +19076,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 492
+      "id": 493
     },
     {
       "categories": [
@@ -19076,10 +19113,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 493
+      "id": 494
     },
     {
-      "id": 494,
+      "id": 495,
       "type": 3,
       "title": "MyIP",
       "name": "myip",
@@ -19153,10 +19190,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 495
+      "id": 496
     },
     {
-      "id": 496,
+      "id": 497,
       "type": 1,
       "title": "Mylar3",
       "name": "Mylar3",
@@ -19234,7 +19271,7 @@
         }
       ],
       "maintainer": "https://github.com/mikestraney/portainer-templates/",
-      "id": 497
+      "id": 498
     },
     {
       "type": 3,
@@ -19273,7 +19310,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 498
+      "id": 499
     },
     {
       "type": 3,
@@ -19302,10 +19339,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 499
+      "id": 500
     },
     {
-      "id": 500,
+      "id": 501,
       "type": 1,
       "title": "Mysql-workbench",
       "name": "Mysql-workbench",
@@ -19408,7 +19445,7 @@
         }
       ],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 501
+      "id": 502
     },
     {
       "categories": [
@@ -19425,7 +19462,7 @@
       "title": "N8n (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 502
+      "id": 503
     },
     {
       "type": 3,
@@ -19441,7 +19478,7 @@
         "stackfile": "nats/compose.yaml"
       },
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 503
+      "id": 504
     },
     {
       "categories": [
@@ -19475,7 +19512,7 @@
       "title": "Navidrome",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 504
+      "id": 505
     },
     {
       "categories": [
@@ -19492,7 +19529,7 @@
       "title": "Neko",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 505
+      "id": 506
     },
     {
       "categories": [
@@ -19509,7 +19546,7 @@
       "title": "NetAlertX",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 506
+      "id": 507
     },
     {
       "type": 1,
@@ -19575,7 +19612,7 @@
         }
       ],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 507
+      "id": 508
     },
     {
       "categories": [
@@ -19592,10 +19629,10 @@
       "title": "Netboot.xyz (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 508
+      "id": 509
     },
     {
-      "id": 509,
+      "id": 510,
       "type": 1,
       "title": "Netbox",
       "name": "Netbox",
@@ -19832,10 +19869,10 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 510
+      "id": 511
     },
     {
-      "id": 511,
+      "id": 512,
       "type": 1,
       "title": "Nextcloud (container)",
       "name": "Nextcloud",
@@ -19931,7 +19968,7 @@
       "title": "Nextcloud (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 512
+      "id": 513
     },
     {
       "categories": [
@@ -19981,7 +20018,7 @@
       "title": "Nextcloud (swarm)",
       "type": 2,
       "maintainer": "https://github.com/mikestraney/portainer-templates/",
-      "id": 513
+      "id": 514
     },
     {
       "type": 2,
@@ -20010,7 +20047,7 @@
         }
       ],
       "maintainer": "https://github.com/mikestraney/portainer-templates/",
-      "id": 514
+      "id": 515
     },
     {
       "categories": [
@@ -20027,10 +20064,10 @@
       "title": "Nexterm",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 515
+      "id": 516
     },
     {
-      "id": 516,
+      "id": 517,
       "type": 1,
       "title": "Nginx",
       "description": "High performance web server",
@@ -20090,7 +20127,7 @@
         }
       ],
       "maintainer": "https://github.com/Qballjos/portainer_templates/",
-      "id": 517
+      "id": 518
     },
     {
       "categories": [
@@ -20114,7 +20151,7 @@
       "title": "Nginx Proxy Manager (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 518
+      "id": 519
     },
     {
       "categories": [
@@ -20181,7 +20218,7 @@
       "type": 3,
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://nginxproxymanager.com/\" target=\"_blank\">https://nginxproxymanager.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://nginxproxymanager.com/setup/#running-the-app\" target=\"_blank\">https://nginxproxymanager.com/setup/#running-the-app</a><br><h3><b>Pi-Hosted dedicated documentation: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/nginx_proxy_manager.md\" target=\"_blank\">nginx_proxy_manager.md</a></h3><br><br><br><b>Youtube Video: </b><a href=https://www.youtube.com/watch?v=yl2Laxbqvo8&list=PL846hFPMqg3jwkxcScD1xw2bKXrJVvarc&index=10 target=\"_blank\">Novaspirit Tech - Installing Nginx Proxy Manager on Docker</a><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 519
+      "id": 520
     },
     {
       "categories": [
@@ -20230,7 +20267,7 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://nginxproxymanager.com/\" target=\"_blank\">https://nginxproxymanager.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://nginxproxymanager.com/setup/\" target=\"_blank\">https://nginxproxymanager.com/setup/</a><br><h3><b>Pi-Hosted dedicated documentation: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/nginx_proxy_manager.md\" target=\"_blank\">nginx_proxy_manager.md</a></h3><br><br><br><b>Youtube Video: </b><a href=https://www.youtube.com/watch?v=yl2Laxbqvo8&list=PL846hFPMqg3jwkxcScD1xw2bKXrJVvarc&index=10 target=\"_blank\">Novaspirit Tech - Installing Nginx Proxy Manager on Docker</a><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 520
+      "id": 521
     },
     {
       "categories": [
@@ -20275,10 +20312,10 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://nginxproxymanager.com/\" target=\"_blank\">https://nginxproxymanager.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://nginxproxymanager.com/setup/\" target=\"_blank\">https://nginxproxymanager.com/setup/</a><br><h3><b>Pi-Hosted dedicated documentation: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/nginx_proxy_manager.md\" target=\"_blank\">nginx_proxy_manager.md</a></h3><br><br><br><b>Youtube Video: </b><a href=https://www.youtube.com/watch?v=yl2Laxbqvo8&list=PL846hFPMqg3jwkxcScD1xw2bKXrJVvarc&index=10 target=\"_blank\">Novaspirit Tech - Installing Nginx Proxy Manager on Docker</a><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 521
+      "id": 522
     },
     {
-      "id": 522,
+      "id": 523,
       "type": 1,
       "title": "Ngircd",
       "name": "Ngircd",
@@ -20341,10 +20378,10 @@
       "type": 3,
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://nitter.net/\" target=\"_blank\">https://nitter.net/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/zedeus/nitter\" target=\"_blank\">https://github.com/zedeus/nitter</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 523
+      "id": 524
     },
     {
-      "id": 524,
+      "id": 525,
       "type": 3,
       "title": "NocoBase",
       "name": "nocobase",
@@ -20397,10 +20434,10 @@
       "title": "NocoDB",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 525
+      "id": 526
     },
     {
-      "id": 526,
+      "id": 527,
       "type": 3,
       "title": "Node-Red",
       "description": "Low-code programming for event-driven applications",
@@ -20423,7 +20460,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 527,
+      "id": 528,
       "type": 1,
       "title": "NodeJS",
       "description": "JavaScript-based platform for server-side and networking applications",
@@ -20438,7 +20475,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 528,
+      "id": 529,
       "type": 1,
       "title": "Nomacs",
       "name": "Nomacs",
@@ -20548,7 +20585,7 @@
       "privileged": true,
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/azinchen/nordvpn\" target=\"_blank\">https://github.com/azinchen/nordvpn</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/azinchen/nordvpn\" target=\"_blank\">https://hub.docker.com/r/azinchen/nordvpn</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 529
+      "id": 530
     },
     {
       "categories": [
@@ -20587,7 +20624,7 @@
           "container": "/etc/ntfy"
         }
       ],
-      "id": 530
+      "id": 531
     },
     {
       "type": 3,
@@ -20622,7 +20659,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 531
+      "id": 532
     },
     {
       "categories": [
@@ -20679,7 +20716,7 @@
       "type": 1,
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://networkupstools.org\" target=\"_blank\">https://networkupstools.org</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/instantlinux/nut-upsd\" target=\"_blank\">https://hub.docker.com/r/instantlinux/nut-upsd</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 532
+      "id": 533
     },
     {
       "categories": [
@@ -20696,7 +20733,7 @@
       "title": "Nutify",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 533
+      "id": 534
     },
     {
       "categories": [
@@ -20719,10 +20756,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 534
+      "id": 535
     },
     {
-      "id": 535,
+      "id": 536,
       "type": 1,
       "title": "Nzbget",
       "name": "Nzbget",
@@ -20783,7 +20820,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 536,
+      "id": 537,
       "type": 1,
       "title": "Nzbhydra2",
       "name": "Nzbhydra2",
@@ -20832,7 +20869,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 537,
+      "id": 538,
       "type": 1,
       "title": "Obsidian",
       "name": "Obsidian",
@@ -20918,7 +20955,7 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://octoprint.org/\" target=\"_blank\">https://octoprint.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/octoprint/octoprint\" target=\"_blank\">https://hub.docker.com/r/octoprint/octoprint</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 538
+      "id": 539
     },
     {
       "type": 1,
@@ -20956,7 +20993,7 @@
         }
       ],
       "maintainer": "https://github.com/mikestraney/portainer-templates/",
-      "id": 539
+      "id": 540
     },
     {
       "type": 3,
@@ -20986,7 +21023,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 540
+      "id": 541
     },
     {
       "type": 3,
@@ -21003,7 +21040,7 @@
       },
       "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/ollama.png",
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 541
+      "id": 542
     },
     {
       "categories": [
@@ -21048,10 +21085,10 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.tp-link.com/us/business-networking/omada-sdn-controller/\" target=\"_blank\">https://www.tp-link.com/us/business-networking/omada-sdn-controller/</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/mbentley/omada-controller\" target=\"_blank\">https://hub.docker.com/r/mbentley/omada-controller</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 542
+      "id": 543
     },
     {
-      "id": 543,
+      "id": 544,
       "type": 1,
       "title": "Ombi (container)",
       "name": "Ombi",
@@ -21118,10 +21155,10 @@
       "title": "Ombi (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 544
+      "id": 545
     },
     {
-      "id": 545,
+      "id": 546,
       "type": 1,
       "title": "OmniTools",
       "name": "omnitools",
@@ -21142,7 +21179,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 546,
+      "id": 547,
       "type": 1,
       "title": "Onlyoffice",
       "name": "Onlyoffice",
@@ -21188,7 +21225,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 547,
+      "id": 548,
       "type": 3,
       "categories": [
         "edge"
@@ -21268,7 +21305,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 548
+      "id": 549
     },
     {
       "type": 3,
@@ -21302,10 +21339,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 549
+      "id": 550
     },
     {
-      "id": 550,
+      "id": 551,
       "type": 3,
       "title": "OpenAMT",
       "description": "OpenAMT Cloud Toolkit",
@@ -21369,7 +21406,7 @@
       "title": "OpenBudgeteer",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 551
+      "id": 552
     },
     {
       "type": 3,
@@ -21410,10 +21447,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 552
+      "id": 553
     },
     {
-      "id": 553,
+      "id": 554,
       "type": 2,
       "title": "OpenFaaS",
       "name": "func",
@@ -21431,7 +21468,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 554,
+      "id": 555,
       "type": 1,
       "title": "Opengist",
       "name": "opengist",
@@ -21457,7 +21494,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 555,
+      "id": 556,
       "type": 3,
       "title": "OpenList",
       "name": "openlist",
@@ -21543,10 +21580,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 556
+      "id": 557
     },
     {
-      "id": 557,
+      "id": 558,
       "type": 1,
       "title": "Openshot",
       "name": "Openshot",
@@ -21592,7 +21629,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 558,
+      "id": 559,
       "type": 1,
       "title": "Openssh-server",
       "name": "Openssh-server",
@@ -21754,7 +21791,7 @@
       ],
       "note": "Open <code>http://&lt;your-host&gt;:8080</code> right after deploying: the first visitor creates the owner account (paste the setup token there if you set one), and sign-up is closed after that. Everything OpenTodo stores is in the <code>/data</code> volume, so back that volume up. On plain http, tasks, sync and sharing work; installing the app, offline use, push notifications and passkeys need https: put a reverse proxy with a certificate in front and set the public https address. Updates: re-pull the <code>stable</code> image (Recreate with <b>Re-pull image</b>). Docs: <a href=\"https://open-todo.app/docs/self-hosting/portainer/\" target=\"_blank\">open-todo.app/docs/self-hosting/portainer</a>",
       "maintainer": "https://github.com/OpenTodoApp/OpenTodo/",
-      "id": 559
+      "id": 560
     },
     {
       "categories": [
@@ -21798,7 +21835,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 560
+      "id": 561
     },
     {
       "description": "OpenVPN Access Server is a full featured secure network tunneling VPN software solution that integrates OpenVPN server capabilities, enterprise management capabilities, simplified OpenVPN Connect UI, and OpenVPN Client software packages that accommodate Windows, MAC, Linux, Android, and iOS environments.",
@@ -21847,10 +21884,10 @@
       "categories": [
         "Other"
       ],
-      "id": 561
+      "id": 562
     },
     {
-      "id": 562,
+      "id": 563,
       "type": 1,
       "title": "Opera",
       "name": "Opera",
@@ -21917,7 +21954,7 @@
       "title": "OpnForm",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 563
+      "id": 564
     },
     {
       "type": 3,
@@ -21946,10 +21983,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 564
+      "id": 565
     },
     {
-      "id": 565,
+      "id": 566,
       "type": 1,
       "title": "Orcaslicer",
       "name": "Orcaslicer",
@@ -22029,7 +22066,7 @@
         }
       ],
       "maintainer": "https://github.com/Qballjos/portainer_templates/",
-      "id": 566
+      "id": 567
     },
     {
       "categories": [
@@ -22047,7 +22084,7 @@
       "title": "Organizr (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 567
+      "id": 568
     },
     {
       "categories": [
@@ -22085,7 +22122,7 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://organizr.app/\" target=\"_blank\">https://organizr.app/</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/organizr/organizr\" target=\"_blank\">https://hub.docker.com/r/organizr/organizr</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 568
+      "id": 569
     },
     {
       "categories": [
@@ -22103,7 +22140,7 @@
       "title": "Ory Kratos (Oathkeeper)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 569
+      "id": 570
     },
     {
       "categories": [
@@ -22121,10 +22158,10 @@
       "title": "Ory Kratos (Standalone)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 570
+      "id": 571
     },
     {
-      "id": 571,
+      "id": 572,
       "type": 1,
       "title": "Oscam",
       "name": "Oscam",
@@ -22225,7 +22262,7 @@
       "restart_policy": "unless-stopped",
       "title": "Outline",
       "type": 3,
-      "id": 572
+      "id": 573
     },
     {
       "type": 1,
@@ -22292,7 +22329,7 @@
         }
       ],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 573
+      "id": 574
     },
     {
       "categories": [
@@ -22309,7 +22346,7 @@
       "title": "Overseerr (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 574
+      "id": 575
     },
     {
       "type": 3,
@@ -22326,7 +22363,7 @@
       },
       "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/owncast.png",
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 575
+      "id": 576
     },
     {
       "categories": [
@@ -22383,7 +22420,7 @@
       "title": "Owncloud",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 576
+      "id": 577
     },
     {
       "categories": [
@@ -22418,7 +22455,7 @@
       "restart_policy": "unless-stopped",
       "title": "PairDrop",
       "type": 1,
-      "id": 577
+      "id": 578
     },
     {
       "categories": [
@@ -22489,10 +22526,10 @@
       "type": 3,
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/paperless-ngx/paperless-ngx\" target=\"_blank\">https://github.com/paperless-ngx/paperless-ngx</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/paperless-ngx/paperless-ngx\" target=\"_blank\">https://github.com/paperless-ngx/paperless-ngx</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 578
+      "id": 579
     },
     {
-      "id": 579,
+      "id": 580,
       "type": 1,
       "title": "Paperless-AI",
       "name": "paperless-ai",
@@ -22517,7 +22554,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 580,
+      "id": 581,
       "type": 3,
       "title": "Papra",
       "name": "papra",
@@ -22602,7 +22639,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 581
+      "id": 582
     },
     {
       "categories": [
@@ -22720,7 +22757,7 @@
       "type": 3,
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/passbolt.md\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted/blob/master/docs/passbolt.md</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/passbolt.md\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted/blob/master/docs/passbolt.md</a><br><h3><b>Pi-Hosted dedicated documentation: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/passbolt.md\" target=\"_blank\">passbolt.md</a></h3><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 582
+      "id": 583
     },
     {
       "categories": [
@@ -22739,7 +22776,7 @@
       "title": "Passky Client",
       "type": 1,
       "maintainer": "https://github.com/Qballjos/portainer_templates/",
-      "id": 583
+      "id": 584
     },
     {
       "categories": [
@@ -22776,10 +22813,10 @@
         }
       ],
       "maintainer": "https://github.com/Qballjos/portainer_templates/",
-      "id": 584
+      "id": 585
     },
     {
-      "id": 585,
+      "id": 586,
       "type": 3,
       "title": "Password Pusher",
       "name": "password-pusher",
@@ -22816,7 +22853,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 586,
+      "id": 587,
       "type": 1,
       "title": "Pcsx2",
       "name": "Pcsx2",
@@ -22862,7 +22899,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 587,
+      "id": 588,
       "type": 1,
       "title": "Pelorus",
       "name": "Pelorus",
@@ -22966,7 +23003,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 588
+      "id": 589
     },
     {
       "type": 3,
@@ -23034,7 +23071,7 @@
         "url": "https://github.com/shmolf/portainer-templates"
       },
       "maintainer": "https://github.com/shmolf/portainer-templates/",
-      "id": 589
+      "id": 590
     },
     {
       "type": 3,
@@ -23072,7 +23109,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 590
+      "id": 591
     },
     {
       "type": 3,
@@ -23110,7 +23147,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 591
+      "id": 592
     },
     {
       "categories": [
@@ -23147,7 +23184,7 @@
       "title": "Petio",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 592
+      "id": 593
     },
     {
       "categories": [
@@ -23200,7 +23237,7 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.pgadmin.org/\" target=\"_blank\">https://www.pgadmin.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html\" target=\"_blank\">https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html</a><br><br><h3><b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/tools/install_pgadmin.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install: </b>wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/tools/install_pgadmin.sh | bash</h3><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 593
+      "id": 594
     },
     {
       "type": 3,
@@ -23223,7 +23260,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 594
+      "id": 595
     },
     {
       "categories": [
@@ -23241,7 +23278,7 @@
       "title": "Photoprism",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 595
+      "id": 596
     },
     {
       "categories": [
@@ -23285,10 +23322,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 596
+      "id": 597
     },
     {
-      "id": 597,
+      "id": 598,
       "type": 1,
       "title": "Phpmyadmin",
       "name": "Phpmyadmin",
@@ -23376,7 +23413,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 598
+      "id": 599
     },
     {
       "categories": [
@@ -23410,7 +23447,7 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 599
+      "id": 600
     },
     {
       "categories": [
@@ -23483,7 +23520,7 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 600
+      "id": 601
     },
     {
       "categories": [
@@ -23519,10 +23556,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 601
+      "id": 602
     },
     {
-      "id": 602,
+      "id": 603,
       "type": 3,
       "title": "PicoShare",
       "name": "picoshare",
@@ -23553,7 +23590,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 603,
+      "id": 604,
       "type": 1,
       "title": "Pidgin",
       "name": "Pidgin",
@@ -23614,7 +23651,7 @@
       "title": "Pinchflat",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 604
+      "id": 605
     },
     {
       "categories": [
@@ -23631,10 +23668,10 @@
       "title": "Pingvin",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 605
+      "id": 606
     },
     {
-      "id": 606,
+      "id": 607,
       "type": 1,
       "title": "Piper",
       "name": "Piper",
@@ -23721,7 +23758,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 607,
+      "id": 608,
       "type": 1,
       "title": "Piwigo",
       "name": "Piwigo",
@@ -23804,7 +23841,7 @@
       "privileged": true,
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"http://www.penguintutor.com/projects/pixel-server\" target=\"_blank\">http://www.penguintutor.com/projects/pixel-server</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/Macleykun/pixel-server\" target=\"_blank\">https://github.com/Macleykun/pixel-server</a><br><h3><b>Pi-Hosted dedicated documentation: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/pixel-server_setup.md\" target=\"_blank\">pixel-server_setup.md</a></h3><br><br><h3><b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/tools/install_pixel-server.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install: </b>wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/tools/install_pixel-server.sh | bash</h3><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 608
+      "id": 609
     },
     {
       "categories": [
@@ -23822,10 +23859,10 @@
       "title": "Plane",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 609
+      "id": 610
     },
     {
-      "id": 610,
+      "id": 611,
       "type": 1,
       "title": "Planka (container)",
       "name": "Planka",
@@ -23972,10 +24009,10 @@
       },
       "title": "Planka (stack)",
       "type": 3,
-      "id": 611
+      "id": 612
     },
     {
-      "id": 612,
+      "id": 613,
       "type": 1,
       "title": "PlantUML Server",
       "name": "plantuml-server",
@@ -24022,7 +24059,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 613
+      "id": 614
     },
     {
       "type": 1,
@@ -24044,10 +24081,10 @@
         "8447/tcp"
       ],
       "maintainer": "https://github.com/mikestraney/portainer-templates/",
-      "id": 614
+      "id": 615
     },
     {
-      "id": 615,
+      "id": 616,
       "type": 1,
       "title": "Plex",
       "name": "Plex",
@@ -24185,7 +24222,7 @@
         }
       ],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 616
+      "id": 617
     },
     {
       "categories": [
@@ -24229,7 +24266,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 617
+      "id": 618
     },
     {
       "type": 3,
@@ -24246,10 +24283,10 @@
         "stackfile": "stacks/plextraktsync/docker-compose.yml"
       },
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 618
+      "id": 619
     },
     {
-      "id": 619,
+      "id": 620,
       "type": 1,
       "title": "Plone",
       "description": "A free and open-source CMS built on top of Zope",
@@ -24285,7 +24322,7 @@
       },
       "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/pocketbase.png",
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 620
+      "id": 621
     },
     {
       "categories": [
@@ -24346,10 +24383,10 @@
           "bind": "/portainer/Files/AppData/PodFetch/db"
         }
       ],
-      "id": 621
+      "id": 622
     },
     {
-      "id": 622,
+      "id": 623,
       "type": 2,
       "title": "Portainer Agent",
       "description": "Manage all the resources in your Swarm cluster",
@@ -24379,10 +24416,10 @@
       "title": "Poste.io",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 623
+      "id": 624
     },
     {
-      "id": 624,
+      "id": 625,
       "type": 1,
       "title": "PostgreSQL",
       "description": "The most advanced open-source database",
@@ -24427,10 +24464,10 @@
       "title": "Postiz",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 625
+      "id": 626
     },
     {
-      "id": 626,
+      "id": 627,
       "type": 1,
       "title": "Ppsspp",
       "name": "Ppsspp",
@@ -24503,7 +24540,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 627
+      "id": 628
     },
     {
       "type": 3,
@@ -24553,7 +24590,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 628
+      "id": 629
     },
     {
       "categories": [
@@ -24570,7 +24607,7 @@
       "title": "PriceGhost",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 629
+      "id": 630
     },
     {
       "categories": [
@@ -24612,7 +24649,7 @@
       "title": "Pritunl",
       "type": 3,
       "maintainer": "https://github.com/SelfhostedPro/selfhosted_templates/",
-      "id": 630
+      "id": 631
     },
     {
       "categories": [
@@ -24657,10 +24694,10 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://privatebin.info/\" target=\"_blank\">https://privatebin.info/</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/privatebin/nginx-fpm-alpine\" target=\"_blank\">https://hub.docker.com/r/privatebin/nginx-fpm-alpine</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 631
+      "id": 632
     },
     {
-      "id": 632,
+      "id": 633,
       "type": 3,
       "title": "Pro Mosquitto with Management Center",
       "description": "Commercial-grade Mosquitto MQTT broker with Management Center",
@@ -24696,7 +24733,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 633,
+      "id": 634,
       "type": 1,
       "title": "Projectsend",
       "name": "Projectsend",
@@ -24770,10 +24807,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 634
+      "id": 635
     },
     {
-      "id": 635,
+      "id": 636,
       "type": 1,
       "title": "Prowlarr",
       "name": "Prowlarr",
@@ -24831,10 +24868,10 @@
       "title": "ProxiTok",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 636
+      "id": 637
     },
     {
-      "id": 637,
+      "id": 638,
       "type": 3,
       "title": "PsiTransfer",
       "name": "psitransfer",
@@ -24892,7 +24929,7 @@
       },
       "title": "Pumperly",
       "type": 3,
-      "id": 638
+      "id": 639
     },
     {
       "type": 1,
@@ -25008,7 +25045,7 @@
       ],
       "labels": [],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 639
+      "id": 640
     },
     {
       "categories": [
@@ -25024,10 +25061,10 @@
       "title": "pve-exporter",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 640
+      "id": 641
     },
     {
-      "id": 641,
+      "id": 642,
       "type": 1,
       "title": "Pwndrop",
       "name": "Pwndrop",
@@ -25079,7 +25116,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 642,
+      "id": 643,
       "type": 1,
       "title": "Pycharm",
       "name": "Pycharm",
@@ -25162,10 +25199,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 643
+      "id": 644
     },
     {
-      "id": 644,
+      "id": 645,
       "type": 1,
       "title": "Pydio-cells",
       "name": "Pydio-cells",
@@ -25222,7 +25259,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 645,
+      "id": 646,
       "type": 1,
       "title": "Pyload-ng",
       "name": "Pyload-ng",
@@ -25272,7 +25309,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 646,
+      "id": 647,
       "type": 1,
       "title": "Qbittorrent",
       "name": "Qbittorrent",
@@ -25335,7 +25372,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 647,
+      "id": 648,
       "type": 1,
       "title": "Qdirstat",
       "name": "Qdirstat",
@@ -25399,10 +25436,10 @@
       },
       "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/qdrant.png",
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 648
+      "id": 649
     },
     {
-      "id": 649,
+      "id": 650,
       "type": 1,
       "title": "Qemu-static",
       "name": "Qemu-static",
@@ -25501,7 +25538,7 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 650
+      "id": 651
     },
     {
       "categories": [
@@ -25537,7 +25574,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 651
+      "id": 652
     },
     {
       "description": "Quassel IRC is a modern, cross-platform, distributed IRC client, meaning that one (or multiple) client(s) can attach to and detach from a central core -- much like the popular combination of screen and a text-based IRC client such as WeeChat, but graphical. Blowfish support and optional web-ui included.",
@@ -25578,10 +25615,10 @@
       "categories": [
         "Messenger"
       ],
-      "id": 652
+      "id": 653
     },
     {
-      "id": 653,
+      "id": 654,
       "type": 1,
       "title": "RabbitMQ (container)",
       "description": "Highly reliable enterprise messaging system",
@@ -25617,7 +25654,7 @@
       },
       "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/rabbitmq.png",
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 654
+      "id": 655
     },
     {
       "categories": [
@@ -25634,10 +25671,10 @@
       "title": "Rackula",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 655
+      "id": 656
     },
     {
-      "id": 656,
+      "id": 657,
       "type": 1,
       "title": "Radarr",
       "name": "Radarr",
@@ -25690,7 +25727,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 657,
+      "id": 658,
       "type": 1,
       "title": "Raneto",
       "name": "Raneto",
@@ -25762,10 +25799,10 @@
       "type": 3,
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/rpi_docker_monitor.md\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted/blob/master/docs/rpi_docker_monitor.md</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/rpi_docker_monitor.md\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted/blob/master/docs/rpi_docker_monitor.md</a><br><h3><b>Pi-Hosted dedicated documentation: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/rpi_docker_monitor.md\" target=\"_blank\">rpi_docker_monitor.md</a></h3><br><br><h3><b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/tools/rpi_docker_monitor.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install: </b>wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/tools/rpi_docker_monitor.sh | bash</h3><br><br><b>Youtube Video: </b><a href=https://www.youtube.com/watch?v=IoD3vFuep64&list=PL846hFPMqg3jwkxcScD1xw2bKXrJVvarc&index=8 target=\"_blank\">Novaspirit Tech - Raspberry Pi Docker Monitoring</a><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 658
+      "id": 659
     },
     {
-      "id": 659,
+      "id": 660,
       "type": 1,
       "title": "Rawtherapee",
       "name": "Rawtherapee",
@@ -25835,7 +25872,7 @@
         }
       ],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 660
+      "id": 661
     },
     {
       "categories": [
@@ -25862,7 +25899,7 @@
           "readonly": true
         }
       ],
-      "id": 661
+      "id": 662
     },
     {
       "categories": [
@@ -25886,7 +25923,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 662
+      "id": 663
     },
     {
       "type": 1,
@@ -25963,7 +26000,7 @@
         }
       ],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 663
+      "id": 664
     },
     {
       "categories": [
@@ -25980,10 +26017,10 @@
       "title": "Readarr (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 664
+      "id": 665
     },
     {
-      "id": 665,
+      "id": 666,
       "type": 1,
       "title": "Readeck",
       "name": "readeck",
@@ -26008,7 +26045,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 666,
+      "id": 667,
       "type": 1,
       "title": "Redis (container)",
       "description": "Open-source in-memory data structure store",
@@ -26050,7 +26087,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 667
+      "id": 668
     },
     {
       "type": 3,
@@ -26074,10 +26111,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 668
+      "id": 669
     },
     {
-      "id": 669,
+      "id": 670,
       "type": 2,
       "title": "Redis Cluster (swarm)",
       "description": "Open-source in-memory data structure store - Cluster mode",
@@ -26120,10 +26157,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 670
+      "id": 671
     },
     {
-      "id": 671,
+      "id": 672,
       "type": 1,
       "title": "Redmine",
       "description": "Open-source project management tool",
@@ -26158,10 +26195,10 @@
         "stackfile": "redpanda/compose.yaml"
       },
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 672
+      "id": 673
     },
     {
-      "id": 673,
+      "id": 674,
       "type": 1,
       "title": "Registry",
       "description": "Docker image registry",
@@ -26182,7 +26219,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 674,
+      "id": 675,
       "type": 1,
       "title": "Registry (cache)",
       "description": "Docker image registry configured as a DockerHub pull through cache",
@@ -26210,7 +26247,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 675,
+      "id": 676,
       "type": 1,
       "title": "Remmina",
       "name": "Remmina",
@@ -26269,7 +26306,7 @@
       "title": "Remotely",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 676
+      "id": 677
     },
     {
       "type": 3,
@@ -26323,10 +26360,10 @@
         }
       ],
       "maintainer": "https://github.com/SauerExe/ReplayHaven/",
-      "id": 677
+      "id": 678
     },
     {
-      "id": 678,
+      "id": 679,
       "type": 1,
       "title": "Resilio-sync",
       "name": "Resilio-sync",
@@ -26380,7 +26417,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 679,
+      "id": 680,
       "type": 1,
       "title": "Retroarch",
       "name": "Retroarch",
@@ -26451,7 +26488,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 680
+      "id": 681
     },
     {
       "type": 3,
@@ -26482,7 +26519,7 @@
       ],
       "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/rocket-chat.png",
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 681
+      "id": 682
     },
     {
       "categories": [
@@ -26499,7 +26536,7 @@
       "title": "RomM",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 682
+      "id": 683
     },
     {
       "type": 3,
@@ -26539,10 +26576,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 683
+      "id": 684
     },
     {
-      "id": 684,
+      "id": 685,
       "type": 1,
       "title": "Rpcs3",
       "name": "Rpcs3",
@@ -26602,10 +26639,10 @@
       "title": "Rport",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 685
+      "id": 686
     },
     {
-      "id": 686,
+      "id": 687,
       "type": 1,
       "title": "Rsnapshot",
       "name": "Rsnapshot",
@@ -26658,7 +26695,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 687,
+      "id": 688,
       "type": 1,
       "title": "RSSHub",
       "name": "rsshub",
@@ -26699,10 +26736,10 @@
       "title": "Rust Desk (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 688
+      "id": 689
     },
     {
-      "id": 689,
+      "id": 690,
       "type": 1,
       "title": "Rustdesk (container)",
       "name": "Rustdesk",
@@ -26748,7 +26785,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 690,
+      "id": 691,
       "type": 3,
       "title": "RustFS",
       "name": "rustfs",
@@ -26856,10 +26893,10 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 691
+      "id": 692
     },
     {
-      "id": 692,
+      "id": 693,
       "type": 3,
       "title": "Ryot",
       "name": "ryot",
@@ -26908,7 +26945,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 693,
+      "id": 694,
       "type": 1,
       "title": "Sabnzbd",
       "name": "Sabnzbd",
@@ -27026,7 +27063,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 694
+      "id": 695
     },
     {
       "categories": [
@@ -27092,10 +27129,10 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.samba.org/\" target=\"_blank\">https://www.samba.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/dperson/samba\" target=\"_blank\">https://github.com/dperson/samba</a><br><br><br><b>Youtube Videos:</b><br><ul><li><a href=https://www.youtube.com/watch?v=2zZ3_1GRWrM&list=PL846hFPMqg3jwkxcScD1xw2bKXrJVvarc&index=11 target=\"_blank\">Novaspirit Tech - Setting up Raspberry Pi Samba Server For File Sharing on Docker</a></li><li><a href=https://www.youtube.com/watch?v=9ln6UFH4z8o target=\"_blank\">Novaspirit Tech - Building NAS with Container</a></li></ul><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 695
+      "id": 696
     },
     {
-      "id": 696,
+      "id": 697,
       "type": 1,
       "title": "Scality S3",
       "description": "Standalone AWS S3 protocol server",
@@ -27172,10 +27209,10 @@
         }
       ],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 697
+      "id": 698
     },
     {
-      "id": 698,
+      "id": 699,
       "type": 1,
       "title": "Scummvm",
       "name": "Scummvm",
@@ -27221,7 +27258,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 699,
+      "id": 700,
       "type": 1,
       "title": "Sealskin",
       "name": "Sealskin",
@@ -27318,7 +27355,7 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://docs.searxng.org/\" target=\"_blank\">https://docs.searxng.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.searxng.org/admin/installation-docker.html\" target=\"_blank\">https://docs.searxng.org/admin/installation-docker.html</a><br><h3><b>Pi-Hosted dedicated documentation: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/searxng.md\" target=\"_blank\">searxng.md</a></h3><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 700
+      "id": 701
     },
     {
       "type": 3,
@@ -27348,7 +27385,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 701
+      "id": 702
     },
     {
       "type": 3,
@@ -27365,10 +27402,10 @@
       },
       "note": "Uses host networking so the client can reach apps on this host at localhost:PORT. Open <code>http://&lt;your-host&gt;:8082</code> and set a password within 5 minutes of the container starting. Requires a free account at <a href=\"https://seawise.io\" target=\"_blank\">seawise.io</a>.",
       "maintainer": "https://github.com/seawise-io/seawise-client/",
-      "id": 702
+      "id": 703
     },
     {
-      "id": 703,
+      "id": 704,
       "type": 1,
       "title": "Seerr",
       "name": "seerr",
@@ -27400,7 +27437,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 704,
+      "id": 705,
       "type": 1,
       "title": "Sematext Docker Agent (container)",
       "description": "Collect logs, metrics and docker events",
@@ -27432,7 +27469,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 705,
+      "id": 706,
       "title": "Sematext Docker Agent (swarm)",
       "type": 2,
       "categories": [
@@ -27477,7 +27514,7 @@
       "title": "Servas",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 706
+      "id": 707
     },
     {
       "type": 3,
@@ -27505,7 +27542,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 707
+      "id": 708
     },
     {
       "categories": [
@@ -27522,7 +27559,7 @@
       "title": "Shaarli",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 708
+      "id": 709
     },
     {
       "categories": [
@@ -27539,10 +27576,10 @@
       "title": "Shadowbroker",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 709
+      "id": 710
     },
     {
-      "id": 710,
+      "id": 711,
       "type": 1,
       "title": "Shadps4",
       "name": "Shadps4",
@@ -27611,7 +27648,7 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/go-shiori/shiori\" target=\"_blank\">https://github.com/go-shiori/shiori</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/nicholaswilde/docker-shiori\" target=\"_blank\">https://github.com/nicholaswilde/docker-shiori</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 711
+      "id": 712
     },
     {
       "categories": [
@@ -27628,7 +27665,7 @@
       "title": "Shiori (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 712
+      "id": 713
     },
     {
       "type": 3,
@@ -27668,10 +27705,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 713
+      "id": 714
     },
     {
-      "id": 714,
+      "id": 715,
       "type": 1,
       "title": "Shotcut",
       "name": "Shotcut",
@@ -27759,10 +27796,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 715
+      "id": 716
     },
     {
-      "id": 716,
+      "id": 717,
       "type": 1,
       "title": "Sickgear",
       "name": "Sickgear",
@@ -27884,10 +27921,10 @@
         }
       ],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 717
+      "id": 718
     },
     {
-      "id": 718,
+      "id": 719,
       "type": 1,
       "title": "Signal",
       "name": "Signal",
@@ -27947,10 +27984,10 @@
       "title": "Signal Proxy",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 719
+      "id": 720
     },
     {
-      "id": 720,
+      "id": 721,
       "type": 1,
       "title": "SilverBullet",
       "name": "silverbullet",
@@ -27990,10 +28027,10 @@
       "title": "Silverstripe",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 721
+      "id": 722
     },
     {
-      "id": 722,
+      "id": 723,
       "type": 3,
       "title": "SiYuan",
       "name": "siyuan",
@@ -28032,7 +28069,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 723,
+      "id": 724,
       "type": 1,
       "title": "Smokeping",
       "name": "Smokeping",
@@ -28122,7 +28159,7 @@
         }
       ],
       "maintainer": "https://github.com/Qballjos/portainer_templates/",
-      "id": 724
+      "id": 725
     },
     {
       "categories": [
@@ -28139,10 +28176,10 @@
       "title": "Snibox (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 725
+      "id": 726
     },
     {
-      "id": 726,
+      "id": 727,
       "type": 3,
       "title": "Snipe-IT",
       "name": "snipe-it",
@@ -28203,7 +28240,7 @@
       "title": "Snippet Box (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 727
+      "id": 728
     },
     {
       "categories": [
@@ -28229,10 +28266,10 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 728
+      "id": 729
     },
     {
-      "id": 729,
+      "id": 730,
       "type": 1,
       "title": "Socket-proxy",
       "name": "Socket-proxy",
@@ -28277,7 +28314,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 730,
+      "id": 731,
       "type": 3,
       "title": "Softing SDEX Suite",
       "description": "Connect PLCs and CNCs from multiple manufacturers and provide their industrial data to IT applications via OPC UA and MQTT.",
@@ -28335,7 +28372,7 @@
           "container": "/data"
         }
       ],
-      "id": 731
+      "id": 732
     },
     {
       "categories": [
@@ -28352,10 +28389,10 @@
       "title": "SolidTime",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 732
+      "id": 733
     },
     {
-      "id": 733,
+      "id": 734,
       "type": 1,
       "title": "Solr",
       "description": "Open-source enterprise search platform",
@@ -28376,7 +28413,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 734,
+      "id": 735,
       "type": 1,
       "title": "Sonarr",
       "name": "Sonarr",
@@ -28429,7 +28466,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 735,
+      "id": 736,
       "type": 3,
       "title": "SORBA SDE",
       "description": "The SORBA Smart Data Engine (SDE) is an industrial data collection/gateway device capable of Advanced Edge Analytics & Machine Learning Edge Processing. SORBA-SDE is equipped with multiple communication driver/protocol applicable to the industrial market. The SORBA-SDE is a sensor/hardware agnostic device that serves as your point & click gateway capable of talking to multiple devices in real-time. The SDE provides easy access to equipment for troubleshooting and remote programming support for PLCs & HMIs utilizing a hassle-free easy, set-up approach to your assets.",
@@ -28445,7 +28482,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 736,
+      "id": 737,
       "type": 3,
       "title": "SparkyFitness",
       "name": "sparkyfitness",
@@ -28510,10 +28547,10 @@
       "title": "Speedtest Tracker (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 737
+      "id": 738
     },
     {
-      "id": 738,
+      "id": 739,
       "type": 1,
       "title": "Speedtest-tracker (container)",
       "name": "Speedtest-tracker",
@@ -28630,7 +28667,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 739,
+      "id": 740,
       "type": 3,
       "title": "Spliit",
       "name": "spliit",
@@ -28661,7 +28698,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 740,
+      "id": 741,
       "type": 1,
       "title": "Spoolman",
       "name": "spoolman",
@@ -28685,7 +28722,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 741,
+      "id": 742,
       "type": 1,
       "title": "Spotube",
       "name": "Spotube",
@@ -28731,7 +28768,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 742,
+      "id": 743,
       "type": 1,
       "title": "SQL Server (container)",
       "description": "Microsoft SQL Server Developer for Windows containers",
@@ -28796,10 +28833,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 743
+      "id": 744
     },
     {
-      "id": 744,
+      "id": 745,
       "type": 1,
       "title": "SQL Server Express",
       "description": "Microsoft SQL Server Express for Windows containers",
@@ -28832,7 +28869,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 745,
+      "id": 746,
       "type": 1,
       "title": "Sqlitebrowser",
       "name": "Sqlitebrowser",
@@ -28895,7 +28932,7 @@
       "type": 1,
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://sshwifty.herokuapp.com/\" target=\"_blank\">https://sshwifty.herokuapp.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/nirui/sshwifty#docker-image\" target=\"_blank\">https://github.com/nirui/sshwifty#docker-image</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 746
+      "id": 747
     },
     {
       "categories": [
@@ -28935,10 +28972,10 @@
           "container": "/var/lib/stalwart"
         }
       ],
-      "id": 747
+      "id": 748
     },
     {
-      "id": 748,
+      "id": 749,
       "type": 3,
       "title": "Stars Organizer",
       "name": "github-stars-organizer",
@@ -29001,10 +29038,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 749
+      "id": 750
     },
     {
-      "id": 750,
+      "id": 751,
       "type": 1,
       "title": "Steam",
       "name": "Steam",
@@ -29105,7 +29142,7 @@
         }
       ],
       "maintainer": "https://github.com/shmolf/portainer-templates/",
-      "id": 751
+      "id": 752
     },
     {
       "categories": [
@@ -29123,7 +29160,7 @@
       "title": "Stirling-PDF",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 752
+      "id": 753
     },
     {
       "categories": [
@@ -29166,7 +29203,7 @@
           "container": "/data"
         }
       ],
-      "id": 753
+      "id": 754
     },
     {
       "type": 3,
@@ -29436,7 +29473,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 754
+      "id": 755
     },
     {
       "type": 3,
@@ -29641,7 +29678,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 755
+      "id": 756
     },
     {
       "type": 3,
@@ -29851,7 +29888,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 756
+      "id": 757
     },
     {
       "type": 3,
@@ -30015,10 +30052,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 757
+      "id": 758
     },
     {
-      "id": 758,
+      "id": 759,
       "type": 1,
       "title": "Super Productivity",
       "name": "super-productivity",
@@ -30067,10 +30104,10 @@
       ],
       "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/apache-superset.png",
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 759
+      "id": 760
     },
     {
-      "id": 760,
+      "id": 761,
       "type": 3,
       "title": "Sure",
       "name": "sure",
@@ -30141,10 +30178,10 @@
       "type": 1,
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://surrealdb.com/\" target=\"_blank\">https://surrealdb.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/surrealdb/surrealdb\" target=\"_blank\">https://hub.docker.com/r/surrealdb/surrealdb</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 761
+      "id": 762
     },
     {
-      "id": 762,
+      "id": 763,
       "type": 1,
       "title": "Swag",
       "name": "Swag",
@@ -30275,7 +30312,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 763,
+      "id": 764,
       "type": 2,
       "title": "Swarm monitoring",
       "description": "Monitor your cluster performances with Prometheus & Grafana",
@@ -30303,7 +30340,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 764,
+      "id": 765,
       "type": 1,
       "title": "Synclounge",
       "name": "Synclounge",
@@ -30336,7 +30373,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 765,
+      "id": 766,
       "type": 1,
       "title": "Syncthing (container)",
       "name": "Syncthing",
@@ -30409,10 +30446,10 @@
       "title": "Syncthing (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 766
+      "id": 767
     },
     {
-      "id": 767,
+      "id": 768,
       "type": 1,
       "title": "Syslog-ng",
       "name": "Syslog-ng",
@@ -30507,10 +30544,10 @@
       "network": "host",
       "privileged": true,
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 768
+      "id": 769
     },
     {
-      "id": 769,
+      "id": 770,
       "categories": [
         "AI",
         "Tools"
@@ -30581,7 +30618,7 @@
       "title": "Tabby",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 770
+      "id": 771
     },
     {
       "categories": [
@@ -30617,7 +30654,7 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://tailscale.com/\" target=\"_blank\">https://tailscale.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/tailscale/tailscale\" target=\"_blank\">https://hub.docker.com/r/tailscale/tailscale</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 771
+      "id": 772
     },
     {
       "categories": [
@@ -30635,7 +30672,7 @@
       "title": "Tailscale (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 772
+      "id": 773
     },
     {
       "categories": [
@@ -30652,10 +30689,10 @@
       "title": "Tandoor",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 773
+      "id": 774
     },
     {
-      "id": 774,
+      "id": 775,
       "type": 1,
       "title": "Tautulli",
       "name": "Tautulli",
@@ -30714,10 +30751,10 @@
       "title": "Tdarr",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 775
+      "id": 776
     },
     {
-      "id": 776,
+      "id": 777,
       "type": 3,
       "title": "Teable",
       "name": "teable",
@@ -30794,7 +30831,7 @@
           "container": "/etc/dns"
         }
       ],
-      "id": 777
+      "id": 778
     },
     {
       "type": 3,
@@ -30817,7 +30854,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 778
+      "id": 779
     },
     {
       "categories": [
@@ -30858,10 +30895,10 @@
       "restart_policy": "unless-stopped",
       "title": "tela",
       "type": 3,
-      "id": 779
+      "id": 780
     },
     {
-      "id": 780,
+      "id": 781,
       "type": 1,
       "title": "Telegram",
       "name": "Telegram",
@@ -30922,7 +30959,7 @@
       "title": "Teleport",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 781
+      "id": 782
     },
     {
       "type": 3,
@@ -30946,10 +30983,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 782
+      "id": 783
     },
     {
-      "id": 783,
+      "id": 784,
       "type": 1,
       "title": "Termix",
       "name": "termix",
@@ -31000,7 +31037,7 @@
       },
       "title": "Terraria Server",
       "type": 3,
-      "id": 784
+      "id": 785
     },
     {
       "type": 1,
@@ -31042,10 +31079,10 @@
         }
       ],
       "maintainer": "https://github.com/shmolf/portainer-templates/",
-      "id": 785
+      "id": 786
     },
     {
-      "id": 786,
+      "id": 787,
       "type": 1,
       "title": "Thelounge",
       "name": "Thelounge",
@@ -31091,7 +31128,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 787,
+      "id": 788,
       "type": 1,
       "title": "Thunderbird",
       "name": "Thunderbird",
@@ -31160,10 +31197,10 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://tiddlywiki.com/\" target=\"_blank\">https://tiddlywiki.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://gitlab.com/nicolaw/tiddlywiki\" target=\"_blank\">https://gitlab.com/nicolaw/tiddlywiki</a><br><br><h3><b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/tools/install_tiddlywiki.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install: </b>wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/tools/install_tiddlywiki.sh | bash</h3><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 788
+      "id": 789
     },
     {
-      "id": 789,
+      "id": 790,
       "type": 3,
       "title": "Timescale DB",
       "description": "Open-source time series database developed by Timescale Inc",
@@ -31200,7 +31237,7 @@
       "title": "TimeTagger",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 790
+      "id": 791
     },
     {
       "categories": [
@@ -31236,7 +31273,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 791
+      "id": 792
     },
     {
       "categories": [
@@ -31253,10 +31290,10 @@
       "title": "TinyMediaManager",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 792
+      "id": 793
     },
     {
-      "id": 793,
+      "id": 794,
       "type": 3,
       "title": "Tolgee",
       "name": "tolgee",
@@ -31309,10 +31346,10 @@
       "title": "Tooljet",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 794
+      "id": 795
     },
     {
-      "id": 795,
+      "id": 796,
       "type": 3,
       "title": "TOSIBOX Lock for Container",
       "description": "Lock for Container brings secure connectivity inside your industrial IoT devices",
@@ -31372,7 +31409,7 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 796
+      "id": 797
     },
     {
       "categories": [
@@ -31391,7 +31428,7 @@
       "restart_policy": "unless-stopped",
       "title": "Traefik (stack)",
       "type": 3,
-      "id": 797
+      "id": 798
     },
     {
       "categories": [
@@ -31408,10 +31445,10 @@
       "title": "Traggo",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 798
+      "id": 799
     },
     {
-      "id": 799,
+      "id": 800,
       "type": 1,
       "title": "Transmission",
       "name": "Transmission",
@@ -31579,7 +31616,7 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 800
+      "id": 801
     },
     {
       "categories": [
@@ -31659,7 +31696,7 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 801
+      "id": 802
     },
     {
       "categories": [
@@ -31722,10 +31759,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 802
+      "id": 803
     },
     {
-      "id": 803,
+      "id": 804,
       "type": 1,
       "title": "TREK",
       "name": "trek",
@@ -31809,7 +31846,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 804
+      "id": 805
     },
     {
       "categories": [
@@ -31826,7 +31863,7 @@
       "title": "TRIP",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 805
+      "id": 806
     },
     {
       "categories": [
@@ -31843,7 +31880,7 @@
       "title": "Trudesk",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 806
+      "id": 807
     },
     {
       "categories": [
@@ -31860,10 +31897,10 @@
       "title": "Tubearchivist",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 807
+      "id": 808
     },
     {
-      "id": 808,
+      "id": 809,
       "type": 3,
       "title": "tududi",
       "name": "tududi",
@@ -31911,7 +31948,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 809,
+      "id": 810,
       "type": 1,
       "title": "Tvheadend",
       "name": "Tvheadend",
@@ -31998,7 +32035,7 @@
       ],
       "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/twenty-crm.png",
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 810
+      "id": 811
     },
     {
       "categories": [
@@ -32036,7 +32073,7 @@
         }
       ],
       "maintainer": "https://github.com/Qballjos/portainer_templates/",
-      "id": 811
+      "id": 812
     },
     {
       "type": 3,
@@ -32105,7 +32142,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 812
+      "id": 813
     },
     {
       "type": 3,
@@ -32129,10 +32166,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 813
+      "id": 814
     },
     {
-      "id": 814,
+      "id": 815,
       "type": 1,
       "title": "Ubooquity",
       "name": "Ubooquity",
@@ -32196,7 +32233,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 815,
+      "id": 816,
       "type": 1,
       "title": "Ubuntu",
       "description": "Debian-based Linux operating system",
@@ -32232,7 +32269,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 816
+      "id": 817
     },
     {
       "categories": [
@@ -32252,10 +32289,10 @@
       "title": "Umami.is",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 817
+      "id": 818
     },
     {
-      "id": 818,
+      "id": 819,
       "type": 1,
       "title": "Ungoogled-chromium",
       "name": "Ungoogled-chromium",
@@ -32348,7 +32385,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 819
+      "id": 820
     },
     {
       "categories": [
@@ -32407,10 +32444,10 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/pducharme/UniFi-Video-Controller\" target=\"_blank\">https://github.com/pducharme/UniFi-Video-Controller</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/pducharme/UniFi-Video-Controller\" target=\"_blank\">https://github.com/pducharme/UniFi-Video-Controller</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 820
+      "id": 821
     },
     {
-      "id": 821,
+      "id": 822,
       "type": 1,
       "title": "Unifi-network-application",
       "name": "Unifi-network-application",
@@ -32542,7 +32579,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 822
+      "id": 823
     },
     {
       "categories": [
@@ -32587,7 +32624,7 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://docs.unmanic.app/\" target=\"_blank\">https://docs.unmanic.app/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.unmanic.app/docs/installation/docker\" target=\"_blank\">https://docs.unmanic.app/docs/installation/docker</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 823
+      "id": 824
     },
     {
       "categories": [
@@ -32604,7 +32641,7 @@
       "title": "Upsnap",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 824
+      "id": 825
     },
     {
       "categories": [
@@ -32630,7 +32667,7 @@
         }
       ],
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 825
+      "id": 826
     },
     {
       "categories": [
@@ -32648,7 +32685,7 @@
       "title": "Uptime Kuma (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 826
+      "id": 827
     },
     {
       "categories": [
@@ -32690,7 +32727,7 @@
       ],
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.urbackup.org/\" target=\"_blank\">https://www.urbackup.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://www.github.com/uroni/urbackup-server-docker\" target=\"_blank\">https://www.github.com/uroni/urbackup-server-docker</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 827
+      "id": 828
     },
     {
       "type": 1,
@@ -32736,10 +32773,10 @@
         }
       ],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 828
+      "id": 829
     },
     {
-      "id": 829,
+      "id": 830,
       "type": 3,
       "title": "USCIS Tracker",
       "name": "uscis-tracker",
@@ -32828,7 +32865,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 830
+      "id": 831
     },
     {
       "categories": [
@@ -32867,7 +32904,7 @@
       },
       "title": "Valheim Server",
       "type": 3,
-      "id": 831
+      "id": 832
     },
     {
       "type": 3,
@@ -32891,7 +32928,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 832
+      "id": 833
     },
     {
       "type": 3,
@@ -32915,7 +32952,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 833
+      "id": 834
     },
     {
       "type": 3,
@@ -32939,7 +32976,7 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 834
+      "id": 835
     },
     {
       "categories": [
@@ -32964,7 +33001,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 835
+      "id": 836
     },
     {
       "type": 3,
@@ -33000,10 +33037,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 836
+      "id": 837
     },
     {
-      "id": 837,
+      "id": 838,
       "type": 1,
       "title": "Verdaccio",
       "name": "verdaccio",
@@ -33059,10 +33096,10 @@
       "title": "Vikunja",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 838
+      "id": 839
     },
     {
-      "id": 839,
+      "id": 840,
       "type": 1,
       "title": "Vivaldi",
       "name": "Vivaldi",
@@ -33114,7 +33151,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 840,
+      "id": 841,
       "type": 1,
       "title": "Vlc",
       "name": "Vlc",
@@ -33183,10 +33220,10 @@
       "type": 1,
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://hub.docker.com/r/mikolatero/vlmcsd\" target=\"_blank\">https://hub.docker.com/r/mikolatero/vlmcsd</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/mikolatero/docker-vlmcsd\" target=\"_blank\">https://github.com/mikolatero/docker-vlmcsd</a><br><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 841
+      "id": 842
     },
     {
-      "id": 842,
+      "id": 843,
       "type": 1,
       "title": "Vscode",
       "name": "Vscode",
@@ -33232,7 +33269,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 843,
+      "id": 844,
       "type": 1,
       "title": "Vscodium",
       "name": "Vscodium",
@@ -33278,7 +33315,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 844,
+      "id": 845,
       "type": 1,
       "title": "Vscodium-web",
       "name": "Vscodium-web",
@@ -33433,10 +33470,10 @@
       ],
       "labels": [],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 845
+      "id": 846
     },
     {
-      "id": 846,
+      "id": 847,
       "type": 3,
       "title": "Wakapi",
       "name": "wakapi",
@@ -33491,10 +33528,10 @@
       "title": "Wallabag",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 847
+      "id": 848
     },
     {
-      "id": 848,
+      "id": 849,
       "type": 1,
       "title": "Wallos",
       "name": "wallos",
@@ -33549,7 +33586,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 849
+      "id": 850
     },
     {
       "type": 1,
@@ -33574,7 +33611,7 @@
         }
       ],
       "maintainer": "https://github.com/shmolf/portainer-templates/",
-      "id": 850
+      "id": 851
     },
     {
       "categories": [
@@ -33591,10 +33628,10 @@
       "title": "Web Check",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 851
+      "id": 852
     },
     {
-      "id": 852,
+      "id": 853,
       "type": 1,
       "title": "Webcord",
       "name": "Webcord",
@@ -33640,7 +33677,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 853,
+      "id": 854,
       "type": 1,
       "title": "Webgrabplus",
       "name": "Webgrabplus",
@@ -33689,7 +33726,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 854,
+      "id": 855,
       "type": 1,
       "title": "Webstation",
       "name": "Webstation",
@@ -33735,7 +33772,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 855,
+      "id": 856,
       "type": 1,
       "title": "Webtop",
       "name": "Webtop",
@@ -33795,10 +33832,10 @@
       "title": "Webtrees",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 856
+      "id": 857
     },
     {
-      "id": 857,
+      "id": 858,
       "type": 1,
       "title": "Weixin",
       "name": "Weixin",
@@ -33858,7 +33895,7 @@
       "title": "Wger",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 858
+      "id": 859
     },
     {
       "categories": [
@@ -33875,7 +33912,7 @@
       "title": "Whisparr",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 859
+      "id": 860
     },
     {
       "categories": [
@@ -33899,10 +33936,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 860
+      "id": 861
     },
     {
-      "id": 861,
+      "id": 862,
       "type": 1,
       "title": "Wikijs",
       "name": "Wikijs",
@@ -33987,7 +34024,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 862,
+      "id": 863,
       "type": 1,
       "title": "Winegui",
       "name": "Winegui",
@@ -34034,7 +34071,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 863,
+      "id": 864,
       "type": 1,
       "title": "Wireguard",
       "name": "Wireguard",
@@ -34182,10 +34219,10 @@
       "type": 3,
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/WeeJeWel/wg-easy/\" target=\"_blank\">https://github.com/WeeJeWel/wg-easy/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/WeeJeWel/wg-easy/#1-install-docker\" target=\"_blank\">https://github.com/WeeJeWel/wg-easy/#1-install-docker</a><br><h3><b>Pi-Hosted dedicated documentation: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/wireguard-install.md\" target=\"_blank\">wireguard-install.md</a></h3><br><br><br><b>Youtube Video: </b><a href=https://www.youtube.com/watch?v=yB_jAumIxOg target=\"_blank\">Novaspirit Tech - Beginners Guide to WireGuard Docker and Installing Pi-OS 64bit</a><br><br>",
       "maintainer": "https://github.com/novaspirit/pi-hosted/",
-      "id": 864
+      "id": 865
     },
     {
-      "id": 865,
+      "id": 866,
       "type": 1,
       "title": "Wireshark",
       "name": "Wireshark",
@@ -34233,7 +34270,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 866,
+      "id": 867,
       "type": 3,
       "title": "Wishlist",
       "name": "wishlist",
@@ -34312,7 +34349,7 @@
         }
       ],
       "maintainer": "https://github.com/mediadepot/templates/",
-      "id": 867
+      "id": 868
     },
     {
       "categories": [
@@ -34350,10 +34387,10 @@
       },
       "title": "Woodpecker CI",
       "type": 3,
-      "id": 868
+      "id": 869
     },
     {
-      "id": 869,
+      "id": 870,
       "type": 3,
       "title": "WordPress (stack)",
       "description": "WordPress setup with a MySQL database",
@@ -34377,7 +34414,7 @@
       "maintainer": "https://github.com/portainer/templates/"
     },
     {
-      "id": 870,
+      "id": 871,
       "type": 2,
       "title": "WordPress (swarm)",
       "description": "WordPress setup with a MySQL database",
@@ -34434,10 +34471,10 @@
         }
       ],
       "maintainer": "https://github.com/mikestraney/portainer-templates/",
-      "id": 871
+      "id": 872
     },
     {
-      "id": 872,
+      "id": 873,
       "type": 1,
       "title": "Wps-office",
       "name": "Wps-office",
@@ -34503,10 +34540,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 873
+      "id": 874
     },
     {
-      "id": 874,
+      "id": 875,
       "type": 1,
       "title": "Xbackbone",
       "name": "Xbackbone",
@@ -34552,7 +34589,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 875,
+      "id": 876,
       "type": 1,
       "title": "Xemu",
       "name": "Xemu",
@@ -34612,10 +34649,10 @@
       "title": "Xwiki",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 876
+      "id": 877
     },
     {
-      "id": 877,
+      "id": 878,
       "type": 1,
       "title": "Yaak",
       "name": "Yaak",
@@ -34686,10 +34723,10 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 878
+      "id": 879
     },
     {
-      "id": 879,
+      "id": 880,
       "type": 3,
       "title": "Yamtrack",
       "name": "yamtrack",
@@ -34727,7 +34764,7 @@
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
-      "id": 880,
+      "id": 881,
       "type": 1,
       "title": "Your_spotify (container)",
       "name": "Your_spotify",
@@ -34823,10 +34860,10 @@
       "title": "Your_spotify (stack)",
       "type": 3,
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 881
+      "id": 882
     },
     {
-      "id": 882,
+      "id": 883,
       "type": 3,
       "title": "YOURLS",
       "name": "yourls",
@@ -34915,7 +34952,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 883
+      "id": 884
     },
     {
       "type": 3,
@@ -34954,10 +34991,10 @@
       ],
       "note": "On a new installation you can deploy this as it is: Yuvomi generates the <b>session secret</b> and the <b>database encryption key</b> on its first start. Keep a copy of the key - Settings &gt; Household &gt; Backup and restore shows it, and a backup only opens with it. Then open port 3000 (or the one you chose) and create your admin account. Behind an HTTPS reverse proxy, also set SESSION_SECURE=true. All other settings are listed in <a href=\"https://github.com/ulsklyc/yuvomi/blob/main/.env.example\" target=\"_blank\">.env.example</a>.",
       "maintainer": "https://github.com/ulsklyc/yuvomi/",
-      "id": 884
+      "id": 885
     },
     {
-      "id": 885,
+      "id": 886,
       "type": 1,
       "title": "Zen",
       "name": "Zen",
@@ -35003,7 +35040,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 886,
+      "id": 887,
       "type": 3,
       "title": "Zipline",
       "name": "zipline",
@@ -35076,10 +35113,10 @@
         }
       ],
       "maintainer": "https://github.com/deployable-sh/stacks/",
-      "id": 887
+      "id": 888
     },
     {
-      "id": 888,
+      "id": 889,
       "type": 1,
       "title": "Znc",
       "name": "Znc",
@@ -35124,7 +35161,7 @@
       "maintainer": "https://github.com/technorabilia/portainer-templates/"
     },
     {
-      "id": 889,
+      "id": 890,
       "type": 1,
       "title": "Zotero",
       "name": "Zotero",
@@ -35196,7 +35233,7 @@
       },
       "title": "ZTNet",
       "type": 3,
-      "id": 890
+      "id": 891
     },
     {
       "categories": [
@@ -35233,7 +35270,7 @@
         }
       ],
       "maintainer": "https://github.com/xneo1/portainer_templates/",
-      "id": 891
+      "id": 892
     }
   ]
 }
