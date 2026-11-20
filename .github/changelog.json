@@ -1,6 +1,18 @@
 {
   "entries": [
     {
+      "version": "v1.4.22",
+      "previous": "v1.4.21",
+      "date": "2026-11-20",
+      "templateCount": 893,
+      "added": [
+        "Jellystat"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.4.21",
       "previous": "v1.4.20",
       "date": "2026-11-18",
