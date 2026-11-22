@@ -1,6 +1,18 @@
 {
   "entries": [
     {
+      "version": "v1.4.23",
+      "previous": "v1.4.22",
+      "date": "2026-11-22",
+      "templateCount": 894,
+      "added": [
+        "SnapOtter"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.4.22",
       "previous": "v1.4.21",
       "date": "2026-11-20",
