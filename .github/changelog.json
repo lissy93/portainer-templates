@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "version": "v1.4.24",
+      "previous": "v1.4.23",
+      "date": "2026-11-23",
+      "templateCount": 894,
+      "added": [],
+      "removed": [],
+      "renamed": [],
+      "updated": [
+        {
+          "title": "Pelorus",
+          "fields": [
+            "description",
+            "ports"
+          ]
+        }
+      ]
+    },
+    {
       "version": "v1.4.23",
       "previous": "v1.4.22",
       "date": "2026-11-22",
