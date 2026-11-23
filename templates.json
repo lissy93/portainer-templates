@@ -22947,7 +22947,7 @@
       "title": "Pelorus",
       "name": "Pelorus",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a>, based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Ensure to create the following volume directories on the host file system, or modify the paths in the volume mapping section under the advanced options below, as needed.</p><p>mkdir -p /srv/lsio/pelorus/config</p>",
-      "description": "[Pelorus](https://github.com/linuxserver/pelorus) is an AI navigator for Selkies-powered Linux desktops. Pelorus runs a FastAPI server that gives an LLM agent (Ollama, OpenAI-compatible, or Gemini) control over mouse, keyboard, screenshot, and window management via the [Pixelflux computer-use backend](https://github.com/linuxserver/pixelflux#computer-use-interface-wayland), a Linux accessibility tree (AT-SPI), and optional KWin D-Bus integration.",
+      "description": "Pelorus is the AI agent interface built into [Selkies](https://github.com/selkies-project/selkies). It describes the desktop to an LLM as text, the windows the Selkies window manager places and the controls applications expose over the Linux accessibility tree (AT-SPI), and drives it with mouse, keyboard, window and screenshot actions from a chat. This image runs Pelorus on the Selkies desktop with a split pane web interface.",
       "categories": [
         "Remote Desktop",
         "AI"
@@ -22976,6 +22976,7 @@
         }
       ],
       "ports": [
+        "3000:3000/tcp",
         "3001:3001/tcp"
       ],
       "volumes": [
