@@ -1,6 +1,30 @@
 {
   "entries": [
     {
+      "version": "v1.4.25",
+      "previous": "v1.4.24",
+      "date": "2026-11-24",
+      "templateCount": 894,
+      "added": [],
+      "removed": [],
+      "renamed": [],
+      "updated": [
+        {
+          "title": "TREK",
+          "fields": [
+            "image",
+            "note"
+          ]
+        },
+        {
+          "title": "Verdaccio",
+          "fields": [
+            "image"
+          ]
+        }
+      ]
+    },
+    {
       "version": "v1.4.24",
       "previous": "v1.4.23",
       "date": "2026-11-23",
