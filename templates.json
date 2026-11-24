@@ -31850,7 +31850,7 @@
       ],
       "platform": "linux",
       "logo": "https://raw.githubusercontent.com/liketrek/TREK/main/client/public/icons/icon.svg",
-      "image": "mauriceboe/trek:4",
+      "image": "mauriceboe/trek:5",
       "restart_policy": "unless-stopped",
       "ports": [
         "8099:3000/tcp"
@@ -31887,7 +31887,7 @@
           "default": "UTC"
         }
       ],
-      "note": "Open <code>http://&lt;your-host&gt;:8099</code> and sign in as <code>admin@trek.local</code>. The password's printed in the container's logs on first start (search them for First Run), and TREK makes you pick a new one straight away. Anyone who can reach it can register their own account, so switch off Password Registration under Administration --&gt; Settings if that's not what you want. Place search asks TREK's own places.liketrek.com as well as OpenStreetMap, add a <code>TREK_PLACES_ENABLED=false</code> env to keep it to OpenStreetMap. The database, its encryption key and every upload live in the two volumes. Docs: <a href=\"https://github.com/liketrek/TREK/wiki\" target=\"_blank\">github.com/liketrek/TREK/wiki</a>",
+      "note": "Open <code>http://&lt;your-host&gt;:8099</code> and sign in as <code>admin@trek.local</code>. The password's printed in the container's logs on first start, over a thousand lines up, so set Lines to 5000 in Portainer's log view and search for <code>Password:</code>. TREK makes you pick a new one straight away. Anyone who can reach it can register their own account, so switch off Password Registration under Admin --&gt; Security if that's not what you want. Place search, address search and routing go through TREK's own servers at liketrek.com, under a key the install fetches for itself. Add <code>TREK_SERVICES=off</code> and <code>TREK_PLACES_ENABLED=false</code> envs to send nothing there. The database, its encryption key and every upload live in the two volumes. Docs: <a href=\"https://github.com/liketrek/TREK/wiki\" target=\"_blank\">github.com/liketrek/TREK/wiki</a>",
       "maintainer": "https://github.com/NotAFlightRisk/portainer-templates-extras/"
     },
     {
@@ -33128,7 +33128,7 @@
       ],
       "platform": "linux",
       "logo": "https://raw.githubusercontent.com/verdaccio/verdaccio/master/packages/ui-components/src/components/Logo/img/logo.svg",
-      "image": "verdaccio/verdaccio:6",
+      "image": "verdaccio/verdaccio:7",
       "restart_policy": "unless-stopped",
       "ports": [
         "4873:4873/tcp"
