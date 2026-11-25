@@ -1,6 +1,25 @@
 {
   "entries": [
     {
+      "version": "v1.4.26",
+      "previous": "v1.4.25",
+      "date": "2026-11-25",
+      "templateCount": 895,
+      "added": [
+        "RSS-Bridge"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": [
+        {
+          "title": "Stars Organizer",
+          "fields": [
+            "env"
+          ]
+        }
+      ]
+    },
+    {
       "version": "v1.4.25",
       "previous": "v1.4.24",
       "date": "2026-11-24",
