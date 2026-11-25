@@ -1,0 +1,40 @@
+{
+  "version": "3",
+  "templates": [
+    {
+      "type": 1,
+      "title": "FCaptcha",
+      "name": "fcaptcha",
+      "description": "Self-hosted CAPTCHA widget and server-side token verification for web forms. Source: https://github.com/WebDecoy/FCaptcha",
+      "categories": ["Security", "Development"],
+      "platform": "linux",
+      "logo": "https://oneclickapps.caprover.com/v4/logos/fcaptcha.png",
+      "image": "ghcr.io/webdecoy/fcaptcha:1.51.4",
+      "restart_policy": "unless-stopped",
+      "ports": ["8300:3000/tcp"],
+      "env": [
+        {
+          "name": "FCAPTCHA_SECRET",
+          "label": "Signing secret (required)",
+          "description": "Generate with openssl rand -hex 32. Save this value for redeployments."
+        },
+        {
+          "name": "FCAPTCHA_VERIFY_SECRET",
+          "label": "Verification secret (required for app integration)",
+          "description": "Run openssl rand -hex 32 again for a different value. Use this value only in your application backend."
+        },
+        {
+          "name": "FCAPTCHA_ALLOWED_HOSTNAMES",
+          "label": "Allowed website hostnames",
+          "description": "For public use, list the hostnames where the widget appears, separated by commas, without schemes or ports."
+        },
+        {
+          "name": "TRUSTED_PROXIES",
+          "label": "Trusted reverse proxies",
+          "description": "For an HTTPS reverse proxy, list only the proxy IPs or CIDRs trusted to set forwarded client information."
+        }
+      ],
+      "note": "Generate the two secrets before deploying. Open <code>http://&lt;docker-host&gt;:8300/demo/</code> from your private network to try the widget. This single instance uses in-memory state and has no login or required volume. Limit access to the published port to your private network or reverse proxy. Configure HTTPS and read the <a href=\"https://github.com/WebDecoy/FCaptcha/blob/v1.51.4/HARDENING.md\">hardening guide</a> before public use. Use the verification secret exclusively in your application backend."
+    }
+  ]
+}
