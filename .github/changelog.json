@@ -1,6 +1,18 @@
 {
   "entries": [
     {
+      "version": "v1.4.28",
+      "previous": "v1.4.27",
+      "date": "2026-11-27",
+      "templateCount": 896,
+      "added": [
+        "SiteWatcher"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.4.27",
       "previous": "v1.4.26",
       "date": "2026-11-27",
