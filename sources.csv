@@ -25,3 +25,4 @@ excaliself, https://raw.githubusercontent.com/maciekzygmunt/excaliself/main/port
 contrack, https://raw.githubusercontent.com/arvarik/contrack/main/portainer-template.json, https://github.com/arvarik/contrack/, app
 life_console, https://raw.githubusercontent.com/TJ-coding/life-console/main/packaging/portainer/portainer-template.json, https://github.com/TJ-coding/life-console/, app
 
+sitewatcher, https://raw.githubusercontent.com/NikKurkov/sitewatcher/main/portainer-template.json, https://github.com/NikKurkov/sitewatcher/, app
